@@ -18,7 +18,7 @@ const publicApi = axios.create({
   headers: {
     "Content-Type": "application/json"
   },
-});
+});     
 
 const api = axios.create({
   baseURL: "",
