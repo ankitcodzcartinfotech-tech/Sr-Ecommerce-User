@@ -35,7 +35,7 @@ function getSeed(product = {}, index = 0) {
 }
 
 export function getProductName(product = {}) {
-  return product.productDetail?.name || product.name || "Handcrafted Saree";
+  return product.productDetail?.name || product.name || "Premium Product";
 }
 
 export function getProductCategory(product = {}) {
@@ -50,7 +50,7 @@ export function getProductDescription(product = {}) {
   return (
     product.productDetail?.description ||
     product.description ||
-    "A drape designed for celebrations, heirloom moments, and effortless elegance."
+    "A premium product designed for style, utility, and everyday elegance."
   );
 }
 
@@ -206,11 +206,11 @@ export function mapFeaturedReviewToTestimonial(review = {}) {
   const productName =
     review.product?.productDetail?.name ||
     review.productName ||
-    "Keshrag Saree";
+    "Premium Store Item";
 
   return {
     id: review._id,
-    name: review.user?.name || "Keshrag Customer",
+    name: review.user?.name || "Verified Customer",
     location: review.location || "India",
     rating: review.rating || 5,
     product: productName,

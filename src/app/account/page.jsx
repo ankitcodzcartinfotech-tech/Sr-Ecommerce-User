@@ -37,12 +37,12 @@ function avatar(src) {
 }
 
 const STATUS_CFG = {
-  Pending: { text: "text-[#B8922C]", bg: "bg-[#B8922C]/10", border: "border-[#B8922C]/20" },
-  Confirmed: { text: "text-[#2D2A26]", bg: "bg-[#2D2A26]/10", border: "border-[#2D2A26]/20" },
-  Processing: { text: "text-[#7A1A2E]", bg: "bg-[#7A1A2E]/10", border: "border-[#7A1A2E]/20" },
-  Shipped: { text: "text-[#1FA971]", bg: "bg-[#1FA971]/10", border: "border-[#1FA971]/20" },
-  Delivered: { text: "text-[#1FA971]", bg: "bg-[#1FA971]/10", border: "border-[#1FA971]/20" },
-  Cancelled: { text: "text-[#E53935]", bg: "bg-[#E53935]/10", border: "border-[#E53935]/20" },
+  Pending: { text: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-200" },
+  Confirmed: { text: "text-stone-900", bg: "bg-stone-100", border: "border-stone-200" },
+  Processing: { text: "text-emerald-700", bg: "bg-emerald-50", border: "border-emerald-200" },
+  Shipped: { text: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-200" },
+  Delivered: { text: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-200" },
+  Cancelled: { text: "text-rose-600", bg: "bg-rose-50", border: "border-rose-200" },
 };
 
 /* ── Address Dialog ──────────────────────────────────────── */
@@ -117,13 +117,13 @@ function AddressDialog({ open, onClose, existing, onSave }) {
           <div className="flex items-center gap-5 pt-3">
             {["Home", "Work", "Other"].map(t => (
               <label key={t} className="flex items-center gap-2 cursor-pointer">
-                <input type="radio" name="addrType" value={t} checked={form.addressType === t} onChange={() => set("addressType", t)} className="h-4 w-4 accent-[#e88436]" />
+                <input type="radio" name="addrType" value={t} checked={form.addressType === t} onChange={() => set("addressType", t)} className="h-4 w-4 accent-emerald-700" />
                 <span className="text-sm font-semibold text-[#736B63]">{t}</span>
               </label>
             ))}
           </div>
           <label className="flex items-center gap-3 cursor-pointer mt-2 pb-2">
-            <input type="checkbox" checked={form.isDefault} onChange={e => set("isDefault", e.target.checked)} className="h-4 w-4 accent-[#e88436] rounded" />
+            <input type="checkbox" checked={form.isDefault} onChange={e => set("isDefault", e.target.checked)} className="h-4 w-4 accent-emerald-700 rounded" />
             <span className="text-sm font-semibold text-[#736B63]">Set as default address</span>
           </label>
           {err && <p className="rounded-xl bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-600">{err}</p>}
@@ -185,15 +185,15 @@ function ProfileTab() {
       {/* Avatar */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-8">
         <div className="relative shrink-0">
-          <div className="relative h-28 w-28 overflow-hidden rounded-full border-4 border-[#F6F3EC] bg-[#FDFBF7] shadow-sm">
+          <div className="relative h-28 w-28 overflow-hidden rounded-full border-4 border-[#F6F3EC] bg-white shadow-sm">
             {imgSrc ? <Image src={imgSrc} alt="Profile" fill sizes="112px" className="object-cover rounded-full" /> : (
-              <div className="flex h-full w-full items-center justify-center bg-[#F6F3EC] text-4xl font-serif font-bold text-[#e88436]">
+              <div className="flex h-full w-full items-center justify-center bg-emerald-50 text-4xl font-serif font-bold text-emerald-700">
                 {form.name?.charAt(0)?.toUpperCase() || "U"}
               </div>
             )}
           </div>
           <button type="button" onClick={() => fileRef.current?.click()}
-            className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-full bg-[#e88436] text-white shadow-md hover:bg-[#B8922C] transition-all hover-scale cursor-pointer">
+            className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center rounded-full bg-emerald-700 text-white shadow-md hover:bg-emerald-600 transition-all hover-scale cursor-pointer">
             <Camera size={16} />
           </button>
           <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleImg} />
@@ -244,7 +244,7 @@ function OrdersTab() {
 
   if (!orders.length) return (
     <div className="flex flex-col items-center py-20 text-center">
-      <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-[#F6F3EC]">
+      <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-stone-50">
         <Package size={40} className="text-[#A39C93]" />
       </div>
       <p className="font-serif text-2xl font-bold text-[#2D2A26]">No orders yet</p>
@@ -258,7 +258,7 @@ function OrdersTab() {
       {orders.map(order => {
         const cfg = STATUS_CFG[order.orderStatus] || STATUS_CFG.Pending;
         return (
-          <div key={order._id} className="group relative flex flex-col sm:flex-row sm:items-center justify-between gap-6 rounded-2xl border border-black/5 bg-[#FDFBF7] p-6 transition-all hover:border-[#e88436]/30 hover:shadow-md hover:-translate-y-1">
+          <div key={order._id} className="group relative flex flex-col sm:flex-row sm:items-center justify-between gap-6 rounded-2xl border border-black/5 bg-white p-6 transition-all hover:border-emerald-500/30 hover:shadow-md hover:-translate-y-1">
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                 <p className="order-id-text text-base sm:text-[1.1rem] font-bold text-[#2D2A26] truncate">
@@ -271,7 +271,7 @@ function OrdersTab() {
               <p className="text-sm font-medium text-[#736B63]">
                 Placed on {new Date(order.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })} • {order.totalItems} item{order.totalItems !== 1 ? "s" : ""}
               </p>
-              <p className="mt-3 text-xl sm:text-2xl font-bold text-[#e88436]">{formatCurrency(order.totalAmount)}</p>
+              <p className="mt-3 text-xl sm:text-2xl font-bold text-emerald-700">{formatCurrency(order.totalAmount)}</p>
             </div>
             <div className="flex shrink-0 items-center gap-3 border-t border-black/5 pt-4 sm:pt-0 sm:border-0 w-full sm:w-auto">
               <Link href={`/orders/orders-details/${order._id}`} className="btn-secondary flex w-full sm:w-auto justify-center items-center gap-2 px-6 py-3 text-xs font-bold shadow-sm cursor-pointer">
@@ -282,7 +282,7 @@ function OrdersTab() {
         );
       })}
       <div className="pt-6 text-center">
-        <Link href="/orders" className="inline-flex items-center gap-2 text-sm font-bold text-[#B8922C] hover:text-[#7A1A2E] transition-colors cursor-pointer">
+        <Link href="/orders" className="inline-flex items-center gap-2 text-sm font-bold text-emerald-700 hover:text-emerald-600 transition-colors cursor-pointer">
           View Detailed Orders Page <ArrowRight size={16} />
         </Link>
       </div>
@@ -347,7 +347,7 @@ function AddressesTab() {
         variant="danger"
       />
       <div className="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-black/5 pb-6">
-        <p className="text-sm font-semibold text-[#736B63] bg-[#F6F3EC] px-4 py-2 rounded-full">
+        <p className="text-sm font-semibold text-[#736B63] bg-stone-50 px-4 py-2 rounded-full">
           {addresses.length} saved address{addresses.length !== 1 ? "es" : ""}
         </p>
         <button onClick={() => { setEditing(null); setDialogOpen(true); }}
@@ -357,7 +357,7 @@ function AddressesTab() {
       </div>
       {!addresses.length ? (
         <div className="flex flex-col items-center py-16 text-center">
-          <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-[#F6F3EC]">
+          <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-stone-50">
             <MapPin size={40} className="text-[#A39C93]" />
           </div>
           <p className="font-serif text-2xl font-bold text-[#2D2A26]">No saved addresses</p>
@@ -366,14 +366,14 @@ function AddressesTab() {
       ) : (
         <div className="grid gap-6 sm:grid-cols-2">
           {addresses.map(addr => (
-            <div key={addr._id} className={`relative flex flex-col rounded-2xl border p-6 transition-all hover-lift ${addr.isDefault ? "border-[#e88436] bg-[#FDFBF7] shadow-sm" : "border-black/5 bg-[#FDFBF7] hover:border-[#e88436]/30 hover:bg-white"}`}>
+            <div key={addr._id} className={`relative flex flex-col rounded-2xl border p-6 transition-all hover-lift ${addr.isDefault ? "border-emerald-600 bg-emerald-50/20 shadow-sm" : "border-black/5 bg-white hover:border-emerald-500/30 hover:bg-white"}`}>
               {addr.isDefault && (
-                <span className="absolute right-5 top-5 flex items-center gap-1 rounded-full bg-[#e88436] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
+                <span className="absolute right-5 top-5 flex items-center gap-1 rounded-full bg-emerald-700 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm">
                   <Check size={10} /> Default
                 </span>
               )}
               <div className="mb-5">
-                <span className="inline-block rounded-full bg-[#F6F3EC] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#736B63]">{addr.addressType || "Home"}</span>
+                <span className="inline-block rounded-full bg-stone-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#736B63]">{addr.addressType || "Home"}</span>
               </div>
               <p className="text-xl font-bold text-[#2D2A26]">{addr.fullName}</p>
               <p className="mt-1 text-sm font-semibold text-[#736B63]">{addr.phone}</p>
@@ -384,7 +384,7 @@ function AddressesTab() {
 
               <div className="mt-8 flex flex-col sm:flex-row items-center gap-3 border-t border-black/5 pt-5">
                 <button onClick={() => { setEditing(addr); setDialogOpen(true); }}
-                  className="flex w-full sm:w-auto flex-1 items-center justify-center gap-1.5 rounded-xl bg-white border border-black/10 px-4 py-2.5 text-xs font-bold text-[#2D2A26] hover:border-[#e88436] hover:text-[#e88436] transition-colors cursor-pointer">
+                  className="flex w-full sm:w-auto flex-1 items-center justify-center gap-1.5 rounded-xl bg-white border border-black/10 px-4 py-2.5 text-xs font-bold text-[#2D2A26] hover:border-emerald-500 hover:text-emerald-700 transition-colors cursor-pointer">
                   <Pencil size={14} /> Edit
                 </button>
                 <button onClick={() => setConfirmDeleteId(addr._id)}
@@ -393,7 +393,7 @@ function AddressesTab() {
                 </button>
                 {!addr.isDefault && (
                   <button onClick={() => handleSetDefault(addr._id)}
-                    className="flex w-full sm:w-auto flex-1 items-center justify-center rounded-xl bg-white border border-black/10 px-4 py-2.5 text-xs font-bold text-[#736B63] hover:border-[#e88436] hover:text-[#e88436] transition-colors cursor-pointer">
+                    className="flex w-full sm:w-auto flex-1 items-center justify-center rounded-xl bg-white border border-black/10 px-4 py-2.5 text-xs font-bold text-[#736B63] hover:border-emerald-500 hover:text-emerald-700 transition-colors cursor-pointer">
                     Make Default
                   </button>
                 )}
@@ -428,7 +428,7 @@ function RecentlyViewedTab() {
 
   if (!items.length) return (
     <div className="flex flex-col items-center py-20 text-center">
-      <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-[#F6F3EC]">
+      <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-stone-50">
         <Clock size={40} className="text-[#A39C93]" />
       </div>
       <p className="font-serif text-2xl font-bold text-[#2D2A26]">No recently viewed products</p>
@@ -445,14 +445,14 @@ function RecentlyViewedTab() {
         const price = getProductPrice(product);
         const href = getProductHref(product);
         return (
-          <div key={product._id || i} className="group flex flex-col rounded-2xl border border-black/5 bg-[#FDFBF7] p-2 transition-all hover:border-[#e88436]/30 hover:bg-white hover:shadow-lg hover:-translate-y-1">
-            <Link href={href} className="relative block aspect-[5/6] overflow-hidden rounded-xl bg-[#F6F3EC] cursor-pointer">
+          <div key={product._id || i} className="group flex flex-col rounded-2xl border border-black/5 bg-white p-2 transition-all hover:border-emerald-500/30 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+            <Link href={href} className="relative block aspect-[5/6] overflow-hidden rounded-xl bg-stone-50 cursor-pointer">
               {img ? <Image src={img} alt={name} fill sizes="200px" className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
                 : <div className="flex h-full items-center justify-center text-[#A39C93]"><Package size={32} /></div>}
             </Link>
             <div className="p-4 flex flex-col flex-1">
               <p className="line-clamp-2 text-sm font-bold text-[#2D2A26]">{name}</p>
-              <p className="mt-2 text-lg font-bold text-[#e88436]">{formatCurrency(price)}</p>
+              <p className="mt-2 text-lg font-bold text-emerald-700">{formatCurrency(price)}</p>
               <Link href={href} className="btn-secondary mt-4 mt-auto w-full py-2.5 text-center text-xs font-bold shadow-sm cursor-pointer">
                 View Product
               </Link>
@@ -510,7 +510,7 @@ function NotificationsTab() {
         {/* Sound Settings */}
         <div>
           <h3 className="font-serif text-xl font-bold text-[#2D2A26] mb-6">Sound Settings</h3>
-          <div className="space-y-6 rounded-2xl border border-black/5 bg-[#FDFBF7] p-6 sm:p-8">
+          <div className="space-y-6 rounded-2xl border border-black/5 bg-white p-6 sm:p-8">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-bold text-[#2D2A26]">Enable Notification Sound</p>
@@ -518,20 +518,20 @@ function NotificationsTab() {
               </div>
               <label className="relative inline-flex cursor-pointer items-center">
                 <input type="checkbox" className="peer sr-only" checked={settings.enabled} onChange={(e) => updateSetting('enabled', e.target.checked)} />
-                <div className="peer h-7 w-12 rounded-full bg-black/10 after:absolute after:left-[3px] after:top-[3px] after:h-[22px] after:w-[22px] after:rounded-full after:border after:border-white after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#7A1A2E] peer-checked:after:translate-x-[20px] peer-focus:outline-none"></div>
+                <div className="peer h-7 w-12 rounded-full bg-black/10 after:absolute after:left-[3px] after:top-[3px] after:h-[22px] after:w-[22px] after:rounded-full after:border after:border-white after:bg-white after:transition-all after:content-[''] peer-checked:bg-emerald-600 peer-checked:after:translate-x-[20px] peer-focus:outline-none"></div>
               </label>
             </div>
 
             <div className={`transition-opacity ${settings.enabled ? 'opacity-100' : 'opacity-50 pointer-events-none'} border-t border-black/5 pt-6`}>
               <div className="flex items-center justify-between mb-3">
                 <p className="text-sm font-bold text-[#2D2A26]">Volume Level</p>
-                <p className="text-sm font-bold text-[#e88436] bg-[#e88436]/10 px-3 py-1 rounded-full">{settings.volume}%</p>
+                <p className="text-sm font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">{settings.volume}%</p>
               </div>
               <input
                 type="range" min="0" max="100" value={settings.volume}
                 onChange={(e) => updateSetting('volume', parseInt(e.target.value))}
                 onMouseUp={(e) => updateSetting('volume', parseInt(e.target.value))}
-                className="w-full accent-[#7A1A2E]"
+                className="w-full accent-emerald-600"
               />
             </div>
           </div>
@@ -540,7 +540,7 @@ function NotificationsTab() {
         {/* Desktop Notifications */}
         <div>
           <h3 className="font-serif text-xl font-bold text-[#2D2A26] mb-6 mt-10">System Preferences</h3>
-          <div className="rounded-2xl border border-black/5 bg-[#FDFBF7] p-6 sm:p-8">
+          <div className="rounded-2xl border border-black/5 bg-white p-6 sm:p-8">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-bold text-[#2D2A26]">Enable Desktop Notifications</p>
@@ -548,7 +548,7 @@ function NotificationsTab() {
               </div>
               <label className="relative inline-flex cursor-pointer items-center">
                 <input type="checkbox" className="peer sr-only" checked={settings.desktopEnabled} onChange={(e) => updateSetting('desktopEnabled', e.target.checked)} />
-                <div className="peer h-7 w-12 rounded-full bg-black/10 after:absolute after:left-[3px] after:top-[3px] after:h-[22px] after:w-[22px] after:rounded-full after:border after:border-white after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#7A1A2E] peer-checked:after:translate-x-[20px] peer-focus:outline-none"></div>
+                <div className="peer h-7 w-12 rounded-full bg-black/10 after:absolute after:left-[3px] after:top-[3px] after:h-[22px] after:w-[22px] after:rounded-full after:border after:border-white after:bg-white after:transition-all after:content-[''] peer-checked:bg-emerald-600 peer-checked:after:translate-x-[20px] peer-focus:outline-none"></div>
               </label>
             </div>
           </div>
@@ -557,7 +557,7 @@ function NotificationsTab() {
         {/* Email Preferences */}
         <div>
           <h3 className="font-serif text-xl font-bold text-[#2D2A26] mb-6 mt-10">Email Subscriptions</h3>
-          <div className="space-y-6 rounded-2xl border border-black/5 bg-[#FDFBF7] p-6 sm:p-8">
+          <div className="space-y-6 rounded-2xl border border-black/5 bg-white p-6 sm:p-8">
             {[
               { id: 'orderNotifications', title: 'Order Updates', desc: 'Real-time status of your orders and deliveries' },
               { id: 'offerNotifications', title: 'Exclusive Offers', desc: 'Special VIP offers, discounts, and price drops' },
@@ -570,7 +570,7 @@ function NotificationsTab() {
                 </div>
                 <label className="relative inline-flex cursor-pointer items-center">
                   <input type="checkbox" className="peer sr-only" checked={settings[pref.id]} onChange={(e) => updateSetting(pref.id, e.target.checked)} />
-                  <div className="peer h-7 w-12 rounded-full bg-black/10 after:absolute after:left-[3px] after:top-[3px] after:h-[22px] after:w-[22px] after:rounded-full after:border after:border-white after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#7A1A2E] peer-checked:after:translate-x-[20px] peer-focus:outline-none"></div>
+                  <div className="peer h-7 w-12 rounded-full bg-black/10 after:absolute after:left-[3px] after:top-[3px] after:h-[22px] after:w-[22px] after:rounded-full after:border after:border-white after:bg-white after:transition-all after:content-[''] peer-checked:bg-emerald-600 peer-checked:after:translate-x-[20px] peer-focus:outline-none"></div>
                 </label>
               </div>
             ))}
@@ -623,11 +623,11 @@ export default function AccountPage() {
       <div className="relative px-6 py-10 md:px-10">
         <div className="mx-auto max-w-[1440px] flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[#B8922C]">My Account</p>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">My Account</p>
             <h1 className="font-serif text-3xl font-bold text-[#2D2A26] md:text-3xl">Account Dashboard</h1>
           </motion.div>
           <button onClick={handleLogout}
-            className="flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 sm:px-5 sm:py-2.5 text-xs font-bold text-[#2D2A26] hover:bg-[#F6F3EC] hover:text-[#E53935] hover:border-[#E53935]/30 transition-all hover-lift shadow-sm cursor-pointer">
+            className="flex w-full sm:w-auto justify-center items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 sm:px-5 sm:py-2.5 text-xs font-bold text-[#2D2A26] hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-200 transition-all hover-lift shadow-sm cursor-pointer">
             <LogOut size={14} /> Sign Out
           </button>
         </div>
@@ -637,16 +637,16 @@ export default function AccountPage() {
 
           {/* Sidebar */}
           <aside className="lg:w-[280px] shrink-0 self-start sticky top-20 lg:top-28 z-30 w-full">
-            <div className="bg-[#FDFBF7] lg:bg-transparent -mx-6 px-6 pt-2 pb-4 lg:mx-0 lg:px-0 lg:pt-0 lg:pb-0">
+            <div className="bg-white lg:bg-transparent -mx-6 px-6 pt-2 pb-4 lg:mx-0 lg:px-0 lg:pt-0 lg:pb-0">
               <nav className="flex flex-row lg:flex-col gap-3 lg:gap-2 overflow-x-auto overflow-y-auto pb-4 lg:pb-0 max-h-[calc(100vh-120px)] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 {TABS.map(tab => (
                   <button key={tab.id} onClick={() => setActiveTab(tab.id)}
                     className={`group flex shrink-0 items-center justify-between rounded-full lg:rounded-2xl px-5 py-3 lg:px-6 lg:py-4 text-sm font-bold transition-all ${activeTab === tab.id
-                        ? "bg-[#7A1A2E] text-white shadow-md shadow-[#7A1A2E]/30"
+                        ? "bg-emerald-700 text-white shadow-md shadow-emerald-700/20"
                         : "text-[#736B63] bg-black/5 lg:bg-transparent hover:bg-white hover:text-[#2D2A26] hover:shadow-sm"
                       } cursor-pointer`}>
                     <div className="flex items-center gap-2 lg:gap-3">
-                      <tab.icon size={18} className={activeTab === tab.id ? "text-[#e88436]" : "text-[#A39C93] group-hover:text-[#e88436]"} />
+                      <tab.icon size={18} className={activeTab === tab.id ? "text-emerald-300" : "text-[#A39C93] group-hover:text-emerald-300"} />
                       {tab.label}
                     </div>
                     {activeTab === tab.id && <ChevronRight size={16} className="hidden lg:block opacity-70" />}

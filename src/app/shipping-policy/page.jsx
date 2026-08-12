@@ -1,8 +1,8 @@
 import PolicyLayout from '@/components/common/PolicyLayout';
 
 export const metadata = {
-  title: "Shipping Policy | Keshrag Premium Sarees",
-  description: "Read the Keshrag Shipping Policy to understand our delivery timelines and processes.",
+  title: "Shipping Policy | SR Ecommerce",
+  description: "Read the SR Ecommerce Shipping Policy to understand our delivery timelines and processes.",
 };
 
 export default function ShippingPolicyPage() {
@@ -82,7 +82,7 @@ export default function ShippingPolicyPage() {
       content: (
         <>
           <p>Customers are responsible for providing accurate shipping details.</p>
-          <p>Keshrag is not responsible for delays or failed deliveries due to incorrect addresses provided by the customer.</p>
+          <p>SR Ecommerce is not responsible for delays or failed deliveries due to incorrect addresses provided by the customer.</p>
         </>
       ),
     },
@@ -93,8 +93,8 @@ export default function ShippingPolicyPage() {
         <>
           <p className="mb-4">For shipping-related questions, please contact our support team.</p>
           <div className="bg-stone-50 p-6 rounded-xl border border-stone-200 mt-4">
-            <p className="font-semibold text-stone-900 mb-2">Keshrag</p>
-            <p className="mb-1"><strong>Email:</strong> support@keshrag.com</p>
+            <p className="font-semibold text-stone-900 mb-2">SR Ecommerce</p>
+            <p className="mb-1"><strong>Email:</strong> support@srecommerce.com</p>
             <p className="mb-1"><strong>Phone:</strong> +91 98246 76060</p>
             <p className="mt-2"><strong>Address:</strong><br />Ground Floor, Raghuvir Scarlett, G-59,<br />Nr. DMD Logistic Park, Saroli,<br />Surat, Gujarat 395010</p>
           </div>
@@ -106,7 +106,7 @@ export default function ShippingPolicyPage() {
   return (
     <PolicyLayout
       title="Shipping Policy"
-      description="Thank you for shopping with Keshrag. We aim to deliver your order safely and on time. Read on to understand our delivery processes."
+      description="Thank you for shopping with SR Ecommerce. We aim to deliver your order safely and on time. Read on to understand our delivery processes."
       date="July 1, 2026"
       sections={sections}
     />

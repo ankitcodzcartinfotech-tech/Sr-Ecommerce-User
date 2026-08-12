@@ -33,11 +33,11 @@ export default function CollectionsPage() {
   }, []);
 
   return (
-    <div className="page-shell bg-[#FAF9F6] pb-16 lg:pb-28">
+    <div className="page-shell bg-white pb-16 lg:pb-28">
       <PageHero
         eyebrow="Collections"
-        title="A collection architecture built for occasions, textures, and mood."
-        description="Use these edits to shop by silhouette, fabric personality, or the kind of event you are dressing for."
+        title="A collection architecture built for categories, textures, and mood."
+        description="Use these edits to shop by category, material type, or styling mood."
         primaryAction={{ href: "/shop", label: "Shop All Products" }}
         secondaryAction={{ href: "/contact", label: "Need Guidance", variant: "outline" }}
       />
@@ -60,7 +60,7 @@ export default function CollectionsPage() {
               {/* Section label */}
               <div className="mb-6 flex items-center justify-between lg:mb-10">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#e88436]">Browse</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-emerald-700">Browse</p>
                   <h2 className="mt-1 text-xl font-bold text-stone-900 lg:text-2xl">All Collections</h2>
                 </div>
                 <p className="text-xs text-stone-400">{categories.length} collection{categories.length !== 1 ? "s" : ""}</p>

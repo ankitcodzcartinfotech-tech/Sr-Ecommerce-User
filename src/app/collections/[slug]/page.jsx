@@ -152,11 +152,11 @@ function CollectionDetailContent({ slug }) {
   const activeWorkingCount = countActive(workingFilters);
 
   return (
-    <div className="page-shell bg-[#FAF9F6] pb-16 lg:pb-24">
+    <div className="page-shell bg-white pb-16 lg:pb-24">
       <PageHero
         eyebrow="Collection"
         title={collectionName}
-        description="A focused edit from the Keshrag catalogue, chosen around one mood, one texture family, or one occasion story."
+        description="A focused edit from the SR Ecommerce catalogue, chosen around one mood, one texture family, or one style story."
         primaryAction={{ href: "/shop", label: "Shop All Products" }}
         secondaryAction={{ href: "/collections", label: "All Collections", variant: "outline" }}
       />
@@ -166,7 +166,7 @@ function CollectionDetailContent({ slug }) {
         {/* ── Mobile toolbar ── */}
         <div className="mb-4 flex items-center justify-between lg:hidden">
           <div className="flex items-center gap-2 text-sm text-stone-500">
-            <LayoutGrid size={14} className="text-[#e88436]" />
+            <LayoutGrid size={14} className="text-emerald-700" />
             {!loading && (
               <span className="font-semibold text-stone-800">
                 {totalCount} <span className="font-normal text-stone-500">product{totalCount !== 1 ? "s" : ""}</span>
@@ -176,12 +176,12 @@ function CollectionDetailContent({ slug }) {
           <button
             type="button"
             onClick={() => { setWorkingFilters({ ...appliedFilters }); setDrawerOpen(true); }}
-            className="flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-xs font-semibold text-stone-700 shadow-sm transition-all hover:border-[#e88436] hover:text-[#e88436] cursor-pointer"
+            className="flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-xs font-semibold text-stone-700 shadow-sm transition-all hover:border-emerald-500 hover:text-emerald-700 cursor-pointer"
           >
-            <SlidersHorizontal size={13} className="text-[#e88436]" />
+            <SlidersHorizontal size={13} className="text-emerald-700" />
             Filters
             {activeAppliedCount > 0 && (
-              <span className="flex h-4.5 w-4.5 min-w-[18px] items-center justify-center rounded-full bg-[#e88436] text-[9px] font-bold text-white px-1">
+              <span className="flex h-4.5 w-4.5 min-w-[18px] items-center justify-center rounded-full bg-emerald-600 text-[9px] font-bold text-white px-1">
                 {activeAppliedCount}
               </span>
             )}
@@ -207,7 +207,7 @@ function CollectionDetailContent({ slug }) {
             {/* Desktop top bar */}
             <div className="mb-5 hidden items-center justify-between lg:flex">
               <div className="flex items-center gap-2">
-                <LayoutGrid size={15} className="text-[#e88436]" />
+                <LayoutGrid size={15} className="text-emerald-700" />
                 <p className="text-sm text-stone-500">
                   {!loading && (
                     <><b className="text-stone-900">{totalCount}</b> product{totalCount !== 1 ? "s" : ""} found</>
@@ -250,10 +250,10 @@ function CollectionDetailContent({ slug }) {
                       type="button"
                       onClick={handleLoadMore}
                       disabled={loadingMore}
-                      className="flex items-center gap-2 rounded-full border-2 border-[#e88436] px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[#e88436] transition-all hover:bg-[#e88436] hover:text-white disabled:opacity-50 cursor-pointer"
+                      className="flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] text-emerald-700 transition-all hover:bg-emerald-600 hover:text-white disabled:opacity-50 cursor-pointer"
                     >
                       {loadingMore
-                        ? <><span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-[#e88436] border-t-transparent" /> Loading…</>
+                        ? <><span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-emerald-600 border-t-transparent" /> Loading…</>
                         : <><ChevronDown size={14} /> Load More</>}
                     </button>
                   </div>
@@ -274,7 +274,7 @@ function CollectionDetailContent({ slug }) {
                   <button
                     type="button"
                     onClick={resetFilters}
-                    className="mt-4 rounded-full bg-[#e88436] px-6 py-2 text-xs font-bold text-white transition-all hover:bg-[#d4722a] cursor-pointer"
+                    className="mt-4 rounded-full bg-emerald-700 px-6 py-2 text-xs font-bold text-white transition-all hover:bg-emerald-600 cursor-pointer"
                   >
                     Clear All Filters
                   </button>

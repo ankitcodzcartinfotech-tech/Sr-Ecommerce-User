@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 import { ChevronRight, Menu, X } from 'lucide-react';
 
-const GOLD = '#b67b45';
+const GOLD = '#047857';
 
 const AnimatedSection = ({ id, title, children }) => {
   const ref = useRef(null);
@@ -75,13 +75,13 @@ export default function PolicyLayout({ title, description, date, sections }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div className="min-h-screen bg-white">
       {/* Reading Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 z-50 origin-left"
         style={{
           scaleX,
-          background: `linear-gradient(90deg, ${GOLD}, #ead7c4)`
+          background: `linear-gradient(90deg, ${GOLD}, #a7f3d0)`
         }}
       />
       {/* Hero Section */}
@@ -89,7 +89,7 @@ export default function PolicyLayout({ title, description, date, sections }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative border-b border-stone-200/60 bg-[rgba(251,245,238,0.7)] py-12 md:py-24 overflow-hidden pt-24 md:pt-32"
+        className="relative border-b border-stone-200/60 bg-stone-50 py-12 md:py-24 overflow-hidden pt-24 md:pt-32"
       >
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 md:px-10 lg:px-14 relative z-10">
           <motion.nav
@@ -98,7 +98,7 @@ export default function PolicyLayout({ title, description, date, sections }) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-6 flex items-center justify-center space-x-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-stone-500"
           >
-            <Link href="/" className="hover:text-(--gold) transition-colors cursor-pointer">Home</Link>
+            <Link href="/" className="hover:text-emerald-700 transition-colors cursor-pointer">Home</Link>
             <ChevronRight size={12} />
             <span className="text-stone-900">{title}</span>
           </motion.nav>

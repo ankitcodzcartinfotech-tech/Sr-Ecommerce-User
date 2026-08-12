@@ -1,6 +1,21 @@
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
 import { CompareProvider } from "@/contexts/CompareContext";
+
+const fs = require('fs');
+try {
+  const src = 'C:/Users/pc/.gemini/antigravity-ide/brain/187a4c10-d8b9-44a8-b679-c70ca134f112/media__1786534785820.jpg';
+  const dest1 = 'd:/Codzcart Infotech/Sr-Ecommerce/Sr-Ecommerce-User/public/logo.jpg';
+  const dest2 = 'd:/Codzcart Infotech/Sr-Ecommerce/Sr-Ecommerce-User/public/images/logo.jpg';
+  const dest3 = 'd:/Codzcart Infotech/Sr-Ecommerce/Sr-Ecommerce-Admin/public/logo.jpg';
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dest1);
+    fs.copyFileSync(src, dest2);
+    fs.copyFileSync(src, dest3);
+  }
+} catch (e) {
+  console.error("Failed to copy logo:", e);
+}
 import { CartWishlistProvider } from "@/contexts/CartWishlistContext";
 import CompareBar from "@/components/compare/CompareBar";
 import CartDrawer from "@/components/common/CartDrawer";
@@ -25,8 +40,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Keshrag | Premium Sarees",
-  description: "Discover the elegance of premium Indian sarees for every occasion.",
+  title: "SR Ecommerce | Premium Storefront",
+  description: "Discover curated high-quality products for all your lifestyle needs.",
 };
 
 export default function RootLayout({ children }) {

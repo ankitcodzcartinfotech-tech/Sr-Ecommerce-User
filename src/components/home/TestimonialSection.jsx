@@ -112,7 +112,7 @@ function ReviewCard({ review }) {
           href={productHref}
           className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-(--gold) transition-colors hover:text-stone-900"
         >
-          {review.product || "Keshrag Saree"}
+          {review.product || "Premium Store Item"}
         </Link>
         <div className="my-5 h-px w-full bg-gradient-to-r from-stone-200 to-transparent" />
         

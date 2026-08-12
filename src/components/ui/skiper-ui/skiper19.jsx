@@ -58,7 +58,7 @@ export default function KeshragScrollStory() {
             className="relative z-10 max-w-4xl text-5xl font-semibold leading-[1.1] tracking-[-0.03em] text-stone-900 md:text-6xl lg:text-7xl"
           >
             Crafted with care,{" "}
-            <span className="text-amber-700">worn with grace.</span>
+            <span className="text-emerald-700">designed for living.</span>
           </motion.h2>
 
           {/* Subtext */}
@@ -68,8 +68,8 @@ export default function KeshragScrollStory() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative z-10 max-w-xl text-base leading-relaxed text-stone-500 md:text-lg"
           >
-            Scroll to explore how Keshrag brings India&apos;s finest weaving traditions
-            into a curated modern experience.
+            Scroll to explore how SR Ecommerce brings you handpicked, exceptional collections
+            in a curated modern experience.
           </motion.p>
 
           {/* Scroll indicator */}
@@ -82,7 +82,7 @@ export default function KeshragScrollStory() {
               <motion.div
                 animate={{ y: [0, 14, 0] }}
                 transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-                className="h-2 w-2 rounded-full bg-amber-700"
+                className="h-2 w-2 rounded-full bg-emerald-700"
               />
             </div>
             <span className="text-[10px] uppercase tracking-[0.3em] text-stone-400">Scroll</span>
@@ -98,20 +98,20 @@ export default function KeshragScrollStory() {
         className="absolute bottom-0 left-0 w-full rounded-t-[40px] bg-stone-900 px-6 py-16 text-stone-50 md:px-14"
       >
         <div className="mx-auto max-w-5xl text-center">
-  <span className="text-xs uppercase tracking-[0.4em] text-amber-500">
+  <span className="text-xs uppercase tracking-[0.4em] text-emerald-500">
     Our Philosophy
   </span>
 
   <h2 className="mt-8 font-serif text-5xl leading-none md:text-7xl">
-    More than a saree.
+    More than a product.
     <br />
-    A story worth wearing.
+    A quality worth experiencing.
   </h2>
 
   <p className="mx-auto mt-8 max-w-2xl text-lg leading-9 text-stone-400">
-    We believe every saree carries a story —
-    of craftsmanship, culture, celebration,
-    and the women who make it their own.
+    We believe every product carries a story —
+    of design excellence, exceptional utility, lifestyle upgrade,
+    and the satisfaction of quality craftsmanship.
   </p>
 </div>
       </motion.div>

@@ -87,7 +87,7 @@ export default function ProductImageGallery({ images = [], productName = "Produc
                 onClick={() => setSelectedImage(idx)}
                 className={`relative shrink-0 overflow-hidden rounded-2xl border-2 transition-all duration-200 w-16 h-20 sm:w-20 sm:h-24 ${
                   selectedImage === idx
-                    ? "border-[#e88436] shadow-md shadow-[#e88436]/20 scale-105"
+                    ? "border-emerald-500 shadow-md shadow-emerald-500/20 scale-105"
                     : "border-transparent bg-stone-50 opacity-70 hover:opacity-100 hover:border-stone-300"
                 } cursor-pointer`}
                 aria-label={`View image ${idx + 1}`}
@@ -196,7 +196,7 @@ export default function ProductImageGallery({ images = [], productName = "Produc
                   <button
                     key={idx}
                     onClick={(e) => { e.stopPropagation(); setSelectedImage(idx); }}
-                    className={`rounded-full transition-all ${selectedImage === idx ? "w-5 h-2 bg-[#e88436]" : "w-2 h-2 bg-black/20 hover:bg-black/40"} cursor-pointer`}
+                    className={`rounded-full transition-all ${selectedImage === idx ? "w-5 h-2 bg-emerald-600" : "w-2 h-2 bg-black/20 hover:bg-black/40"} cursor-pointer`}
                   />
                 ))}
               </div>

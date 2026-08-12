@@ -70,7 +70,7 @@ function ProductSlide({ product }) {
         {/* Quick view overlay */}
         <div className="absolute inset-x-3 bottom-3 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
           <Link href={href}
-            className="flex w-full items-center justify-center gap-1.5 rounded-full bg-white/95 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-800 hover:bg-[#e88436] hover:text-white transition-colors backdrop-blur-sm cursor-pointer">
+            className="flex w-full items-center justify-center gap-1.5 rounded-full bg-white/95 py-2.5 text-[11px] font-bold uppercase tracking-[0.18em] text-stone-800 hover:bg-emerald-700 hover:text-white transition-colors backdrop-blur-sm cursor-pointer">
             <Eye size={13}/> Quick View
           </Link>
         </div>
@@ -78,11 +78,11 @@ function ProductSlide({ product }) {
       {/* Info */}
       <div className="flex flex-1 flex-col px-4 py-4">
         <Link href={href} className="cursor-pointer">
-          <p className="line-clamp-2 text-sm font-medium leading-snug text-stone-800 hover:text-[#e88436] transition-colors">{name}</p>
+          <p className="line-clamp-2 text-sm font-medium leading-snug text-stone-800 hover:text-emerald-700 transition-colors">{name}</p>
         </Link>
         {rating > 0 && (
           <div className="mt-1.5 flex items-center gap-1">
-            <Star size={11} className="fill-[#e88436] text-[#e88436]"/>
+            <Star size={11} className="fill-emerald-500 text-emerald-500"/>
             <span className="text-xs font-medium text-stone-600">{rating}</span>
             <span className="text-xs text-stone-400">({reviews})</span>
           </div>
@@ -131,17 +131,17 @@ export default function RelatedProducts({ categoryId, excludeId }) {
         {/* Heading */}
         <div className="mb-8 flex items-end justify-between">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-[#e88436]">Recommendations</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-emerald-700">Recommendations</p>
             <h2 className="mt-2 font-serif text-2xl font-semibold text-stone-900 sm:text-3xl">You May Also Like</h2>
             <p className="mt-1 text-sm text-stone-500">Handpicked recommendations based on this product</p>
           </div>
           <div className="hidden items-center gap-2 sm:flex">
             <button onClick={() => scroll(-1)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-[#e88436] hover:text-[#e88436] transition-colors cursor-pointer">
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-emerald-500 hover:text-emerald-700 transition-colors cursor-pointer">
               <ChevronLeft size={18}/>
             </button>
             <button onClick={() => scroll(1)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-[#e88436] hover:text-[#e88436] transition-colors cursor-pointer">
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-emerald-500 hover:text-emerald-700 transition-colors cursor-pointer">
               <ChevronRight size={18}/>
             </button>
           </div>

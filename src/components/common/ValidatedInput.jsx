@@ -89,9 +89,9 @@ const ValidatedInput = forwardRef(({
   if (variant === "stone") {
     defaultStateStyles = "border-stone-200 bg-white focus:border-[var(--gold)] focus:ring-[var(--gold)]/30 placeholder:text-stone-400 text-stone-900";
   } else if (variant === "account") {
-    defaultStateStyles = "border-black/10 bg-[#FDFBF7] text-[#2D2A26] focus:border-[#e88436] focus:ring-[#e88436]/20 focus:bg-white placeholder:text-[#A39C93]";
+    defaultStateStyles = "border-black/10 bg-white text-[#2D2A26] focus:border-[var(--gold)] focus:ring-[var(--gold)]/20 focus:bg-white placeholder:text-[#A39C93]";
   } else if (variant === "dark") {
-    defaultStateStyles = "border-white/10 bg-black/20 text-white focus:border-[#e88436]/50 focus:ring-[#e88436]/10 hover:bg-black/30 focus:bg-black/40 placeholder:text-stone-600";
+    defaultStateStyles = "border-white/10 bg-black/20 text-white focus:border-[var(--gold)]/50 focus:ring-[var(--gold)]/10 hover:bg-black/30 focus:bg-black/40 placeholder:text-stone-600";
   }
 
   const baseInputStyles = `w-full border transition-all outline-none focus:ring-2 ${

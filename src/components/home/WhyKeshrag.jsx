@@ -9,7 +9,7 @@ import { HoverExpand_001 } from "@/components/ui/skiper-ui/skiper52";
 /* ── Stats ────────────────────────────────────────────────── */
 const STATS = [
   { value: "1000+", label: "Happy Customers" },
-  { value: "250+",  label: "Curated Sarees"  },
+  { value: "250+",  label: "Curated Products" },
   { value: "4.9★",  label: "Customer Rating" },
   { value: "7 Days", label: "Easy Returns"   },
 ];
@@ -20,36 +20,36 @@ const STATS = [
 ───────────────────────────────────────────────────────────── */
 const PILLARS = [
   {
-    src:    "/images/saree6.jpg",
+    src:    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
     alt:    "Premium Finish",
     icon:   Gem,
     number: "01",
     title:  "Premium\nFinish",
-    desc:   "Every piece passes a quality check for texture, fall, and finishing before it reaches you.",
+    desc:   "Every piece passes a strict quality check for texture, detail, and finishing before it reaches you.",
   },
   {
-    src:    "/images/saree11.jpg",
-    alt:    "Thoughtful Fabrics",
+    src:    "https://images.unsplash.com/photo-1581497396202-5645e76a3a8e?auto=format&fit=crop&w=600&q=80",
+    alt:    "Quality Materials",
     icon:   Leaf,
     number: "02",
-    title:  "Thoughtful\nFabrics",
-    desc:   "Silk, cotton, organza, and festive blends chosen for comfort, drape, and longevity.",
+    title:  "Quality\nMaterials",
+    desc:   "Carefully selected fabrics, components, and finishes chosen for comfort, style, and longevity.",
   },
   {
-    src:    "/images/saree4.jpg",
+    src:    "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=600&q=80",
     alt:    "Fast Dispatch",
     icon:   Truck,
     number: "03",
     title:  "Fast\nDispatch",
-    desc:   "Gift-ready packaging and reliable delivery across India, every single order.",
+    desc:   "Gift-ready packaging and reliable delivery across the country, for every single order.",
   },
   {
-    src:    "/images/saree5.jpg",
+    src:    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     alt:    "Trusted Support",
     icon:   ShieldCheck,
     number: "04",
     title:  "Trusted\nSupport",
-    desc:   "Real help for orders, styling questions, and post-purchase care — Mon to Sat.",
+    desc:   "Real help for orders, product questions, and post-purchase care — Monday to Saturday.",
   },
 ];
 
@@ -77,7 +77,7 @@ function StatCard({ value, label, delay = 0 }) {
         transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
       }}
     >
-      <p className="font-serif text-4xl font-semibold text-(--gold) sm:text-5xl">{value}</p>
+      <p className="font-serif text-4xl font-semibold text-emerald-700 sm:text-5xl">{value}</p>
       <p className="mt-2 text-xs font-semibold uppercase tracking-[0.24em] text-(--muted)">{label}</p>
     </div>
   );
@@ -104,8 +104,8 @@ function PillarOverlay({ image }) {
       <p className="mt-2 max-w-[26ch] text-xs leading-5 text-white/70">
         {image.desc}
       </p>
-      {/* Gold accent */}
-      <div className="mt-4 h-0.5 w-8 rounded-full bg-(--gold)" />
+      {/* Emerald accent */}
+      <div className="mt-4 h-0.5 w-8 rounded-full bg-emerald-600" />
     </div>
   );
 }
@@ -181,7 +181,7 @@ function MobileCards() {
               <p className="text-[9px] font-bold tracking-[0.28em] text-white/50">{number}</p>
               <h3 className="mt-1 whitespace-pre-line text-lg font-light leading-tight text-white">{title}</h3>
               <p className="mt-1.5 text-xs leading-5 text-white/70">{desc}</p>
-              <div className="mt-3 h-0.5 w-7 rounded-full bg-(--gold)" />
+              <div className="mt-3 h-0.5 w-7 rounded-full bg-emerald-600" />
             </div>
           </div>
         ))}
@@ -193,7 +193,7 @@ function MobileCards() {
             type="button"
             onClick={() => scrollTo(i)}
             className={`rounded-full transition-all duration-300 ${
-              active === i ? "w-6 h-2 bg-(--gold)" : "w-2 h-2 bg-(--gold)/30"
+              active === i ? "w-6 h-2 bg-emerald-600" : "w-2 h-2 bg-emerald-600/30"
             } cursor-pointer`}
           />
         ))}
@@ -216,11 +216,11 @@ export default function WhyKeshrag() {
           transition={{ duration: 0.5 }}
           className="mb-14 text-center"
         >
-          <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-(--gold)">
-            Why Keshrag
+          <p className="text-[11px] font-bold uppercase tracking-[0.34em] text-emerald-600">
+            Why Choose Us
           </p>
           <h2 className="mt-4 font-serif text-3xl font-light tracking-tight text-(--text) sm:text-4xl">
-            Why Women Choose Keshrag
+            The SR Ecommerce Standard
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-(--muted)">
             A premium storefront built around quality, ease, and lasting wardrobe value.

@@ -80,7 +80,7 @@ export default function RecentlyViewedSection() {
         {/* Heading */}
         <div className="mb-8 flex items-end justify-between">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.32em] text-[#e88436]">Your History</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.32em] text-emerald-700">Your History</p>
             <h2 className="mt-2 font-serif text-2xl font-semibold text-[#1A1A1A] sm:text-3xl">
               Continue Where You Left Off
             </h2>
@@ -88,11 +88,11 @@ export default function RecentlyViewedSection() {
           </div>
           <div className="hidden items-center gap-2 sm:flex">
             <button onClick={() => scroll(-1)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-[#e88436] hover:text-[#e88436] transition-all cursor-pointer">
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-emerald-500 hover:text-emerald-700 transition-all cursor-pointer">
               <ChevronLeft size={18}/>
             </button>
             <button onClick={() => scroll(1)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-[#e88436] hover:text-[#e88436] transition-all cursor-pointer">
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 hover:border-emerald-500 hover:text-emerald-700 transition-all cursor-pointer">
               <ChevronRight size={18}/>
             </button>
           </div>
@@ -138,7 +138,7 @@ export default function RecentlyViewedSection() {
                       )}
                     </div>
                     <div className="mt-3">
-                      <p className="line-clamp-2 text-xs font-medium leading-snug text-stone-800 group-hover:text-[#e88436] transition-colors">{name}</p>
+                      <p className="line-clamp-2 text-xs font-medium leading-snug text-stone-800 group-hover:text-emerald-700 transition-colors">{name}</p>
                       <div className="mt-1.5 flex items-baseline gap-2">
                         <span className="text-sm font-bold font-sans text-[#1A1A1A]">{formatCurrency(price)}</span>
                         {mrp > price && <span className="text-xs font-medium text-stone-400 line-through">{formatCurrency(mrp)}</span>}
