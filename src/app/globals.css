@@ -1,0 +1,426 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--text);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-primary: var(--primary);
+  --color-light-gold: var(--gold-soft);
+  --color-accent: var(--accent);
+
+  --font-sans: var(--font-sans), "Inter", sans-serif;
+  --font-serif: var(--font-serif), "Playfair Display", serif;
+}
+
+@layer base {
+  :root {
+
+    /* Background */
+
+    --background: #FDFBF7;
+    --surface: #FFFFFF;
+    --surface-2: #F6F3EC;
+
+    /* Text */
+
+    --text: #2D2A26;
+    --muted: #736B63;
+
+    /* Brand */
+
+    --primary: #7A1A2E;
+    --primary-hover: #5A1120;
+
+    /* Gold */
+
+    --gold: #e88436;
+    --gold-soft: #F2E9CD;
+
+    /* Accent */
+
+    --accent: #B8922C;
+
+    /* Status */
+
+    --success: #1FA971;
+    --danger: #E53935;
+    --warning: #F59E0B;
+
+    /* Border */
+
+    --border: rgba(0, 0, 0, .08);
+
+    /* Shadows */
+
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, .05);
+
+    --shadow-strong: 0 18px 50px rgba(0, 0, 0, .10);
+
+  }
+
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+
+    background-image:
+      radial-gradient(circle at top left,
+        rgba(122, 26, 46, 0.08),
+        transparent 30%),
+
+      radial-gradient(circle at top right,
+        rgba(212, 175, 55, 0.10),
+        transparent 25%),
+
+      linear-gradient(180deg,
+        #fdfbf7 0%,
+        #fdfbf7 45%,
+        #f8f5ee 100%);
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--primary-hover);
+  }
+
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    transition:
+      background-color .25s ease,
+      color .25s ease,
+      border-color .25s ease,
+      transform .25s ease,
+      box-shadow .25s ease,
+      opacity .25s ease;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(122, 26, 46, .45);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: rgba(122, 26, 46, .18);
+    color: var(--primary);
+  }
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Elegant Scrollbar for containers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(122, 26, 46, 0.25);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 26, 46, 0.45);
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(122, 26, 46, 0.3) rgba(0, 0, 0, 0.03);
+}
+
+/* ===========================
+   Page Background Decoration
+=========================== */
+
+.page-shell {
+  position: relative;
+}
+
+.page-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .16) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(255, 255, 255, .16) 1px,
+      transparent 1px);
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, .18),
+      transparent 85%);
+}
+
+/* ===========================
+   Premium Card
+=========================== */
+
+.surface-card {
+
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, .98),
+      rgba(253, 251, 247, .98));
+
+  border: 1px solid rgba(122, 26, 46, .08);
+
+  border-radius: 20px;
+
+  box-shadow: var(--shadow-soft);
+
+  backdrop-filter: blur(12px);
+}
+
+.surface-card:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-strong);
+}
+
+/* ===========================
+   Safe Area
+=========================== */
+
+.safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+}
+
+/* ===========================
+   Luxury Buttons
+=========================== */
+
+.btn-primary {
+
+  background: var(--primary);
+
+  color: white;
+
+  border-radius: 12px;
+}
+
+.btn-primary:hover {
+
+  background: var(--primary-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 24px rgba(122, 26, 46, .22);
+}
+
+.btn-secondary {
+
+  background: white;
+
+  color: var(--primary);
+
+  border: 1px solid rgba(122, 26, 46, .15);
+
+  border-radius: 12px;
+}
+
+.btn-secondary:hover {
+
+  background: #fdf5f6;
+
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Order Styles
+=========================== */
+
+.order-id-text {
+
+  font-family: var(--font-serif);
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+
+  color: var(--text);
+
+  letter-spacing: .05em;
+
+  text-transform: uppercase;
+}
+
+.total-amount-text {
+
+  font-family: var(--font-serif);
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+
+  color: var(--gold);
+
+  letter-spacing: -.02em;
+}
+
+.admin-order-id {
+
+  font-family: "Courier New", monospace;
+
+  font-size: .95rem;
+
+  font-weight: 600;
+
+  color: var(--primary);
+
+  letter-spacing: .04em;
+}
+
+/* ===========================
+   Utility Colors
+=========================== */
+
+.text-price {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.border-theme {
+  border: 1px solid var(--border);
+}
+
+.shadow-theme {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-theme-lg {
+  box-shadow: var(--shadow-strong);
+}
+
+.badge-sale {
+
+  background: var(--danger);
+
+  color: white;
+
+  border-radius: 999px;
+
+  padding: .3rem .7rem;
+
+  font-size: .75rem;
+
+  font-weight: 600;
+}
+
+.badge-success {
+
+  background: var(--success);
+
+  color: white;
+
+  border-radius: 999px;
+
+  padding: .3rem .7rem;
+}
+
+.rating-star {
+  color: #f4b400;
+}
+
+/* ===========================
+   Smooth Animations
+=========================== */
+
+.hover-lift {
+  transition: .3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-scale {
+  transition: .3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* ===========================
+   Premium Form Elements Focus
+=========================== */
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15) !important;
+}
