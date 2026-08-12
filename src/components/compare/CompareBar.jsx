@@ -22,7 +22,7 @@ export default function CompareBar() {
           className="fixed bottom-0 inset-x-0 z-50 border-t border-stone-200 bg-white/95 px-4 py-3 shadow-[0_-4px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm"
         >
           <div className="mx-auto flex max-w-5xl items-center gap-3">
-            <GitCompare size={18} className="shrink-0 text-[#e88436]" />
+            <GitCompare size={18} className="shrink-0 text-emerald-600" />
             <p className="hidden text-xs font-semibold text-stone-700 sm:block">
               Compare ({compareList.length}/3)
             </p>
@@ -62,7 +62,7 @@ export default function CompareBar() {
               <button
                 onClick={() => router.push("/compare")}
                 disabled={compareList.length < 2}
-                className="flex items-center gap-1.5 rounded-full bg-[#e88436] px-4 py-1.5 text-xs font-bold text-white transition-all hover:bg-[#d4722a] disabled:opacity-50 cursor-not-allowed"
+                className="flex items-center gap-1.5 rounded-full bg-emerald-700 px-4 py-1.5 text-xs font-bold text-white transition-all hover:bg-emerald-600 disabled:opacity-50 cursor-not-allowed"
               >
                 Compare Now <ArrowRight size={12} />
               </button>

@@ -189,14 +189,14 @@ function ShopContent({ query, occasionParam }) {
   return (
     <div className="page-shell pb-20">
       <PageHero
-        eyebrow={query ? "Search Results" : occasionParam ? "Shop by Occasion" : "The Shop"}
-        title={query ? `Results for "${query}"` : occasionParam ? `${occasionParam.charAt(0).toUpperCase() + occasionParam.slice(1)} Sarees` : "Explore the Keshrag Shop"}
+        eyebrow={query ? "Search Results" : occasionParam ? "Shop by Category" : "The Shop"}
+        title={query ? `Results for "${query}"` : occasionParam ? `${occasionParam.charAt(0).toUpperCase() + occasionParam.slice(1)}` : "Explore SR Shop"}
         description={
           query
-            ? "A curated set of matching products from our current saree collection."
+            ? "A curated set of matching products from our current collections."
             : occasionParam
-              ? `Browse beautiful sarees perfect for ${occasionParam.charAt(0).toUpperCase() + occasionParam.slice(1)}.`
-              : "Browse signature silks, modern occasion drapes, and versatile everyday sarees in one place."
+              ? `Browse products perfect for ${occasionParam.charAt(0).toUpperCase() + occasionParam.slice(1)}.`
+              : "Browse high-quality apparel, accessories, and home essentials in one place."
         }
         primaryAction={{ href: "/collections", label: "Browse Collections" }}
       />
@@ -221,7 +221,7 @@ function ShopContent({ query, occasionParam }) {
           </button>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 pt-4 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 pt-4 items-start">
           {/* Desktop sidebar */}
           <div
             data-lenis-prevent="true"
@@ -401,8 +401,8 @@ export default function ShopPage() {
         <div className="page-shell pb-20">
           <PageHero
             eyebrow="The Shop"
-            title="Explore the Keshrag Shop"
-            description="Browse signature silks, modern occasion drapes, and versatile everyday sarees in one place."
+            title="Explore SR Shop"
+            description="Browse high-quality apparel, accessories, and home essentials in one place."
             primaryAction={{ href: "/collections", label: "Browse Collections" }}
           />
           <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">

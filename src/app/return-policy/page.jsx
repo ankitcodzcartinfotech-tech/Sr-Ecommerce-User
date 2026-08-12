@@ -1,8 +1,8 @@
 import PolicyLayout from '@/components/common/PolicyLayout';
 
 export const metadata = {
-  title: "Return & Refund Policy | Keshrag Premium Sarees",
-  description: "Read the Keshrag Return & Refund Policy to understand our return guidelines and processes.",
+  title: "Return & Refund Policy | SR Ecommerce",
+  description: "Read the SR Return & Refund Policy to understand our return guidelines and processes.",
 };
 
 export default function ReturnPolicyPage() {
@@ -77,7 +77,7 @@ export default function ReturnPolicyPage() {
       content: (
         <>
           <p>
-            If the return is due to our mistake (wrong, damaged, or defective product), return shipping costs will be borne by Keshrag.
+            If the return is due to our mistake (wrong, damaged, or defective product), return shipping costs will be borne by SR Ecommerce.
           </p>
           <p>
             For other approved returns, shipping charges may be deducted from the refund.
@@ -92,8 +92,8 @@ export default function ReturnPolicyPage() {
         <>
           <p className="mb-4">If you have any questions regarding returns or refunds, please contact our customer support.</p>
           <div className="bg-stone-50 p-6 rounded-xl border border-stone-200 mt-4">
-            <p className="font-semibold text-stone-900 mb-2">Keshrag</p>
-            <p className="mb-1"><strong>Email:</strong> support@keshrag.com</p>
+            <p className="font-semibold text-stone-900 mb-2">SR Ecommerce</p>
+            <p className="mb-1"><strong>Email:</strong> support@srecommerce.com</p>
             <p className="mb-1"><strong>Phone:</strong> +91 98246 76060</p>
             <p className="mt-2"><strong>Address:</strong><br />Ground Floor, Raghuvir Scarlett, G-59,<br />Nr. DMD Logistic Park, Saroli,<br />Surat, Gujarat 395010</p>
           </div>
@@ -105,7 +105,7 @@ export default function ReturnPolicyPage() {
   return (
     <PolicyLayout
       title="Return & Refund Policy"
-      description="At Keshrag, customer satisfaction is our priority. If you are not completely satisfied with your purchase, please review our return and refund policy below."
+      description="At SR Ecommerce, customer satisfaction is our priority. If you are not completely satisfied with your purchase, please review our return and refund policy below."
       date="July 1, 2026"
       sections={sections}
     />

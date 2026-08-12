@@ -1,131 +1,108 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
-  "/images/saree1.jpg",
-  "/images/saree2.jpg",
-  "/images/saree3.jpg",
-  "/images/saree4.jpg",
-  "/images/saree5.jpg",
-  "/images/saree6.jpg",
-  "/images/saree7.jpg",
-  "/images/saree8.jpg",
-  "/images/saree9.jpg",
-  "/images/saree10.jpg",
-  "/images/hero.jpg",
-  "/images/hero-1.jpg",
-  "/images/hero-2.jpg",
+  "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80",
+  "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=600&q=80",
 ];
 
 const Skiper = () => {
   const gallery = useRef(null);
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  const [height, setHeight] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ["start end", "end start"],
   });
 
-  const { height } = dimension;
-  // Use a smaller multiplier on mobile to make it less aggressive
-  const isMobile = dimension.width > 0 && dimension.width < 768;
-  const mult1 = isMobile ? 0.6 : 2;
-  const mult2 = isMobile ? 0.8 : 3.3;
-  const mult3 = isMobile ? 0.8 : 1.25;
-  const mult4 = isMobile ? 1.4 : 3;
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, height * 1.8]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.1]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.7]);
 
-  // Link directly to scrollYProgress (useSpring freezes on iOS during touch-scroll)
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * mult1]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * mult2]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * mult3]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * mult4]);
+  const yM1 = useTransform(scrollYProgress, [0, 1], [0, height * 0.6]);
+  const yM2 = useTransform(scrollYProgress, [0, 1], [0, height * 0.9]);
 
   useEffect(() => {
-    let currentWidth = window.innerWidth;
-    
-    const resize = () => {
-      // On mobile, the URL bar hiding triggers a resize (changing height).
-      // We ONLY want to update and recalculate parallax if the WIDTH changes (e.g., rotating the phone),
-      // otherwise scrolling will cause massive lag from constant re-renders.
-      if (window.innerWidth !== currentWidth || currentWidth === 0) {
-        currentWidth = window.innerWidth;
-        setDimension({ width: window.innerWidth, height: window.innerHeight });
-      } else if (dimension.height === 0) {
-        // Initial setup
-        setDimension({ width: window.innerWidth, height: window.innerHeight });
-      }
+    const update = () => {
+      setHeight(window.innerHeight);
+      setIsMobile(window.innerWidth < 768);
     };
-
-    window.addEventListener("resize", resize);
-    // Initial call to set dimensions
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   return (
-    <section className="w-full overflow-hidden bg-white">
-      {/* Top hint section */}
-      <div className="flex h-40 items-center justify-center gap-2 bg-[#FAF9F6]">
-        <div className="grid content-start justify-items-center gap-6 text-center">
-          <span className="relative max-w-[12ch] text-xs uppercase leading-tight text-[#4A4A4A] opacity-70 after:absolute after:left-1/2 after:top-full after:mt-4 after:h-10 after:w-px after:bg-gradient-to-b after:from-[#e88436] after:to-transparent after:content-['']">
-            Scroll to explore
-          </span>
+    <section className="w-full bg-white py-4">
+      {/* "Scroll to explore" hint */}
+      <div className="flex h-10 items-center justify-center">
+        <span className="text-[10px] uppercase tracking-[0.25em] text-stone-400">
+          Scroll to explore
+        </span>
+      </div>
+
+      {/* Gallery — big horizontal margin */}
+      <div className="mx-auto max-w-[1440px] px-16 sm:px-24 md:px-32 lg:px-40">
+        <div
+          ref={gallery}
+          className="relative flex h-[90vh] gap-3 overflow-hidden rounded-2xl"
+        >
+          {isMobile ? (
+            <>
+              <Column images={images.slice(0, 6)} y={yM1} />
+              <Column images={images.slice(6, 12)} y={yM2} />
+            </>
+          ) : (
+            <>
+              <Column images={images.slice(0, 3)} y={y1} topOffset="-45%" />
+              <Column images={images.slice(3, 6)} y={y2} topOffset="-95%" />
+              <Column images={images.slice(6, 9)} y={y3} topOffset="-45%" />
+              <Column images={images.slice(9, 12)} y={y4} topOffset="-75%" />
+            </>
+          )}
         </div>
       </div>
 
-      {/* Gallery section */}
-      <div
-        ref={gallery}
-        className="relative flex h-[175vh] gap-[2vw] overflow-hidden bg-[#FAF9F6] p-[2vw]"
-      >
-        {isMobile ? (
-          <>
-            <Column images={images.slice(0, 6)} y={y} isMobile={isMobile} />
-            <Column images={images.slice(6, 12)} y={y2} isMobile={isMobile} />
-          </>
-        ) : (
-          <>
-            <Column images={images.slice(0, 3)} y={y} isMobile={isMobile} />
-            <Column images={images.slice(3, 6)} y={y2} isMobile={isMobile} />
-            <Column images={images.slice(6, 9)} y={y3} isMobile={isMobile} />
-            <Column images={images.slice(9, 12)} y={y4} isMobile={isMobile} />
-          </>
-        )}
-      </div>
-
-      {/* Bottom hint section */}
-      <div className="flex h-40 items-center justify-center gap-2 bg-[#FAF9F6]">
-        <div className="grid content-start justify-items-center gap-6 text-center">
-          <span className="relative max-w-[12ch] text-xs uppercase leading-tight text-[#4A4A4A] opacity-70">
-            Keep exploring
-          </span>
-        </div>
+      {/* Bottom hint */}
+      <div className="flex h-10 items-center justify-center mt-3">
+        <span className="text-[10px] uppercase tracking-[0.25em] text-stone-400">
+          Keep exploring
+        </span>
       </div>
     </section>
   );
 };
 
-const Column = ({ images, y, isMobile }) => {
+const Column = ({ images, y, topOffset = "0%" }) => {
   return (
     <motion.div
-      className={
-        isMobile
-          ? "relative flex h-full w-1/2 flex-col gap-[3vw] top-[-15%]"
-          : "relative flex h-full w-1/4 flex-col gap-[2vw] first:top-[-45%] nth-2:top-[-95%] nth-3:top-[-45%] nth-4:top-[-75%]"
-      }
-      style={{ y, willChange: "transform" }}
+      className="relative flex h-full w-1/4 flex-col gap-3"
+      style={{ y, top: topOffset, willChange: "transform" }}
     >
       {images.map((src, i) => (
-        <div key={i} className="relative h-full w-full overflow-hidden rounded-[14px] md:rounded-[20px]">
+        <div
+          key={i}
+          className="relative w-full overflow-hidden rounded-xl"
+          style={{ height: "33.33%" }}
+        >
           <img
             src={src}
-            alt="Premium saree"
-            className="h-full w-full object-cover object-top"
+            alt="Curated product"
+            className="h-full w-full object-cover object-center"
             loading="lazy"
           />
         </div>

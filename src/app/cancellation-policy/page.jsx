@@ -1,8 +1,8 @@
 import PolicyLayout from '@/components/common/PolicyLayout';
 
 export const metadata = {
-  title: "Cancellation Policy | Keshrag Premium Sarees",
-  description: "Read the Keshrag Cancellation Policy to understand how to cancel orders.",
+  title: "Cancellation Policy | SR Ecommerce",
+  description: "Read the SR Ecommerce Cancellation Policy to understand how to cancel orders.",
 };
 
 export default function CancellationPolicyPage() {
@@ -70,8 +70,8 @@ export default function CancellationPolicyPage() {
         <>
           <p className="mb-4">For cancellation requests or assistance, please contact our customer support.</p>
           <div className="bg-stone-50 p-6 rounded-xl border border-stone-200 mt-4">
-            <p className="font-semibold text-stone-900 mb-2">Keshrag</p>
-            <p className="mb-1"><strong>Email:</strong> support@keshrag.com</p>
+            <p className="font-semibold text-stone-900 mb-2">SR Ecommerce</p>
+            <p className="mb-1"><strong>Email:</strong> support@srecommerce.com</p>
             <p className="mb-1"><strong>Phone:</strong> +91 98246 76060</p>
             <p className="mt-2"><strong>Address:</strong><br />Ground Floor, Raghuvir Scarlett, G-59,<br />Nr. DMD Logistic Park, Saroli,<br />Surat, Gujarat 395010</p>
           </div>
@@ -83,7 +83,7 @@ export default function CancellationPolicyPage() {
   return (
     <PolicyLayout
       title="Cancellation Policy"
-      description="At Keshrag, we understand that you may need to cancel an order. Please review our cancellation policy below."
+      description="At SR Ecommerce, we understand that you may need to cancel an order. Please review our cancellation policy below."
       date="July 1, 2026"
       sections={sections}
     />

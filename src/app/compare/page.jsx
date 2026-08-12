@@ -188,13 +188,13 @@ export default function ComparePage() {
   const lowestPrice = prices.length ? Math.min(...prices) : null;
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pb-32 pt-20">
+    <div className="min-h-screen bg-stone-50 pb-32 pt-20">
       {/* Header Hero */}
-      <div className="bg-linear-to-b from-white/80 via-white/60 to-[#F8F5F0] px-6 py-10 backdrop-blur-md md:px-10">
+      <div className="bg-linear-to-b from-white/80 via-white/60 to-stone-50 px-6 py-10 backdrop-blur-md md:px-10">
         <div className="mx-auto max-w-[1440px]">
           <Link
             href="/shop"
-            className="mb-4 inline-flex items-center gap-1.5 text-xs font-semibold text-stone-500 hover:text-[#e88436] transition-colors cursor-pointer"
+            className="mb-4 inline-flex items-center gap-1.5 text-xs font-semibold text-stone-500 hover:text-emerald-700 transition-colors cursor-pointer"
           >
             <ChevronLeft size={14} /> Back to Shop
           </Link>
@@ -202,20 +202,20 @@ export default function ComparePage() {
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
             <div>
               <div className="flex items-center gap-3">
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#e88436]">
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-emerald-700">
                   Product Compare
                 </p>
                 {display.length > 0 && (
-                  <span className="rounded-full bg-[#e88436]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#e88436]">
+                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700">
                     {display.length} Products
                   </span>
                 )}
               </div>
               <h1 className="mt-2 font-serif text-3xl font-semibold text-[#1A1A1A] md:text-4xl lg:text-5xl">
-                Find Your Perfect Saree
+                Find Your Perfect Product
               </h1>
               <p className="mt-2 max-w-xl text-sm text-stone-500">
-                Compare premium sarees side by side to make the perfect choice
+                Compare premium products side by side to make the perfect choice
               </p>
             </div>
 
@@ -238,8 +238,8 @@ export default function ComparePage() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center rounded-4xl bg-white px-8 py-24 text-center shadow-[0_4px_50px_rgba(0,0,0,0.04)]"
           >
-            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#e88436]/10">
-              <GitCompare size={40} className="text-[#e88436]" />
+            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50">
+              <GitCompare size={40} className="text-emerald-600" />
             </div>
             <h2 className="font-serif text-2xl font-semibold text-[#1A1A1A]">No products to compare</h2>
             <p className="mt-2 max-w-sm text-sm text-stone-500">
@@ -247,7 +247,7 @@ export default function ComparePage() {
             </p>
             <Link
               href="/shop"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#e88436] px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#e88436]/20 hover:bg-[#d4722a] transition-all hover:-translate-y-0.5 cursor-pointer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-emerald-700 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 hover:bg-emerald-600 transition-all hover:-translate-y-0.5 cursor-pointer"
             >
               Browse Products
             </Link>
@@ -281,13 +281,13 @@ export default function ComparePage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className={`group relative rounded-4xl bg-white p-6 shadow-[0_8px_60px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-1 hover:shadow-[0_16px_80px_rgba(0,0,0,0.1)] ${
-                      isBestValue ? "ring-2 ring-[#e88436] ring-offset-4" : ""
+                      isBestValue ? "ring-2 ring-emerald-600 ring-offset-4" : ""
                     }`}
                   >
                     {/* Best Value Badge */}
                     {isBestValue && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                        <span className="inline-flex items-center gap-1 rounded-full bg-[#e88436] px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600 px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white">
                           <Sparkles size={10} /> Best Value
                         </span>
                       </div>
@@ -317,7 +317,7 @@ export default function ComparePage() {
                     </div>
                     {/* Product Info */}
                     <div className="text-center">
-                      <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#e88436]">
+                      <p className="mb-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
                         {getProductCategory(product)}
                       </p>
                       <h3 className="mb-3 line-clamp-2 font-serif text-lg font-semibold text-[#1A1A1A]">
@@ -346,13 +346,13 @@ export default function ComparePage() {
                         </button>
                         <Link
                           href={getProductHref(product)}
-                          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-500 hover:border-[#e88436] hover:text-[#e88436] transition-all cursor-pointer"
+                          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-500 hover:border-emerald-500 hover:text-emerald-700 transition-all cursor-pointer"
                         >
                           <Eye size={18} />
                         </Link>
                         <button
                           onClick={() => handleAddToCart(product)}
-                          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#e88436] px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-[#d4722a] transition-all cursor-pointer"
+                          className="flex flex-1 items-center justify-center gap-2 rounded-full bg-emerald-700 px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-emerald-600 transition-all cursor-pointer"
                         >
                           <ShoppingBag size={14} /> Add to Cart
                         </button>
@@ -377,8 +377,8 @@ export default function ComparePage() {
                   >
                     {/* Section Header */}
                     <div className="flex items-center gap-3 border-b border-stone-100 bg-stone-50 px-8 py-5">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#e88436]/10">
-                        <Icon size={18} className="text-[#e88436]" />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50">
+                        <Icon size={18} className="text-emerald-600" />
                       </div>
                       <h2 className="font-serif text-xl font-semibold text-[#1A1A1A]">{section.title}</h2>
                     </div>
@@ -415,7 +415,7 @@ export default function ComparePage() {
                                 {attr.highlight ? (
                                   <p
                                     className={`text-lg font-bold ${
-                                      isLowestPrice ? "text-[#e88436]" : "text-[#1A1A1A]"
+                                      isLowestPrice ? "text-emerald-700" : "text-[#1A1A1A]"
                                     }`}
                                   >
                                     {value}
@@ -471,13 +471,13 @@ export default function ComparePage() {
                   >
                     <div
                       className={`relative rounded-[28px] bg-white p-5 shadow-[0_8px_60px_rgba(0,0,0,0.06)] ${
-                        isBestValue ? "ring-2 ring-[#e88436]" : ""
+                        isBestValue ? "ring-2 ring-emerald-600" : ""
                       }`}
                     >
                       {/* Best Value Badge */}
                       {isBestValue && (
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                          <span className="inline-flex items-center gap-1 rounded-full bg-[#e88436] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
                             <Sparkles size={10} /> Best Value
                           </span>
                         </div>
@@ -506,7 +506,7 @@ export default function ComparePage() {
 
                       {/* Name & Price */}
                       <div className="mt-4">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#e88436]">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
                           {getProductCategory(product)}
                         </p>
                         <h3 className="mt-1 line-clamp-2 font-serif text-base font-semibold text-[#1A1A1A]">
@@ -556,7 +556,7 @@ export default function ComparePage() {
                         </Link>
                         <button
                           onClick={() => handleAddToCart(product)}
-                          className="flex flex-1 items-center justify-center rounded-full bg-[#e88436] py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white cursor-pointer"
+                          className="flex flex-1 items-center justify-center rounded-full bg-emerald-700 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white cursor-pointer"
                         >
                           Add to Cart
                         </button>

@@ -7,13 +7,12 @@ import BestSellerSection from "@/components/home/BestSellerSection";
 import StoryBanner from "@/components/home/StoryBanner";
 import WhyKeshrag from "@/components/home/WhyKeshrag";
 import TestimonialSection from "@/components/home/TestimonialSection";
-import InstagramSection from "@/components/home/InstagramSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import RecentlyViewedSection from "@/components/home/RecentlyViewedSection";
 
 export const metadata = {
-  title: "Keshrag | Premium Sarees",
-  description: "Handcrafted Indian sarees celebrating the artistry of India's finest weavers.",
+  title: "SR Ecommerce | Premium Storefront",
+  description: "Discover curated high-quality products for all your lifestyle needs.",
 };
 
 export default function Home() {
@@ -39,8 +38,6 @@ export default function Home() {
       <TestimonialSection />
       {/* 10. Recently Viewed (logged-in users) */}
       <RecentlyViewedSection />
-      {/* 11. Instagram Gallery */}
-      <InstagramSection />
       {/* 12. Newsletter */}
       <NewsletterSection />
     </div>

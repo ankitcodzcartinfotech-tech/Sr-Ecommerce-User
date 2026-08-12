@@ -45,7 +45,7 @@ export default function NotifyMe({ productId, productName }) {
       {/* Trigger button */}
       <button
         onClick={openModal}
-        className="flex w-full items-center justify-center gap-2.5 rounded-full border-2 border-stone-300 bg-stone-50 py-3.5 text-sm font-bold uppercase tracking-[0.18em] text-stone-600 transition-all hover:border-[#e88436] hover:bg-[#e88436]/5 hover:text-[#e88436] active:scale-[0.98] cursor-pointer"
+        className="flex w-full items-center justify-center gap-2.5 rounded-full border-2 border-stone-300 bg-stone-50 py-3.5 text-sm font-bold uppercase tracking-[0.18em] text-stone-600 transition-all hover:border-emerald-500 hover:bg-emerald-50 hover:text-emerald-700 active:scale-[0.98] cursor-pointer"
       >
         <Bell size={16}/> Notify Me When Available
       </button>
@@ -62,7 +62,7 @@ export default function NotifyMe({ productId, productName }) {
             >
               <div className="mb-5 flex items-start justify-between">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#e88436]">Back In Stock</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-emerald-700">Back In Stock</p>
                   <h3 className="mt-1 text-lg font-bold text-[#1A1A1A]">Notify Me</h3>
                 </div>
                 <button onClick={() => setOpen(false)} className="flex h-9 w-9 items-center justify-center rounded-full bg-stone-100 text-stone-500 hover:bg-stone-200 cursor-pointer">
@@ -72,14 +72,14 @@ export default function NotifyMe({ productId, productName }) {
 
               {state === "done" ? (
                 <div className="flex flex-col items-center py-6 text-center">
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#e88436]/10">
-                    <Check size={28} className="text-[#e88436]"/>
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
+                    <Check size={28} className="text-emerald-600"/>
                   </div>
                   <p className="font-bold text-[#1A1A1A]">You&apos;re on the list!</p>
                   <p className="mt-2 text-sm text-stone-500">
                     We&apos;ll notify you when <span className="font-medium text-[#1A1A1A]">{productName}</span> becomes available.
                   </p>
-                  <button onClick={() => setOpen(false)} className="mt-6 rounded-full bg-[#e88436] px-8 py-2.5 text-sm font-bold text-white hover:bg-[#d4722a] cursor-pointer">
+                  <button onClick={() => setOpen(false)} className="mt-6 rounded-full bg-emerald-700 px-8 py-2.5 text-sm font-bold text-white hover:bg-emerald-600 cursor-pointer">
                     Done
                   </button>
                 </div>
@@ -99,7 +99,7 @@ export default function NotifyMe({ productId, productName }) {
                     placeholder="your@email.com"
                   />
                   <button type="submit" disabled={state === "loading"}
-                    className="flex w-full items-center justify-center gap-2 rounded-full bg-[#e88436] py-3.5 text-sm font-bold text-white transition-all hover:bg-[#d4722a] hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 cursor-not-allowed">
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-emerald-700 py-3.5 text-sm font-bold text-white transition-all hover:bg-emerald-600 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 cursor-not-allowed">
                     {state === "loading" ? <><Loader2 size={15} className="animate-spin"/> Saving…</> : <><Bell size={15}/> Notify Me</>}
                   </button>
                 </form>

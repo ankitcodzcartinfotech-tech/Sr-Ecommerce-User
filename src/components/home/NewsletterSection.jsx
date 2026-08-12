@@ -43,12 +43,12 @@ export default function NewsletterSection() {
   return (
     <section
       id="newsletter"
-      className="relative w-full bg-[#FAF9F6] px-4 py-20 sm:px-6 md:px-10 lg:px-14 lg:py-28"
+      className="relative w-full bg-white px-4 py-20 sm:px-6 md:px-10 lg:px-14 lg:py-28"
     >
       <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[2.5rem] md:rounded-[4rem] bg-[#0A0A0A] px-6 py-20 shadow-2xl sm:px-12 md:px-20 lg:px-24">
         {/* Ambient Premium Glows */}
-        <div className="pointer-events-none absolute -left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-[#e88436] opacity-[0.12] blur-[100px]" />
-        <div className="pointer-events-none absolute -right-1/4 bottom-0 h-[500px] w-[500px] rounded-full bg-[#e3cdab] opacity-[0.08] blur-[100px]" />
+        <div className="pointer-events-none absolute -left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-emerald-500 opacity-[0.12] blur-[100px]" />
+        <div className="pointer-events-none absolute -right-1/4 bottom-0 h-[500px] w-[500px] rounded-full bg-emerald-300 opacity-[0.08] blur-[100px]" />
         <div className="pointer-events-none absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] mix-blend-overlay" />
 
         <div className="relative z-10 mx-auto max-w-6xl">
@@ -72,19 +72,19 @@ export default function NewsletterSection() {
                     damping: 20,
                     delay: 0.1,
                   }}
-                  className="mb-8 flex h-24 w-24 items-center justify-center rounded-full border border-[#e88436]/30 bg-[#e88436]/10 shadow-[0_0_40px_rgba(200,154,90,0.2)]"
+                  className="mb-8 flex h-24 w-24 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-50 shadow-[0_0_40px_rgba(4,120,87,0.2)]"
                 >
-                  <Check size={40} className="text-[#e88436]" strokeWidth={2.5} />
+                  <Check size={40} className="text-emerald-600" strokeWidth={2.5} />
                 </motion.div>
                 <h2 className="font-serif text-4xl font-light text-white md:text-5xl">
-                  Welcome to the <span className="italic text-[#e88436]">Circle</span>
+                  Welcome to the <span className="italic text-emerald-500">Circle</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-stone-400">
-                  You are now on the list. Watch your inbox for exclusive launches, member offers, and style inspiration from Keshrag.
+                  You are now on the list. Watch your inbox for exclusive launches, member offers, and style inspiration from SR Ecommerce.
                 </p>
                 <button
                   onClick={() => setState("idle")}
-                  className="group mt-10 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500 transition-colors hover:text-[#e88436] cursor-pointer"
+                  className="group mt-10 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-500 transition-colors hover:text-emerald-500 cursor-pointer"
                 >
                   Subscribe another email
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
@@ -105,9 +105,9 @@ export default function NewsletterSection() {
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-[11px] font-bold uppercase tracking-[0.35em] text-[#e88436]"
+                    className="text-[11px] font-bold uppercase tracking-[0.35em] text-emerald-500"
                   >
-                    Join the Keshrag Circle
+                    Join the SR Ecommerce Circle
                   </motion.p>
                   
                   <motion.h2
@@ -128,7 +128,7 @@ export default function NewsletterSection() {
                     transition={{ delay: 0.2 }}
                     className="mt-6 max-w-md text-base leading-relaxed text-stone-400"
                   >
-                    Join thousands of women who receive early access, curated edits, and exclusive offers directly in their inbox.
+                    Join thousands of subscribers who receive early access, curated edits, and exclusive offers directly in their inbox.
                   </motion.p>
 
                   <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
@@ -141,8 +141,8 @@ export default function NewsletterSection() {
                         key={p}
                         className="flex items-center gap-3.5 text-[13px] font-medium tracking-wide text-stone-300"
                       >
-                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e88436]/15 border border-[#e88436]/20">
-                          <Check size={12} className="text-[#e88436]" strokeWidth={3} />
+                        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 border border-emerald-500/20">
+                          <Check size={12} className="text-emerald-600" strokeWidth={3} />
                         </div>
                         {p}
                       </motion.li>
@@ -158,7 +158,7 @@ export default function NewsletterSection() {
                   className="relative lg:ml-auto w-full max-w-lg"
                 >
                   {/* Subtle Card Glow */}
-                  <div className="absolute -inset-0.5 rounded-[32px] bg-gradient-to-br from-[#e88436]/30 to-transparent opacity-40 blur-xl" />
+                   <div className="absolute -inset-0.5 rounded-[32px] bg-gradient-to-br from-emerald-500/30 to-transparent opacity-40 blur-xl" />
                   
                   <div className="relative rounded-[32px] border border-white/10 bg-white/5 p-8 backdrop-blur-2xl shadow-2xl sm:p-10">
                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -182,7 +182,7 @@ export default function NewsletterSection() {
                       <button
                         type="submit"
                         disabled={state === "loading" || !email.trim()}
-                        className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-[#e88436] py-4.5 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#b5894f] hover:shadow-[0_0_20px_rgba(200,154,90,0.3)] hover:scale-[1.01] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none cursor-not-allowed"
+                        className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-emerald-700 py-4.5 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-emerald-600 hover:shadow-[0_0_20px_rgba(4,120,87,0.3)] hover:scale-[1.01] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none cursor-not-allowed"
                       >
                         <span className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[100%]" />
                         <span className="relative flex items-center gap-2">

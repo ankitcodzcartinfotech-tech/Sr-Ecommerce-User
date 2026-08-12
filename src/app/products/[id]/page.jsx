@@ -706,7 +706,7 @@ function ProductDetailContent({ productId }) {
               )}
 
               {/* Standard Size Indication for Saree / No Variants */}
-              {availableSizes.length === 0 && (
+              {availableSizes.length === 0 && (product?.productDetail?.category?.name?.toLowerCase().includes("saree") || product?.category?.toLowerCase().includes("saree") || product?.productDetail?.name?.toLowerCase().includes("saree")) && (
                 <div className="flex items-center justify-between border-y border-stone-100 py-4">
                   <div>
                     <p className="text-sm font-semibold text-(--text)">Size</p>

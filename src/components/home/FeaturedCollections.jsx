@@ -35,11 +35,11 @@ export default function FeaturedCollections() {
     <section id="collections" className="px-6 py-24 md:px-10 lg:px-14 lg:py-28">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
-  title="Timeless Elegance, Thoughtfully Curated"
-  subtitle="Discover signature saree collections crafted with exquisite artistry, luxurious fabrics, and enduring sophistication."
-  eyebrow="Keshrag Signatures"
-  className="mb-14"
-/>
+          title="Explore Featured Collections"
+          subtitle="Discover signature collections crafted with premium materials, fine details, and enduring usability."
+          eyebrow="Featured Collections"
+          className="mb-14"
+        />
 
         {loading ? (
           <CategoryGridSkeleton count={4} />

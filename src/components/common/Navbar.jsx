@@ -15,15 +15,6 @@ import { playMessage } from "@/utils/notificationSound";
 
 
 
-const occasionMenu = [
-  { label: "All Occasions", href: "/occasions" },
-  { label: "Bridal", href: "/shop?occasion=wedding" },
-  { label: "Wedding", href: "/shop?occasion=wedding" },
-  { label: "Festive", href: "/shop?occasion=festive" },
-  { label: "Party Wear", href: "/shop?occasion=party" },
-  { label: "Casual", href: "/shop?occasion=daily" },
-];
-
 export default function Navbar() {
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -47,9 +38,9 @@ export default function Navbar() {
         .catch((err) => {
           const msg = (err.message || "").toLowerCase();
           const isTokenInvalid = 
-            msg.includes("token expired") || 
-            msg.includes("invalid token") || 
-            (msg.includes("authorization denied") && msg.includes("user not found"));
+             msg.includes("token expired") || 
+             msg.includes("invalid token") || 
+             (msg.includes("authorization denied") && msg.includes("user not found"));
 
           if (isTokenInvalid) {
             // Silently clear invalid token
@@ -86,9 +77,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-stone-900/5 bg-[rgba(251,245,238,0.86)] backdrop-blur-xl">
-        <div className="bg-stone-900 px-4 py-2 text-center text-[10px] font-medium uppercase tracking-[0.25em] text-white/95 sm:text-[11px]">
-          Free shipping across India on premium orders over <span className="text-(--gold) font-bold">Rs. 2,500</span>
+      <header className="sticky top-0 z-50 border-b border-stone-900/5 bg-[rgba(255,255,255,0.92)] backdrop-blur-xl">
+        <div className="bg-[#047857] px-4 py-2 text-center text-[10px] font-medium uppercase tracking-[0.25em] text-white sm:text-[11px]">
+          Free shipping across India on premium orders over <span className="text-emerald-100 font-extrabold">Rs. 2,500</span>
         </div>
 
         <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-3 px-4 sm:h-20 sm:gap-4 md:px-8">
@@ -104,16 +95,8 @@ export default function Navbar() {
               <Menu size={22} />
             </button>
 
-            <Link href="/" className="min-w-0 shrink flex flex-col items-center md:items-start cursor-pointer z-10">
-              <Image
-                src="/logo.jpg"
-                alt="Keshrag Logo"
-                width={56}
-                height={56}
-                // style={{ width: "auto", height: "auto" }}
-                className="w-10 h-10 rounded-full object-cover sm:w-14 sm:h-14"
-                priority
-              />
+            <Link href="/" className="min-w-0 shrink flex items-center cursor-pointer z-10">
+              <img src="/logo.jpg" alt="SR Logo" className="h-8 w-8 sm:h-10 sm:w-10 rounded-[10px] border border-black/5 object-cover" />
             </Link>
           </div>
 
@@ -217,11 +200,11 @@ export default function Navbar() {
             <Link
               href="/wishlist"
               aria-label="Wishlist"
-              className="relative hidden lg:flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition-all hover:bg-stone-200/50 hover:text-(--gold) active:bg-stone-200 cursor-pointer"
+              className="relative hidden lg:flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition-all hover:bg-stone-200/50 hover:text-emerald-700 active:bg-stone-200 cursor-pointer"
             >
               <Heart size={20} strokeWidth={1.5} />
               {wishlistCount > 0 && (
-                <span className="absolute right-0 top-0 flex h-[18px] min-w-[18px] items-center justify-center rounded-full border-2 border-[rgba(251,245,238,0.86)] bg-(--gold) px-1 text-[9px] font-bold text-white shadow-sm">
+                <span className="absolute right-0 top-0 flex h-[18px] min-w-[18px] items-center justify-center rounded-full border-2 border-white bg-emerald-600 px-1 text-[9px] font-bold text-white shadow-sm">
                   {wishlistCount}
                 </span>
               )}
@@ -230,11 +213,11 @@ export default function Navbar() {
             <button
               onClick={() => setIsCartOpen(true)}
               aria-label="Cart"
-              className="relative flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition-all hover:bg-stone-200/50 hover:text-(--gold) active:bg-stone-200 cursor-pointer"
+              className="relative flex h-11 w-11 items-center justify-center rounded-full text-stone-700 transition-all hover:bg-stone-200/50 hover:text-emerald-700 active:bg-stone-200 cursor-pointer"
             >
               <ShoppingBag size={20} strokeWidth={1.5} />
               {cartCount > 0 && (
-                <span className="absolute right-0 top-0 flex h-[18px] min-w-[18px] items-center justify-center rounded-full border-2 border-[rgba(251,245,238,0.86)] bg-(--gold) px-1 text-[9px] font-bold text-white shadow-sm">
+                <span className="absolute right-0 top-0 flex h-[18px] min-w-[18px] items-center justify-center rounded-full border-2 border-white bg-emerald-600 px-1 text-[9px] font-bold text-white shadow-sm">
                   {cartCount}
                 </span>
               )}
@@ -261,14 +244,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <Image
-                    src="/logo.jpg"
-                    alt="Keshrag Logo"
-                    width={40}
-                    height={40}
-                    style={{ width: "auto", height: "auto" }}
-                    className="rounded-full object-cover"
-                  />
+                  <span className="font-serif text-2xl font-black tracking-widest text-(--primary)">SR</span>
                 </div>
                 <button
                   type="button"

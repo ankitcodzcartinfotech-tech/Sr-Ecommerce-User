@@ -20,15 +20,15 @@ const contactSchema = z.object({
 
 const contactCards = [
   {
-    icon: <Mail size={20} className="text-[#e88436]" />,
+    icon: <Mail size={20} className="text-emerald-700" />,
     title: "Customer Support",
     text: "Reach us for product guidance or post-order support.",
-    value: "support@keshrag.com",
-    href: "mailto:support@keshrag.com",
+    value: "support@srecommerce.com",
+    href: "mailto:support@srecommerce.com",
     cta: "Send Email",
   },
   {
-    icon: <Phone size={20} className="text-[#e88436]" />,
+    icon: <Phone size={20} className="text-emerald-700" />,
     title: "Phone Assistance",
     text: "Need quick help? Call our support team directly.",
     value: "+91 98246 76060",
@@ -36,7 +36,7 @@ const contactCards = [
     cta: "Call Now",
   },
   {
-    icon: <Clock size={20} className="text-[#e88436]" />,
+    icon: <Clock size={20} className="text-emerald-700" />,
     title: "Studio Hours",
     text: "Available for order help and product assistance.",
     value: "Mon–Sat, 10 AM – 7 PM",
@@ -46,7 +46,7 @@ const contactCards = [
 ];
 
 const inputBase =
-  "w-full rounded-xl border bg-[#FAF9F6] px-4 py-3.5 text-sm text-stone-800 placeholder:text-stone-400 outline-none transition-all duration-300 focus:bg-white focus:ring-4 hover:bg-stone-50";
+  "w-full rounded-xl border bg-stone-50 px-4 py-3.5 text-sm text-stone-800 placeholder:text-stone-400 outline-none transition-all duration-300 focus:bg-white focus:ring-4 hover:bg-stone-50";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -75,9 +75,9 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="page-shell bg-[#FAF9F6] pb-16 lg:pb-28">
+    <div className="page-shell bg-white pb-16 lg:pb-28">
       <PageHero
-        eyebrow="Contact Keshrag"
+        eyebrow="Contact SR Ecommerce"
         title="We're here to help you."
         description="Whether you need styling assistance, have questions about an order, or want to explore business partnerships — our team is ready."
       />
@@ -93,12 +93,12 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 key={card.title}
-                className="group relative overflow-hidden rounded-2xl border border-stone-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#e88436]/30 hover:shadow-[0_16px_40px_-12px_rgba(232,132,54,0.12)] lg:rounded-3xl lg:p-8"
+                className="group relative overflow-hidden rounded-2xl border border-stone-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-[0_16px_40px_-12px_rgba(4,120,87,0.12)] lg:rounded-3xl lg:p-8"
               >
                 {/* Top accent */}
-                <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-[#e88436]/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FAF9F6] border border-stone-100 transition-all duration-300 group-hover:bg-[#e88436]/10 group-hover:border-[#e88436]/20">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 border border-stone-100 transition-all duration-300 group-hover:bg-emerald-100 group-hover:border-emerald-200">
                   {card.icon}
                 </div>
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
                 {card.href ? (
                   <a
                     href={card.href}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#e88436] transition-all hover:gap-2.5"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 transition-all hover:gap-2.5"
                   >
                     {card.value} <ArrowRight size={12} />
                   </a>
@@ -130,11 +130,11 @@ export default function ContactPage() {
               className="relative overflow-hidden rounded-2xl border border-stone-100 bg-white p-6 shadow-sm lg:rounded-3xl lg:p-10"
             >
               {/* Subtle glows */}
-              <div className="pointer-events-none absolute -left-16 -top-16 h-48 w-48 rounded-full bg-[#e88436]/8 blur-[50px]" />
-              <div className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 rounded-full bg-[#e3cdab]/15 blur-[50px]" />
+              <div className="pointer-events-none absolute -left-16 -top-16 h-48 w-48 rounded-full bg-emerald-600/8 blur-[50px]" />
+              <div className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 rounded-full bg-emerald-600/8 blur-[50px]" />
 
               <div className="relative z-10 mb-8">
-                <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#e88436]">Get In Touch</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-emerald-700">Get In Touch</span>
                 <h2 className="mt-2 text-2xl font-bold text-stone-900 lg:text-3xl">
                   Send us a <span className="font-light italic text-stone-500">message</span>
                 </h2>
@@ -220,7 +220,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="group relative flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-full bg-[#e88436] py-4 text-xs font-bold uppercase tracking-[0.25em] text-white shadow-[0_12px_28px_-8px_rgba(232,132,54,0.45)] transition-all duration-300 hover:scale-[1.01] hover:bg-[#d4722a] active:scale-[0.98] disabled:opacity-60 disabled:hover:scale-100 cursor-pointer"
+                    className="group relative flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-full bg-emerald-700 py-4 text-xs font-bold uppercase tracking-[0.25em] text-white shadow-[0_12px_28px_-8px_rgba(4,120,87,0.45)] transition-all duration-300 hover:scale-[1.01] hover:bg-emerald-600 active:scale-[0.98] disabled:opacity-60 disabled:hover:scale-100 cursor-pointer"
                   >
                     <span className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover:translate-x-[100%]" />
                     <span className="relative flex items-center gap-2">
@@ -246,27 +246,27 @@ export default function ContactPage() {
               <div className="rounded-3xl border border-stone-100 bg-white p-7 shadow-sm">
                 <p className="mb-5 text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400">Quick Contact</p>
                 <div className="space-y-4">
-                  <a href="mailto:support@keshrag.com" className="flex items-start gap-3.5 group">
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#e88436]/10">
-                      <Mail size={15} className="text-[#e88436]" />
+                  <a href="mailto:support@srecommerce.com" className="flex items-start gap-3.5 group">
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50">
+                      <Mail size={15} className="text-emerald-700" />
                     </div>
                     <div>
                       <p className="text-[11px] font-bold uppercase tracking-widest text-stone-400">Email</p>
-                      <p className="text-sm font-semibold text-stone-800 group-hover:text-[#e88436] transition-colors">support@keshrag.com</p>
+                      <p className="text-sm font-semibold text-stone-800 group-hover:text-emerald-700 transition-colors">support@srecommerce.com</p>
                     </div>
                   </a>
                   <a href="tel:+919824676060" className="flex items-start gap-3.5 group">
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#e88436]/10">
-                      <Phone size={15} className="text-[#e88436]" />
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50">
+                      <Phone size={15} className="text-emerald-700" />
                     </div>
                     <div>
                       <p className="text-[11px] font-bold uppercase tracking-widest text-stone-400">Phone</p>
-                      <p className="text-sm font-semibold text-stone-800 group-hover:text-[#e88436] transition-colors">+91 98246 76060</p>
+                      <p className="text-sm font-semibold text-stone-800 group-hover:text-emerald-700 transition-colors">+91 98246 76060</p>
                     </div>
                   </a>
                   <div className="flex items-start gap-3.5">
-                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#e88436]/10">
-                      <Clock size={15} className="text-[#e88436]" />
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50">
+                      <Clock size={15} className="text-emerald-700" />
                     </div>
                     <div>
                       <p className="text-[11px] font-bold uppercase tracking-widest text-stone-400">Hours</p>
@@ -280,7 +280,7 @@ export default function ContactPage() {
               {/* Studio location */}
               <div className="rounded-3xl border border-stone-100 bg-white p-7 shadow-sm">
                 <div className="mb-4 flex items-center gap-2">
-                  <MapPin size={15} className="text-[#e88436]" />
+                  <MapPin size={15} className="text-emerald-700" />
                   <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400">Location</p>
                 </div>
                 <p className="text-sm leading-relaxed text-stone-600">
@@ -291,11 +291,11 @@ export default function ContactPage() {
               </div>
 
               {/* Promise card */}
-              <div className="rounded-3xl bg-gradient-to-br from-[#e88436] to-[#d4722a] p-7 text-white shadow-[0_12px_30px_-8px_rgba(232,132,54,0.4)]">
+              <div className="rounded-3xl bg-gradient-to-br from-emerald-700 to-emerald-800 p-7 text-white shadow-[0_12px_30px_-8px_rgba(4,120,87,0.4)]">
                 <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/70">Our Promise</p>
                 <p className="text-lg font-bold leading-snug">We reply within 24 hours, always.</p>
                 <p className="mt-2 text-xs leading-relaxed text-white/80">
-                  Every query matters. Our team is dedicated to giving you the best saree-buying experience.
+                  Every query matters. Our team is dedicated to giving you the best shopping experience.
                 </p>
               </div>
             </motion.div>

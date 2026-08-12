@@ -13,7 +13,7 @@ import {
   X
 } from 'lucide-react';
 
-const GOLD = '#b67b45';
+const GOLD = '#047857';
 
 const sections = [
   { id: 'introduction', title: 'Introduction' },
@@ -103,7 +103,7 @@ export default function PrivacyPolicyClient() {
         className="fixed top-0 left-0 right-0 h-1 z-50 origin-left"
         style={{
           scaleX,
-          background: `linear-gradient(90deg, ${GOLD}, #ead7c4)`
+          background: `linear-gradient(90deg, ${GOLD}, #a7f3d0)`
         }}
       />
       {/* Hero Section */}
@@ -111,7 +111,7 @@ export default function PrivacyPolicyClient() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative border-b border-stone-200/60 bg-[rgba(251,245,238,0.7)] py-12 md:py-24 overflow-hidden"
+        className="relative border-b border-stone-200/60 bg-stone-50 py-12 md:py-24 overflow-hidden"
       >
         {/* Background Pattern */}
         <div
@@ -132,7 +132,7 @@ export default function PrivacyPolicyClient() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-6 flex items-center justify-center space-x-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-stone-500"
           >
-            <Link href="/" className="hover:text-var(--gold)) transition-colors cursor-pointer">Home</Link>
+            <Link href="/" className="hover:text-emerald-700 transition-colors cursor-pointer">Home</Link>
             <ChevronRight size={12} />
             <span className="text-stone-900">Privacy Policy</span>
           </motion.nav>
@@ -144,7 +144,7 @@ export default function PrivacyPolicyClient() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold"
               style={{
-                background: `linear-gradient(135deg, ${GOLD} 0%, #d4a574 50%, #c9a14a 100%)`,
+                background: `linear-gradient(135deg, ${GOLD} 0%, #10b981 50%, #34d399 100%)`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text'

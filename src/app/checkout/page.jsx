@@ -106,7 +106,7 @@ function ProgressSteps({ currentStep }) {
             <div
               className={`flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full transition-all ${
                 step.id <= currentStep
-                  ? "bg-[#e88436] text-white"
+                  ? "bg-emerald-600 text-white"
                   : "bg-stone-200 text-stone-400"
               }`}
             >
@@ -439,7 +439,7 @@ export default function CheckoutPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F8F5F0] px-4 py-24">
+      <div className="min-h-screen bg-stone-50 px-4 py-24">
         <div className="mx-auto max-w-[1440px]">
           <div className="mb-8 h-8 w-64 animate-pulse rounded-full bg-stone-200" />
           <div className="grid gap-8 md:grid-cols-[1fr_320px] lg:grid-cols-[1fr_400px]">
@@ -457,22 +457,22 @@ export default function CheckoutPage() {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-[#F8F5F0] px-4 py-24">
+      <div className="min-h-screen bg-stone-50 px-4 py-24">
         <div className="mx-auto max-w-2xl text-center">
           <div className="mb-6 flex justify-center">
-            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[#e88436]/10">
-              <ShoppingBag size={40} className="text-[#e88436]" />
+            <div className="flex h-24 w-24 items-center justify-center rounded-full bg-emerald-50">
+              <ShoppingBag size={40} className="text-emerald-600" />
             </div>
           </div>
           <h1 className="mb-4 font-serif text-3xl font-semibold text-[#1A1A1A]">
             Your cart is empty
           </h1>
           <p className="mb-8 text-base text-stone-600">
-            Add some beautiful sarees before checking out
+            Add some beautiful products before checking out
           </p>
           <button
             onClick={() => router.push("/shop")}
-            className="inline-flex items-center gap-2 rounded-full bg-[#e88436] px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-[#d4722a] cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-emerald-600 cursor-pointer"
           >
             Continue Shopping <ChevronRight size={16} />
           </button>
@@ -482,7 +482,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pb-24 pt-20">
+    <div className="min-h-screen bg-stone-50 pb-24 pt-20">
       {/* Header */}
       <div className="border-b border-stone-200/50 bg-white/50 px-6 py-8 backdrop-blur-sm md:px-10">
         <div className="mx-auto max-w-[1440px]">
@@ -559,7 +559,7 @@ export default function CheckoutPage() {
                             <button
                               onClick={() => handleQtyChange(item._id || item.id, item.quantity - 1)}
                               disabled={item.quantity <= 1}
-                              className="text-stone-600 transition-colors hover:text-[#e88436] disabled:opacity-30 cursor-not-allowed"
+                              className="text-stone-600 transition-colors hover:text-emerald-700 disabled:opacity-30 cursor-not-allowed"
                             >
                               −
                             </button>
@@ -569,7 +569,7 @@ export default function CheckoutPage() {
                             <button
                               onClick={() => handleQtyChange(item._id || item.id, item.quantity + 1)}
                               disabled={item.quantity >= 10}
-                              className="text-stone-600 transition-colors hover:text-[#e88436] disabled:opacity-30 cursor-not-allowed"
+                              className="text-stone-600 transition-colors hover:text-emerald-700 disabled:opacity-30 cursor-not-allowed"
                             >
                               +
                             </button>
@@ -625,7 +625,7 @@ export default function CheckoutPage() {
                         }));
                         setPincodeError("");
                       }}
-                      className="w-full appearance-none rounded-xl border border-[#e88436]/50 bg-[#e88436]/5 px-4 py-3 pr-10 text-sm text-[#1A1A1A] focus:border-[#e88436] focus:outline-none focus:ring-2 focus:ring-[#e88436]/20"
+                      className="w-full appearance-none rounded-xl border border-emerald-600/30 bg-emerald-50/20 px-4 py-3 pr-10 text-sm text-[#1A1A1A] focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
                     >
                       <option value="">— Enter address manually —</option>
                       {savedAddresses.map((addr) => {
@@ -711,7 +711,7 @@ export default function CheckoutPage() {
                     onBlur={() => touch("city")}
                     touched={touched.city}
                     readOnly={pincodeLoading}
-                    inputClassName={pincodeLoading ? "border-[#e88436]/40 bg-amber-50" : ""}
+                    inputClassName={pincodeLoading ? "border-emerald-600/30 bg-emerald-50/10" : ""}
                   />
                   <ValidatedInput
                     placeholder="State"
@@ -721,7 +721,7 @@ export default function CheckoutPage() {
                     onBlur={() => touch("state")}
                     touched={touched.state}
                     readOnly={pincodeLoading}
-                    inputClassName={pincodeLoading ? "border-[#e88436]/40 bg-amber-50" : ""}
+                    inputClassName={pincodeLoading ? "border-emerald-600/30 bg-emerald-50/10" : ""}
                   />
                   <div className="relative">
                     <ValidatedInput
@@ -735,11 +735,11 @@ export default function CheckoutPage() {
                       onBlur={() => touch("pincode")}
                       touched={touched.pincode}
                       error={pincodeError || undefined}
-                      inputClassName={pincodeLoading ? "border-[#e88436]/40 bg-amber-50" : ""}
+                      inputClassName={pincodeLoading ? "border-emerald-600/30 bg-emerald-50/10" : ""}
                     />
                     <div className="pointer-events-none absolute right-12 top-[26px] -translate-y-1/2">
                       {pincodeLoading && (
-                        <svg className="h-4 w-4 animate-spin text-[#e88436]" fill="none" viewBox="0 0 24 24">
+                        <svg className="h-4 w-4 animate-spin text-emerald-600" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
                         </svg>
@@ -767,7 +767,7 @@ export default function CheckoutPage() {
                     key={method.id}
                     className={`flex cursor-pointer items-start gap-4 rounded-xl border-2 p-4 transition-all ${
                       deliveryMethod === method.id
-                        ? "border-[#e88436] bg-[#e88436]/5"
+                        ? "border-emerald-600 bg-emerald-50/10"
                         : "border-stone-200 hover:border-stone-300"
                     }`}
                   >
@@ -777,7 +777,7 @@ export default function CheckoutPage() {
                       value={method.id}
                       checked={deliveryMethod === method.id}
                       onChange={(e) => setDeliveryMethod(e.target.value)}
-                      className="mt-0.5 h-5 w-5 accent-[#e88436]"
+                      className="mt-0.5 h-5 w-5 accent-emerald-700"
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-start justify-between gap-2">
@@ -785,7 +785,7 @@ export default function CheckoutPage() {
                           <p className="font-semibold text-[#1A1A1A]">{method.name}</p>
                           <p className="text-xs text-stone-500">{method.time}</p>
                         </div>
-                        <span className="text-sm font-bold text-[#e88436]">
+                        <span className="text-sm font-bold text-emerald-700">
                           {method.cost === 0 ? "FREE" : `+${formatCurrency(method.cost)}`}
                         </span>
                       </div>
@@ -812,7 +812,7 @@ export default function CheckoutPage() {
                     key={method.id}
                     className={`flex cursor-pointer items-start gap-4 rounded-xl border-2 p-4 transition-all ${
                       paymentMethod === method.id
-                        ? "border-[#e88436] bg-[#e88436]/5"
+                        ? "border-emerald-600 bg-emerald-50/10"
                         : "border-stone-200 hover:border-stone-300"
                     }`}
                   >
@@ -822,7 +822,7 @@ export default function CheckoutPage() {
                       value={method.id}
                       checked={paymentMethod === method.id}
                       onChange={(e) => setPaymentMethod(e.target.value)}
-                      className="mt-0.5 h-5 w-5 accent-[#e88436]"
+                      className="mt-0.5 h-5 w-5 accent-emerald-700"
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
@@ -838,22 +838,22 @@ export default function CheckoutPage() {
               </div>
 
               {/* Trust Badges */}
-              <div className="mt-6 grid grid-cols-3 gap-3 rounded-xl bg-[#F8F5F0] p-4">
+              <div className="mt-6 grid grid-cols-3 gap-3 rounded-xl bg-stone-50 p-4">
                 <div className="flex flex-col items-center gap-2 text-center">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
-                    <Lock size={18} className="text-[#e88436]" />
+                    <Lock size={18} className="text-emerald-600" />
                   </div>
                   <span className="text-xs font-medium text-stone-600">Secure Payments</span>
                 </div>
                 <div className="flex flex-col items-center gap-2 text-center">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
-                    <RotateCcw size={18} className="text-[#e88436]" />
+                    <RotateCcw size={18} className="text-emerald-600" />
                   </div>
                   <span className="text-xs font-medium text-stone-600">Easy Returns</span>
                 </div>
                 <div className="flex flex-col items-center gap-2 text-center">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
-                    <Truck size={18} className="text-[#e88436]" />
+                    <Truck size={18} className="text-emerald-600" />
                   </div>
                   <span className="text-xs font-medium text-stone-600">Free Shipping</span>
                 </div>
@@ -913,7 +913,7 @@ export default function CheckoutPage() {
               {/* Coupon Code */}
               <div className="mb-6 border-t border-stone-100 pt-6">
                 <div className="mb-2 flex items-center gap-2">
-                  <Tag size={14} className="text-[#e88436]" />
+                  <Tag size={14} className="text-emerald-700" />
                   <span className="text-sm font-semibold text-[#1A1A1A]">Promo Code</span>
                 </div>
 
@@ -924,12 +924,12 @@ export default function CheckoutPage() {
                       value={couponCode}
                       onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
                       placeholder="Enter code"
-                      className="flex-1 rounded-full border border-stone-200 px-4 py-2 text-sm text-[#1A1A1A] placeholder:text-stone-400 focus:border-[#e88436] focus:outline-none focus:ring-2 focus:ring-[#e88436]/20"
+                      className="flex-1 rounded-full border border-stone-200 px-4 py-2 text-sm text-[#1A1A1A] placeholder:text-stone-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
                     />
                     <button
                       onClick={handleApplyCoupon}
                       disabled={!couponCode.trim()}
-                      className="rounded-full bg-[#e88436] px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-[#d4722a] disabled:opacity-50 cursor-not-allowed"
+                      className="rounded-full bg-emerald-700 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-emerald-600 disabled:opacity-50 cursor-not-allowed"
                     >
                       Apply
                     </button>
@@ -989,16 +989,16 @@ export default function CheckoutPage() {
 
               {/* Free Shipping Progress */}
               {subtotal < FREE_SHIPPING_THRESHOLD && (
-                <div className="mt-4 rounded-xl bg-amber-50 p-3">
+                <div className="mt-4 rounded-xl bg-emerald-50 p-3">
                   <div className="mb-2 flex items-center gap-2">
-                    <Sparkles size={14} className="text-amber-600" />
-                    <p className="text-xs font-semibold text-amber-900">
+                    <Sparkles size={14} className="text-emerald-700" />
+                    <p className="text-xs font-semibold text-emerald-950">
                       Add {formatCurrency(FREE_SHIPPING_THRESHOLD - subtotal)} more for FREE shipping
                     </p>
                   </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-amber-200">
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-emerald-100">
                     <motion.div
-                      className="h-full bg-amber-600"
+                       className="h-full bg-emerald-600"
                       initial={{ width: 0 }}
                       animate={{
                         width: `${Math.min((subtotal / FREE_SHIPPING_THRESHOLD) * 100, 100)}%`,
@@ -1013,7 +1013,7 @@ export default function CheckoutPage() {
               <button
                 onClick={handlePlaceOrder}
                 disabled={placing}
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#e88436] py-4 text-sm font-bold uppercase tracking-wide text-white transition-all cursor-pointer hover:bg-[#d4722a] disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-emerald-700 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all cursor-pointer hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {placing ? (
                   <>
@@ -1034,11 +1034,11 @@ export default function CheckoutPage() {
 
               <p className="mt-4 text-center text-xs text-stone-500">
                 By placing your order, you agree to our{" "}
-                <a href="/terms" className="text-[#e88436] hover:underline cursor-pointer">
+                <a href="/terms" className="text-emerald-700 hover:underline cursor-pointer">
                   Terms
                 </a>{" "}
                 and{" "}
-                <a href="/privacy" className="text-[#e88436] hover:underline cursor-pointer">
+                <a href="/privacy" className="text-emerald-700 hover:underline cursor-pointer">
                   Privacy Policy
                 </a>
               </p>

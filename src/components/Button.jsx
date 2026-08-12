@@ -25,7 +25,7 @@ export default function Button({
     primary:
       "bg-stone-900 text-white shadow-[0_14px_30px_rgba(36,23,19,0.18)] hover:-translate-y-0.5 hover:bg-[#1a1a1a]",
     dark:
-      "bg-[#e88436] text-white shadow-[0_12px_30px_rgba(232,132,54,0.30)] hover:-translate-y-0.5 hover:bg-[#d4722a]",
+      "bg-(--primary) text-white shadow-[0_12px_30px_rgba(4,120,87,0.30)] hover:-translate-y-0.5 hover:bg-(--primary-hover)",
     outline:
       "border border-stone-900/15 bg-white/70 text-stone-900 hover:-translate-y-0.5 hover:bg-stone-900 hover:text-white",
     white:

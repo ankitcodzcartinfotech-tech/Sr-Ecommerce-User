@@ -188,13 +188,13 @@ export default function ProductCard({ product }) {
         border border-[#ECECEC]
         shadow-[0_30px_80px_rgba(0,0,0,0.08)]
         hover:shadow-[0_40px_100px_rgba(0,0,0,0.14)]
-        hover:border-[#e88436]/30
+        hover:border-(--gold)/30
         transition-all duration-500
       "
       >
         <Link
           href={href}
-          className="relative block aspect-[5/6] overflow-hidden bg-[#FAF9F6] cursor-pointer"
+          className="relative block aspect-[5/6] overflow-hidden bg-white cursor-pointer"
         >
           {image ? (
             <>
@@ -227,7 +227,7 @@ export default function ProductCard({ product }) {
               />
             </>
           ) : (
-            <div className="flex h-full items-center justify-center bg-[#FAF9F6]">
+            <div className="flex h-full items-center justify-center bg-white">
               <div className="flex flex-col items-center gap-2">
                 <div className="h-12 w-12 rounded-full bg-[#ECECEC] animate-pulse" />
                 <div className="h-3 w-20 bg-[#ECECEC] rounded animate-pulse" />
@@ -240,7 +240,7 @@ export default function ProductCard({ product }) {
               className="
               absolute left-4 top-4 z-20
               rounded-full
-              bg-[#e88436]/90
+              bg-(--gold)/90
               px-3.5 py-1.5
               text-[11px]
               font-semibold
@@ -294,7 +294,7 @@ export default function ProductCard({ product }) {
                 rounded-full border shadow-lg backdrop-blur-xl
                 transition-all duration-300
                 ${inCompare
-                  ? "border-[#e88436]/60 bg-[#e88436] text-white"
+                  ? "border-(--gold)/60 bg-(--gold) text-white"
                   : "border-white/30 bg-white/15 text-white hover:bg-white/25"}
                 ${compareFull ? "opacity-40 cursor-not-allowed" : ""}
                cursor-pointer`}
@@ -352,7 +352,7 @@ export default function ProductCard({ product }) {
               leading-relaxed
               text-[#1F1F1F]
               transition-colors duration-300
-              hover:text-[#e88436]
+              hover:text-(--gold)
             "
             >
               {name}
@@ -361,7 +361,7 @@ export default function ProductCard({ product }) {
 
           <div className="mb-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-base md:text-lg font-bold text-[#e88436]">
+              <span className="text-base md:text-lg font-bold text-(--gold)">
                 {formatCurrency(price)}
               </span>
               {mrp > price && (
@@ -411,8 +411,8 @@ export default function ProductCard({ product }) {
               aria-label={loading ? "Processing purchase" : "Buy now"}
               className={`
                 flex-1 h-9 min-h-[36px] sm:h-11 sm:min-h-[44px] md:h-12 md:min-h-[48px] shrink-0 rounded-full
-                bg-[#e88436] text-[10px] sm:text-xs md:text-sm font-bold text-white
-                transition-all duration-300 hover:bg-[#d4722a]
+                bg-(--gold) text-[10px] sm:text-xs md:text-sm font-bold text-white
+                transition-all duration-300 hover:bg-(--primary-hover)
                 flex items-center justify-center shadow-md hover:shadow-lg
                 cursor-pointer 
               `}
@@ -465,7 +465,7 @@ export default function ProductCard({ product }) {
                   </div>
                 )}
                 {tag && (
-                  <span className="absolute left-6 top-6 rounded-full bg-[#e88436]/90 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white shadow-md">
+                  <span className="absolute left-6 top-6 rounded-full bg-(--gold)/90 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white shadow-md">
                     {tag}
                   </span>
                 )}
@@ -473,8 +473,8 @@ export default function ProductCard({ product }) {
 
               {/* Product Details Section */}
               <div className="flex flex-col p-8 md:w-1/2 md:p-10">
-                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#e88436] mb-2">
-                  {product.productDetail?.category?.name || "Premium Saree"}
+                <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-(--gold) mb-2">
+                  {product.productDetail?.category?.name || "Premium Product"}
                 </span>
                 <h2 className="text-xl md:text-2xl font-serif text-stone-900 leading-tight mb-3">
                   {name}
@@ -501,7 +501,7 @@ export default function ProductCard({ product }) {
                 {/* Pricing Area */}
                 <div className="mb-6 rounded-2xl bg-stone-50 p-4 border border-stone-100">
                   <div className="flex items-baseline gap-3 flex-wrap">
-                    <span className="text-2xl font-bold text-[#e88436]">
+                    <span className="text-2xl font-bold text-(--gold)">
                       {formatCurrency(price)}
                     </span>
                     {mrp > price && (
@@ -583,7 +583,7 @@ export default function ProductCard({ product }) {
                 {toastMsg.includes("Cart") && (
                   <button
                     onClick={() => setIsCartOpen(true)}
-                    className="text-xs text-[#e88436] font-semibold mt-1 hover:underline cursor-pointer"
+                    className="text-xs text-(--gold) font-semibold mt-1 hover:underline cursor-pointer"
                   >
                     View Cart →
                   </button>
@@ -592,7 +592,7 @@ export default function ProductCard({ product }) {
             </div>
             <div className="h-1 w-full bg-stone-100">
               <motion.div
-                className="h-full bg-[#e88436]"
+                className="h-full bg-(--gold)"
                 initial={{ width: "100%" }}
                 animate={{ width: `${toastProgress}%` }}
                 transition={{ duration: 0.1 }}

@@ -25,16 +25,16 @@ import {
 } from "@/lib/storefront";
 
 const searchPlaceholders = [
-  "Search for Pure Banarasi Silk...",
-  "Search for The Bridal...",
-  "Search for Organza Sarees...",
-  "Search for Luxury Handlooms...",
+  "Search for premium apparel...",
+  "Search for new arrivals...",
+  "Search for collections...",
+  "Search by category or name...",
 ];
 
 const popularCollections = [
-  { label: "The Bridal Edit", href: "/collections/wedding-atelier", image: "/images/saree1.jpg" },
-  { label: "Pure Silk Heritage", href: "/collections/silk-sarees", image: "/images/saree2.jpg" },
-  { label: "Organza Elegance", href: "/collections/organza", image: "/images/saree3.jpg" },
+  { label: "New Arrivals", href: "/shop?sort=newest", image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80" },
+  { label: "Best Sellers", href: "/shop?sort=bestselling", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" },
+  { label: "Trending Now", href: "/shop", image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80" },
 ];
 
 function resolveSearchImage(product) {

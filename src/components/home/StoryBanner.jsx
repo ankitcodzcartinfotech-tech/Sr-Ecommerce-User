@@ -16,14 +16,14 @@ export default function StoryBanner() {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
 
   return (
-    <section ref={containerRef} className="px-4 py-16 md:px-10 lg:px-14 lg:py-24 bg-[#FAF9F6]">
+    <section ref={containerRef} className="px-4 py-16 md:px-10 lg:px-14 lg:py-24 bg-white">
       <div className="relative mx-auto min-h-[560px] max-w-[1280px] overflow-hidden rounded-[2.5rem] md:rounded-[4rem] lg:min-h-[700px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]">
         
         {/* Parallax Image Background */}
         <motion.div style={{ y, opacity }} className="absolute -inset-[15%] h-[130%] w-[130%]">
           <Image
-            src="/images/add.jpg"
-            alt="Keshrag story"
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
+            alt="Storefront story"
             fill
             sizes="100vw"
             className="object-cover object-center"
@@ -49,9 +49,9 @@ export default function StoryBanner() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex items-center gap-4"
             >
-              <div className="h-px w-8 bg-[#e88436]" />
-              <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-[#e88436]">
-                The Keshrag Story
+              <div className="h-px w-8 bg-emerald-500" />
+              <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-emerald-500">
+                Our Standards
               </p>
             </motion.div>
             
@@ -62,9 +62,9 @@ export default function StoryBanner() {
               transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
               className="mt-8 font-serif text-[2.5rem] font-light leading-[1.15] text-white sm:text-6xl lg:text-[4.5rem]"
             >
-              Crafted by tradition. <br className="hidden md:block" />
+              Crafted for quality. <br className="hidden md:block" />
               <span className="italic text-stone-300">
-                Styled for the pace and confidence of modern women.
+                Styled for the pace and confidence of modern living.
               </span>
             </motion.h3>
             
@@ -79,7 +79,7 @@ export default function StoryBanner() {
                 Explore Our Story
               </Button>
               <Button href="/contact" variant="glass" size="lg" className="hover:scale-[1.02] active:scale-95 border-white/30 hover:bg-white/20 hover:border-white/50 backdrop-blur-2xl">
-                Talk to a Stylist
+                Get in Touch
               </Button>
             </motion.div>
           </div>

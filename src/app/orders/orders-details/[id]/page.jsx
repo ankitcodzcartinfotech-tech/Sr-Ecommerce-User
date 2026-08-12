@@ -43,7 +43,7 @@ function Section({ title, icon: Icon, children, delay = 0 }) {
       className="rounded-[22px] bg-white p-5 shadow-sm ring-1 ring-stone-900/5 md:p-7">
       {title && (
         <div className="mb-4 flex items-center gap-2.5 border-b border-stone-100 pb-4 md:mb-5">
-          {Icon && <Icon size={18} className="text-[#e88436]" />}
+          {Icon && <Icon size={18} className="text-emerald-600" />}
           <h2 className="text-sm font-bold text-[#1A1A1A] md:text-base">{title}</h2>
         </div>
       )}
@@ -144,7 +144,7 @@ function ReturnExchangeModal({ open, onClose, order, type }) {
                   <p className="text-sm text-stone-500">
                     Your {type} request has been received. Our team will contact you within 24–48 hours.
                   </p>
-                  <button type="button" onClick={onClose} className="mt-6 rounded-full bg-[#e88436] px-8 py-3 text-sm font-bold text-white hover:bg-[#d4722a] cursor-pointer">
+                  <button type="button" onClick={onClose} className="mt-6 rounded-full bg-emerald-700 px-8 py-3 text-sm font-bold text-white hover:bg-emerald-600 cursor-pointer">
                     Done
                   </button>
                 </div>
@@ -155,12 +155,12 @@ function ReturnExchangeModal({ open, onClose, order, type }) {
                     <p className="mb-2 text-sm font-semibold text-[#1A1A1A]">Select Items *</p>
                     <div className="space-y-2">
                       {(order?.items || []).map(item => (
-                        <label key={item._id} className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 p-3 transition-all ${selectedItems.includes(item._id) ? "border-[#e88436] bg-amber-50/40" : "border-stone-200"}`}>
+                        <label key={item._id} className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 p-3 transition-all ${selectedItems.includes(item._id) ? "border-emerald-600 bg-emerald-50/40" : "border-stone-200"}`}>
                           <input
                             type="checkbox"
                             checked={selectedItems.includes(item._id)}
                             onChange={() => toggleItem(item._id)}
-                            className="accent-[#e88436]"
+                            className="accent-emerald-700"
                           />
                           <div className="min-w-0 flex-1">
                             <p className="line-clamp-1 text-sm font-medium text-[#1A1A1A]">{item.productName}</p>
@@ -181,7 +181,7 @@ function ReturnExchangeModal({ open, onClose, order, type }) {
                           key={r}
                           type="button"
                           onClick={() => setReason(r)}
-                          className={`rounded-xl border-2 px-3 py-2.5 text-left text-xs font-medium transition-all ${reason === r ? "border-[#e88436] bg-amber-50 text-[#e88436]" : "border-stone-200 text-stone-600 hover:border-stone-300"} cursor-pointer`}
+                          className={`rounded-xl border-2 px-3 py-2.5 text-left text-xs font-medium transition-all ${reason === r ? "border-emerald-600 bg-emerald-50 text-emerald-700" : "border-stone-200 text-stone-600 hover:border-stone-300"} cursor-pointer`}
                         >
                           {r}
                         </button>
@@ -198,7 +198,7 @@ function ReturnExchangeModal({ open, onClose, order, type }) {
                       onChange={e => setNotes(e.target.value)}
                       rows={3}
                       placeholder="Any additional details..."
-                      className="w-full resize-none rounded-xl border border-stone-200 px-4 py-3 text-sm text-[#1A1A1A] outline-none focus:border-[#e88436] placeholder:text-stone-400"
+                      className="w-full resize-none rounded-xl border border-stone-200 px-4 py-3 text-sm text-[#1A1A1A] outline-none focus:border-emerald-500 placeholder:text-stone-400"
                     />
                   </div>
 
@@ -321,7 +321,7 @@ export default function OrderDetailPage() {
 
   /* ── Loading ──────────────────────────────────────────────── */
   if (loading) return (
-    <div className="min-h-screen bg-[#F8F5F0] px-4 py-24">
+    <div className="min-h-screen bg-stone-50 px-4 py-24">
       <div className="mx-auto max-w-5xl space-y-6">
         <div className="h-8 w-64 animate-pulse rounded-full bg-stone-200"/>
         <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
@@ -334,12 +334,12 @@ export default function OrderDetailPage() {
 
   /* ── Error ────────────────────────────────────────────────── */
   if (error || !order) return (
-    <div className="min-h-screen bg-[#F8F5F0] px-4 py-24">
+    <div className="min-h-screen bg-stone-50 px-4 py-24">
       <div className="mx-auto max-w-2xl rounded-[22px] bg-white p-12 text-center shadow-sm">
         <XCircle size={56} className="mx-auto mb-4 text-rose-400"/>
         <h1 className="mb-2 text-xl font-bold text-[#1A1A1A]">Order Not Found</h1>
         <p className="mb-6 text-sm text-stone-500">{error || "This order doesn't exist or you don't have access."}</p>
-        <Link href="/orders" className="inline-flex items-center gap-2 rounded-full bg-[#e88436] px-6 py-3 text-sm font-semibold text-white hover:bg-[#d4722a] cursor-pointer">
+        <Link href="/orders" className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-600 cursor-pointer">
           <ChevronLeft size={15}/> Back to Orders
         </Link>
       </div>
@@ -364,13 +364,13 @@ export default function OrderDetailPage() {
   const taxableAmt   = grandTotal - gst;
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pb-20 pt-0">
+    <div className="min-h-screen bg-stone-50 pb-20 pt-0">
       {/* ── Desktop Hero Header ───────────────────────────────── */}
       <div className="relative bg-white/90 backdrop-blur-sm shadow-sm">
         {/* Subtle gradient accent bar at top */}
-        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#e88436]/30 via-[#e88436] to-[#e88436]/30" />
+        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-600/30 via-emerald-600 to-emerald-600/30" />
         <div className="mx-auto max-w-6xl px-4 py-5 md:px-10 md:py-8">
-          <Link href="/orders" className="mb-4 inline-flex items-center gap-1 text-xs font-semibold text-stone-500 hover:text-[#e88436] transition-colors cursor-pointer">
+          <Link href="/orders" className="mb-4 inline-flex items-center gap-1 text-xs font-semibold text-stone-500 hover:text-emerald-700 transition-colors cursor-pointer">
             <ChevronLeft size={14}/> Back to Orders
           </Link>
           {/* Header content: stacked on mobile, side-by-side on desktop */}
@@ -396,14 +396,14 @@ export default function OrderDetailPage() {
           {/* Right: action buttons — horizontal scroll on mobile */}
             <div className="flex gap-2 overflow-x-auto pb-0.5 md:flex-wrap md:overflow-visible">
               <Link href={`/orders/orders-details/${order._id}/invoice`} target="_blank"
-                className="flex shrink-0 items-center gap-2 rounded-full border-2 border-[#e88436] bg-white px-4 py-2 text-xs font-semibold text-[#e88436] transition-all hover:bg-[#e88436] hover:text-white cursor-pointer md:px-5 md:py-2.5">
+                className="flex shrink-0 items-center gap-2 rounded-full border-2 border-emerald-600 bg-white px-4 py-2 text-xs font-semibold text-emerald-700 transition-all hover:bg-emerald-600 hover:text-white cursor-pointer md:px-5 md:py-2.5">
                 <FileText size={13}/> <span className="hidden sm:inline">View </span>Invoice
               </Link>
               <button
                 id="download-invoice-btn"
                 onClick={handleDownloadInvoice}
                 disabled={dlLoading}
-                className="flex shrink-0 items-center gap-2 rounded-full bg-[#1A1A1A] px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-[#e88436] disabled:opacity-60 disabled:cursor-not-allowed md:px-5 md:py-2.5"
+                className="flex shrink-0 items-center gap-2 rounded-full bg-[#1A1A1A] px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-emerald-600 disabled:opacity-60 disabled:cursor-not-allowed md:px-5 md:py-2.5"
               >
                 {dlLoading
                   ? <><Loader2 size={13} className="animate-spin" /> <span className="hidden sm:inline">Generating…</span><span className="sm:hidden">PDF…</span></>
@@ -448,18 +448,18 @@ export default function OrderDetailPage() {
                       return (
                         <div key={step.key} className="flex flex-1 flex-col items-center gap-1">
                           <div className="relative flex w-full items-center">
-                            <div className={`h-0.5 flex-1 ${i === 0 ? "invisible" : done ? "bg-[#e88436]" : "bg-stone-200"}`}/>
+                            <div className={`h-0.5 flex-1 ${i === 0 ? "invisible" : done ? "bg-emerald-600" : "bg-stone-200"}`}/>
                             <div className={`relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 transition-all ${
-                              done ? "border-[#e88436] bg-[#e88436] text-white" : "border-stone-200 bg-white text-stone-300"
-                            } ${active ? "shadow-md shadow-[#e88436]/30" : ""}`}>
+                              done ? "border-emerald-600 bg-emerald-600 text-white" : "border-stone-200 bg-white text-stone-300"
+                            } ${active ? "shadow-md shadow-emerald-600/20" : ""}`}>
                               <StepIcon size={13} strokeWidth={2.5}/>
                             </div>
-                            <div className={`h-0.5 flex-1 ${i === TIMELINE_STEPS.length - 1 ? "invisible" : done && i < currentStep ? "bg-[#e88436]" : "bg-stone-200"}`}/>
+                            <div className={`h-0.5 flex-1 ${i === TIMELINE_STEPS.length - 1 ? "invisible" : done && i < currentStep ? "bg-emerald-600" : "bg-stone-200"}`}/>
                           </div>
                           <p className={`text-center text-[9px] font-semibold leading-tight ${done ? "text-[#1A1A1A]" : "text-stone-400"}`}>
                             {step.label}
                           </p>
-                          {active && <span className="text-[8px] font-bold text-[#e88436]">● Now</span>}
+                          {active && <span className="text-[8px] font-bold text-emerald-700">● Now</span>}
                         </div>
                       );
                     })}
@@ -473,19 +473,19 @@ export default function OrderDetailPage() {
                       return (
                         <div key={step.key} className="flex flex-1 flex-col items-center gap-2">
                           <div className="relative flex w-full items-center">
-                            <div className={`h-0.5 flex-1 transition-colors duration-500 ${i === 0 ? "invisible" : done ? "bg-[#e88436]" : "bg-stone-200"}`}/>
+                            <div className={`h-0.5 flex-1 transition-colors duration-500 ${i === 0 ? "invisible" : done ? "bg-emerald-600" : "bg-stone-200"}`}/>
                             <div className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 transition-all ${
-                              done ? "border-[#e88436] bg-[#e88436] text-white shadow-lg shadow-[#e88436]/20" : "border-stone-200 bg-white text-stone-300"
-                            } ${active ? "scale-110 shadow-xl shadow-[#e88436]/30" : ""}`}>
+                              done ? "border-emerald-600 bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "border-stone-200 bg-white text-stone-300"
+                            } ${active ? "scale-110 shadow-xl shadow-emerald-600/20" : ""}`}>
                               <StepIcon size={18} strokeWidth={2}/>
                             </div>
-                            <div className={`h-0.5 flex-1 transition-colors duration-500 ${i === TIMELINE_STEPS.length - 1 ? "invisible" : done && i < currentStep ? "bg-[#e88436]" : "bg-stone-200"}`}/>
+                            <div className={`h-0.5 flex-1 transition-colors duration-500 ${i === TIMELINE_STEPS.length - 1 ? "invisible" : done && i < currentStep ? "bg-emerald-600" : "bg-stone-200"}`}/>
                           </div>
                           <div className="text-center">
                             <p className={`text-xs font-bold ${done ? "text-[#1A1A1A]" : "text-stone-400"}`}>
                               {step.label}
                             </p>
-                            {active && <span className="mt-0.5 block text-[10px] font-bold text-[#e88436]">● Current</span>}
+                            {active && <span className="mt-0.5 block text-[10px] font-bold text-emerald-700">● Current</span>}
                             {done && !active && <span className="mt-0.5 block text-[10px] text-stone-400">Done</span>}
                           </div>
                         </div>
@@ -543,10 +543,7 @@ export default function OrderDetailPage() {
             {isDelivered && (
               <Section title="Post-Delivery Actions" icon={Star} delay={0.2}>
                 <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-                  <Link href="/shop" className="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-stone-200 bg-white py-4 text-xs font-semibold text-stone-700 transition-all hover:border-[#e88436] hover:text-[#e88436] hover:-translate-y-0.5 hover:shadow-md cursor-pointer">
-                    <RotateCcw size={18} className="text-stone-400 group-hover:text-[#e88436]"/> Buy Again
-                  </Link>
-                  <Link href={`/products`} className="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-amber-200 bg-amber-50 py-4 text-xs font-semibold text-amber-700 transition-all hover:bg-amber-100 hover:-translate-y-0.5 hover:shadow-md cursor-pointer">
+                  <Link href={`/shop`} className="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-emerald-200 bg-emerald-50 py-4 text-xs font-semibold text-emerald-700 transition-all hover:bg-emerald-100 hover:-translate-y-0.5 hover:shadow-md cursor-pointer">
                     <Star size={18}/> Write Review
                   </Link>
                   <button
@@ -626,7 +623,7 @@ export default function OrderDetailPage() {
             <Section title="Need Help?" icon={AlertCircle} delay={0.25}>
               <p className="mb-4 text-xs text-stone-500">Our support team is available Mon–Sat, 10am–7pm IST</p>
               <div className="space-y-2">
-                <a href="tel:+919999999999" className="flex items-center gap-3 rounded-xl border border-stone-100 bg-stone-50 px-4 py-3 text-sm font-semibold text-[#1A1A1A] transition-all hover:border-[#e88436]/40 hover:bg-amber-50 cursor-pointer">
+                <a href="tel:+919999999999" className="flex items-center gap-3 rounded-xl border border-stone-100 bg-stone-50 px-4 py-3 text-sm font-semibold text-[#1A1A1A] transition-all hover:border-emerald-500/40 hover:bg-emerald-50/20 cursor-pointer">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100"><Phone size={15} className="text-green-700"/></div>
                   Call Support
                 </a>
@@ -634,7 +631,7 @@ export default function OrderDetailPage() {
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100"><MessageCircle size={15} className="text-green-700"/></div>
                   WhatsApp Support
                 </a>
-                <a href="mailto:support@keshrag.com" className="flex items-center gap-3 rounded-xl border border-stone-100 bg-stone-50 px-4 py-3 text-sm font-semibold text-[#1A1A1A] transition-all hover:border-blue-200 hover:bg-blue-50 cursor-pointer">
+                <a href="mailto:support@srecommerce.com" className="flex items-center gap-3 rounded-xl border border-stone-100 bg-stone-50 px-4 py-3 text-sm font-semibold text-[#1A1A1A] transition-all hover:border-blue-200 hover:bg-blue-50 cursor-pointer">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100"><Mail size={15} className="text-blue-700"/></div>
                   Email Support
                 </a>
@@ -643,7 +640,7 @@ export default function OrderDetailPage() {
 
             {/* Trust badge */}
             <div className="flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-xs text-stone-500 shadow-sm ring-1 ring-stone-900/5">
-              <Shield size={14} className="text-[#e88436]"/>
+              <Shield size={14} className="text-emerald-600"/>
               <span>100% Secure &amp; Encrypted Orders</span>
             </div>
           </div>

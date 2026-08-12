@@ -13,17 +13,12 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr] lg:gap-12">
           <div>
-            <Image
-              src="/logo.jpg"
-              alt="Keshrag Logo"
-              width={50}
-              height={50}
-              // style={{ width: "auto", height: "auto" }}
-              className="rounded-full object-cover"
-            />
+            <div className="flex items-center gap-2.5">
+              <img src="/logo.jpg" alt="SR Logo" className="h-8 w-8 rounded-[10px] border border-black/5 object-cover" />
+              <span className="font-serif text-2xl font-black tracking-widest text-(--primary)">SR</span>
+            </div>
             <p className="mt-6 max-w-sm text-sm leading-7 text-(--muted) sm:mt-5">
-              A warmer, more modern way to discover handcrafted sarees for celebrations, gifting,
-              and everyday elegance.
+              A curated shopping experience offering premium products for gifting, lifestyle, and everyday elegance.
             </p>
             <div className="mt-6 text-sm text-(--muted) max-w-sm leading-relaxed">
               <p className="font-semibold text-stone-900 mb-2">Visit Us</p>
@@ -99,8 +94,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-stone-900/8 pt-8 text-xs leading-relaxed text-(--muted) sm:mt-14 md:flex-row md:items-center md:justify-between">
-          <p>Copyright (c) {new Date().getFullYear()} Keshrag. All rights reserved.</p>
-          <p className="max-w-md">Handcrafted style, thoughtful service, and a softer luxury experience.</p>
+          <p>Copyright (c) {new Date().getFullYear()} SR Ecommerce. All rights reserved.</p>
+          <p className="max-w-md">Premium quality, exceptional support, and a modern shopping experience.</p>
         </div>
       </div>
     </footer>

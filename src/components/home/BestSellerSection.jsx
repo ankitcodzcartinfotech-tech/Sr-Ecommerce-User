@@ -65,7 +65,7 @@ export default function BestSellerSection() {
             <div className="mt-12 flex justify-center">
               <Link
                 href="/shop?sort=bestselling"
-                className="inline-flex items-center justify-center rounded-full border border-stone-200 bg-white px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#e88436]/40 hover:text-[#e88436] hover:shadow-md cursor-pointer"
+                className="inline-flex items-center justify-center rounded-full border border-stone-200 bg-white px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] text-stone-900 shadow-sm transition-all hover:-translate-y-0.5 hover:border-emerald-500/40 hover:text-emerald-700 hover:shadow-md cursor-pointer"
               >
                 View All Best Sellers
               </Link>
