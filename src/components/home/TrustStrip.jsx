@@ -23,10 +23,10 @@ export default function TrustStrip() {
                 <Icon size={20} className="text-emerald-700 transition-colors duration-300" strokeWidth={1.5} />
               </div>
               <div className="min-w-0">
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-stone-900 transition-colors duration-300 group-hover:text-emerald-700">
+                <p className="text-[9px] xs:text-[10px] font-bold uppercase tracking-[0.25em] text-stone-900 transition-colors duration-300 group-hover:text-emerald-700">
                   {label}
                 </p>
-                <p className="mt-1.5 text-xs text-stone-500">{sub}</p>
+                <p className="mt-1.5 text-[10px] xs:text-xs text-stone-500">{sub}</p>
               </div>
             </div>
           ))}

@@ -90,7 +90,7 @@ function ReviewCard({ review }) {
       : "Exquisite craftsmanship and premium quality. Absolutely in love with this piece.";
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-stone-100 bg-white p-7 sm:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] group cursor-default">
+    <div className="relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-stone-100 bg-white p-5 xs:p-6 sm:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.08)] group cursor-default">
       {/* Decorative Quote mark */}
       <div className="absolute right-6 top-6 opacity-[0.03] transition-opacity duration-500 group-hover:opacity-[0.06]">
         <Quote size={80} className="text-stone-900" />
@@ -103,7 +103,7 @@ function ReviewCard({ review }) {
         </span>
       </div>
 
-      <p className="mt-6 flex-1 text-base leading-loose text-stone-600 italic z-10">
+      <p className="mt-6 flex-1 text-sm xs:text-base leading-relaxed xs:leading-loose text-stone-600 italic z-10">
         &ldquo;{displayText}&rdquo;
       </p>
 
@@ -232,7 +232,7 @@ export default function TestimonialSection() {
           </div>
 
           {!loading && displayReviews.length > 0 && (
-            <div className="flex shrink-0 flex-col items-center justify-center rounded-[2rem] border border-stone-100 bg-white px-8 py-5 shadow-sm transition-transform duration-500 hover:scale-105 hover:shadow-md sm:items-end">
+            <div className="flex shrink-0 flex-col items-center justify-center rounded-[2rem] border border-stone-100 bg-white px-6 py-4 sm:px-8 sm:py-5 shadow-sm transition-transform duration-500 hover:scale-105 hover:shadow-md sm:items-end">
               <div className="flex items-baseline gap-1">
                 <span className="font-serif text-5xl font-semibold tracking-tight text-stone-900">
                   {avgRating}

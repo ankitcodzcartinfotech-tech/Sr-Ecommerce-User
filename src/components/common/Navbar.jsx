@@ -256,7 +256,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <nav className="mt-8 space-y-2">
+              <nav className="mt-8 space-y-2 pb-10">
                 {[
                   { label: "Home", href: "/" },
                   { label: "Shop", href: "/shop" },

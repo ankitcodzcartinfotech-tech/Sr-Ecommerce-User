@@ -18,7 +18,7 @@ const publicApi = axios.create({
   headers: {
     "Content-Type": "application/json"
   },
-});     
+});
 
 const api = axios.create({
   baseURL: "",
@@ -52,8 +52,8 @@ api.interceptors.request.use((config) => {
 });
 
 const errHandler = (error) => {
-  const status  = error.response?.status;
-  const data    = error.response?.data;
+  const status = error.response?.status;
+  const data = error.response?.data;
   const message =
     data?.errors?.length
       ? data.errors.join(", ")
@@ -123,19 +123,19 @@ export const searchProducts = (query, limit = 8) =>
 // ═══════════════════════════════════════════════════════════
 
 // 🔒 Private APIs (require authentication)
-export const saveSearchHistory = (query) => 
+export const saveSearchHistory = (query) =>
   api.post("/api/user/search-history", { query });
-export const getSearchHistory = (limit = 10) => 
+export const getSearchHistory = (limit = 10) =>
   api.get("/api/user/search-history", { params: { limit } });
-export const clearSearchHistory = () => 
+export const clearSearchHistory = () =>
   api.delete("/api/user/search-history");
-export const deleteSearchItem = (id) => 
+export const deleteSearchItem = (id) =>
   api.delete(`/api/user/search-history/${id}`);
 
 // 🌍 Public APIs (no authentication required)
-export const getTrendingSearches = (limit = 10) => 
+export const getTrendingSearches = (limit = 10) =>
   publicApi.get("/api/user/search-history/trending", { params: { limit } });
-export const getSearchSuggestions = (query) => 
+export const getSearchSuggestions = (query) =>
   publicApi.get("/api/user/search-history/suggestions", { params: { q: query } });
 
 // ═══════════════════════════════════════════════════════════
@@ -207,11 +207,11 @@ export const addReview = (body) =>
   });
 export const upvoteReview = (reviewId) =>
   api.post(`/api/user/reviews/${reviewId}/vote`, { vote: "helpful" });
-export const getUserReviews = () => 
+export const getUserReviews = () =>
   api.get("/api/user/reviews/my-reviews");
-export const updateReview = (reviewId, formData) => 
+export const updateReview = (reviewId, formData) =>
   api.put(`/api/user/reviews/${reviewId}`, formData);
-export const deleteReview = (reviewId) => 
+export const deleteReview = (reviewId) =>
   api.delete(`/api/user/reviews/${reviewId}`);
 export const getFeaturedReviews = (limit = 10) =>
   publicApi.get("/api/user/reviews/featured", { params: { limit } });

@@ -43,9 +43,9 @@ export default function NewsletterSection() {
   return (
     <section
       id="newsletter"
-      className="relative w-full bg-white px-4 py-20 sm:px-6 md:px-10 lg:px-14 lg:py-28"
+      className="relative w-full bg-white px-4 py-12 sm:px-6 md:px-10 lg:px-14 lg:py-28"
     >
-      <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[2.5rem] md:rounded-[4rem] bg-gradient-to-br from-emerald-50/40 via-stone-50/60 to-white px-6 py-20 border border-emerald-100/40 shadow-[0_20px_50px_rgba(0,0,0,0.05)] sm:px-12 md:px-20 lg:px-24">
+      <div className="relative mx-auto max-w-[1280px] overflow-hidden rounded-[2.5rem] md:rounded-[4rem] bg-gradient-to-br from-emerald-50/40 via-stone-50/60 to-white px-6 py-12 sm:py-20 border border-emerald-100/40 shadow-[0_20px_50px_rgba(0,0,0,0.05)] sm:px-12 md:px-20 lg:px-24">
         {/* Ambient Premium Glows */}
         <div className="pointer-events-none absolute -left-1/4 top-0 h-[600px] w-[600px] rounded-full bg-emerald-100 opacity-[0.25] blur-[120px]" />
         <div className="pointer-events-none absolute -right-1/4 bottom-0 h-[500px] w-[500px] rounded-full bg-emerald-200 opacity-[0.2] blur-[120px]" />
@@ -92,12 +92,12 @@ export default function NewsletterSection() {
               </motion.div>
             ) : (
               /* ── Default State ── */
-              (<motion.div
+              <motion.div
                 key="form"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:items-center"
+                className="grid gap-8 lg:gap-16 lg:grid-cols-[1.1fr_1fr] lg:items-center"
               >
                 {/* Left: Copy & Perks */}
                 <div>
@@ -182,7 +182,7 @@ export default function NewsletterSection() {
                       <button
                         type="submit"
                         disabled={state === "loading" || !email.trim()}
-                        className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-emerald-700 py-4.5 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-emerald-800 hover:shadow-[0_0_20px_rgba(4,120,87,0.2)] hover:scale-[1.01] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none cursor-pointer disabled:cursor-not-allowed"
+                        className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-emerald-700 py-3.5 sm:py-4.5 text-[11px] font-bold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-emerald-800 hover:shadow-[0_0_20px_rgba(4,120,87,0.2)] hover:scale-[1.01] active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none cursor-pointer disabled:cursor-not-allowed"
                       >
                         <span className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[100%]" />
                         <span className="relative flex items-center gap-2">
@@ -200,7 +200,7 @@ export default function NewsletterSection() {
                     </form>
                   </div>
                 </motion.div>
-              </motion.div>)
+              </motion.div>
             )}
           </AnimatePresence>
         </div>

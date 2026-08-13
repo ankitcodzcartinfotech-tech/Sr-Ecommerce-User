@@ -24,7 +24,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white pt-24 pb-4 sm:pt-28 md:pt-30 lg:pb-8">
+    <section className="relative overflow-hidden bg-white pt-10 pb-4 sm:pt-28 md:pt-30 lg:pb-8">
       {/* Soft ambient glows */}
       <div
         aria-hidden
@@ -52,7 +52,7 @@ export default function HeroSection() {
             </div>
 
             {/* Headline */}
-            <h1 className="max-w-2xl font-serif text-[2.5rem] font-light leading-[1.08] tracking-tight text-stone-900 sm:text-[clamp(2.75rem,5.5vw,4.25rem)]">
+            <h1 className="max-w-2xl font-serif text-[2.25rem] xs:text-[2.5rem] font-light leading-[1.08] tracking-tight text-stone-900 sm:text-[clamp(2.75rem,5.5vw,4.25rem)]">
               Explore, shop,<br />
               <span className="font-extrabold text-[#047857]">repeat again.</span>
             </h1>
