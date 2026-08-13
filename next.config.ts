@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === 'production';
-const backendUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://sr-ecommerce-backend.onrender.com';
+const backendUrl = 'https://sr-ecommerce-backend.onrender.com';
 
 const nextConfig: NextConfig = {
   images: {
