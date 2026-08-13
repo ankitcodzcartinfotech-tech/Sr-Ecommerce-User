@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const isDev = process.env.NODE_ENV === 'development';
-const SERVER_API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL?.trim() || (isDev ? "http://localhost:7410" : "https://sr-ecommerce-backend.onrender.com");
+const SERVER_API_BASE = isDev ? "http://localhost:7410" : "https://sr-ecommerce-backend.onrender.com";
 
 export const API_BASE_URL = SERVER_API_BASE;
 
