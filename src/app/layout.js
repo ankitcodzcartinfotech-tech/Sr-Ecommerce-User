@@ -8,10 +8,12 @@ try {
   const dest1 = 'd:/Codzcart Infotech/Sr-Ecommerce/Sr-Ecommerce-User/public/logo.jpg';
   const dest2 = 'd:/Codzcart Infotech/Sr-Ecommerce/Sr-Ecommerce-User/public/images/logo.jpg';
   const dest3 = 'd:/Codzcart Infotech/Sr-Ecommerce/Sr-Ecommerce-Admin/public/logo.jpg';
+  const dest4 = 'd:/Codzcart Infotech/Sr-Ecommerce/Sr-Ecommerce-User/src/app/icon.jpg';
   if (fs.existsSync(src)) {
     fs.copyFileSync(src, dest1);
     fs.copyFileSync(src, dest2);
     fs.copyFileSync(src, dest3);
+    fs.copyFileSync(src, dest4);
   }
 } catch (e) {
   console.error("Failed to copy logo:", e);
@@ -42,6 +44,9 @@ const inter = Inter({
 export const metadata = {
   title: "SR Ecommerce | Premium Storefront",
   description: "Discover curated high-quality products for all your lifestyle needs.",
+  icons: {
+    icon: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({ children }) {

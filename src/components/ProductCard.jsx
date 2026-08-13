@@ -340,12 +340,12 @@ export default function ProductCard({ product }) {
           </div>
         </Link>
 
-        <div className="flex flex-1 flex-col px-5 py-5 sm:px-6 sm:py-6">
+        <div className="flex flex-1 flex-col px-3 py-3 sm:px-6 sm:py-6">
           <Link href={href} className="mb-3 cursor-pointer">
             <h3
               className="
               line-clamp-2
-              text-[14px]
+              text-[13px]
               md:text-[15px]
               font-medium
               tracking-wide
@@ -361,12 +361,12 @@ export default function ProductCard({ product }) {
 
           <div className="mb-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-base md:text-lg font-bold text-(--gold)">
+              <span className="text-sm sm:text-base md:text-lg font-bold text-(--gold)">
                 {formatCurrency(price)}
               </span>
               {mrp > price && (
                 <>
-                  <span className="text-[11px] font-medium text-stone-400 line-through">
+                  <span className="text-[10px] sm:text-[11px] font-medium text-stone-400 line-through">
                     MRP {formatCurrency(mrp)}
                   </span>
                   <span className="text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
@@ -377,7 +377,7 @@ export default function ProductCard({ product }) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 sm:gap-3 mt-auto lg:flex-row">
+          <div className="flex flex-col gap-1.5 sm:gap-3 mt-auto lg:flex-row">
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -386,8 +386,8 @@ export default function ProductCard({ product }) {
               disabled={loading}
               aria-label={loading ? "Adding to bag" : "Add to bag"}
               className={`
-                flex-1 h-9 min-h-[36px] sm:h-11 sm:min-h-[44px] md:h-12 md:min-h-[48px] shrink-0 rounded-full
-                bg-[#000000] text-[10px] sm:text-xs md:text-sm font-bold text-white
+                flex-1 h-8 min-h-[32px] sm:h-11 sm:min-h-[44px] md:h-12 md:min-h-[48px] shrink-0 rounded-full
+                bg-[#000000] text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold text-white
                 transition-all duration-300 hover:bg-stone-850
                 flex items-center justify-center shadow-md hover:shadow-lg
                 relative overflow-hidden cursor-pointer 
@@ -410,8 +410,8 @@ export default function ProductCard({ product }) {
               disabled={loading}
               aria-label={loading ? "Processing purchase" : "Buy now"}
               className={`
-                flex-1 h-9 min-h-[36px] sm:h-11 sm:min-h-[44px] md:h-12 md:min-h-[48px] shrink-0 rounded-full
-                bg-(--gold) text-[10px] sm:text-xs md:text-sm font-bold text-white
+                flex-1 h-8 min-h-[32px] sm:h-11 sm:min-h-[44px] md:h-12 md:min-h-[48px] shrink-0 rounded-full
+                bg-(--gold) text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold text-white
                 transition-all duration-300 hover:bg-(--primary-hover)
                 flex items-center justify-center shadow-md hover:shadow-lg
                 cursor-pointer 
@@ -437,7 +437,7 @@ export default function ProductCard({ product }) {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl overflow-hidden rounded-[30px] bg-[#FAF8F5] shadow-2xl md:flex cursor-pointer"
+              className="relative w-full max-w-4xl overflow-y-auto max-h-[90vh] md:overflow-hidden rounded-[30px] bg-[#FAF8F5] shadow-2xl md:flex cursor-pointer"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}

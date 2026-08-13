@@ -70,15 +70,15 @@ function StatCard({ value, label, delay = 0 }) {
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center rounded-[20px] border border-(--border) bg-(--surface) px-6 py-8 text-center"
+      className="flex flex-col items-center rounded-[20px] border border-(--border) bg-(--surface) px-3 py-5 sm:px-6 sm:py-8 text-center"
       style={{
         opacity:    shown ? 1 : 0,
         transform:  shown ? "translateY(0)" : "translateY(18px)",
         transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
       }}
     >
-      <p className="font-serif text-4xl font-semibold text-emerald-700 sm:text-5xl">{value}</p>
-      <p className="mt-2 text-xs font-semibold uppercase tracking-[0.24em] text-(--muted)">{label}</p>
+      <p className="font-serif text-3xl font-semibold text-emerald-700 sm:text-5xl">{value}</p>
+      <p className="mt-2 text-[9px] sm:text-xs font-semibold uppercase tracking-[0.24em] text-(--muted)">{label}</p>
     </div>
   );
 }
@@ -205,7 +205,7 @@ function MobileCards() {
 /* ── Section ──────────────────────────────────────────────── */
 export default function WhyKeshrag() {
   return (
-    <section className="bg-(--surface) px-4 py-20 sm:px-6 md:px-10 lg:px-14 lg:py-24">
+    <section className="bg-(--surface) px-4 py-14 sm:px-6 md:px-10 lg:px-14 lg:py-24">
       <div className="mx-auto max-w-[1440px]">
 
         {/* Header */}

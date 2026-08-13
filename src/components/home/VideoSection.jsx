@@ -76,7 +76,7 @@ export default function VideoSection() {
                     <p className="text-[8px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] sm:tracking-[0.32em] text-white/70">
                       {meta.eyebrow}
                     </p>
-                    <h3 className="mt-1 sm:mt-2 text-base sm:text-2xl font-light leading-tight">{cat.name}</h3>
+                    <h3 className="mt-1 sm:mt-2 text-sm xs:text-base sm:text-2xl font-light leading-tight">{cat.name}</h3>
                     <div className="mt-2 sm:mt-4 flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/80 transition-all duration-300 group-hover:text-white group-hover:gap-2.5 sm:group-hover:gap-3">
                       Explore <ArrowRight className="h-3 w-3 sm:h-[13px] sm:w-[13px]" />
                     </div>
