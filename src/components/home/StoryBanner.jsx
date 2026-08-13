@@ -1,90 +1,152 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Button from "@/components/Button";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { getStories, getImageSrc } from "@/Api/AllApi";
 
 export default function StoryBanner() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
+  const [stories, setStories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const y = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
+  useEffect(() => {
+    const fetchStories = async () => {
+      try {
+        const res = await getStories();
+        if (res?.data?.length > 0) {
+          setStories(res.data);
+        } else {
+          // Fallback static story if no data
+          setStories([
+            {
+              _id: '1',
+              title: "Crafted for quality",
+              subtitle: "Our Standards",
+              image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+            },
+            {
+              _id: '2',
+              title: "Modern Lifestyle",
+              subtitle: "Style",
+              image: "https://images.unsplash.com/photo-1555529669-2269763671c0?auto=format&fit=crop&w=800&q=80",
+            },
+            {
+              _id: '3',
+              title: "Ethical Sourcing",
+              subtitle: "Planet",
+              image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80",
+            },
+            {
+              _id: '4',
+              title: "Premium Materials",
+              subtitle: "Quality",
+              image: "https://images.unsplash.com/photo-1618220179428-22790b46a0eb?auto=format&fit=crop&w=800&q=80",
+            }
+          ]);
+        }
+      } catch (err) {
+        console.error("Failed to fetch stories", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchStories();
+  }, []);
 
   return (
-    <section ref={containerRef} className="px-4 py-16 md:px-10 lg:px-14 lg:py-24 bg-white">
-      <div className="relative mx-auto min-h-[560px] max-w-[1280px] overflow-hidden rounded-[2.5rem] md:rounded-[4rem] lg:min-h-[700px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]">
+    <section className="px-4 py-12 md:px-10 lg:px-14 bg-gray-50 overflow-hidden" style={{ perspective: "1500px" }}>
+      <div className="mx-auto max-w-[1400px]">
         
-        {/* Parallax Image Background */}
-        <motion.div style={{ y, opacity }} className="absolute -inset-[15%] h-[130%] w-[130%]">
-          <Image
-            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
-            alt="Storefront story"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-            quality={95}
-            priority
-          />
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-10 flex items-end justify-between"
+        >
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-gray-900 tracking-tight">
+              Brand Stories
+            </h2>
+            <div className="mt-3 h-px w-16 bg-emerald-500 rounded-full" />
+          </div>
         </motion.div>
 
-        {/* Elegant Dark Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(200,154,90,0.35),transparent_50%)] mix-blend-overlay" />
-        
-        {/* Fine Grain Texture */}
-        <div className="pointer-events-none absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.05]" />
-
-        <div className="relative z-10 flex h-full min-h-[560px] flex-col justify-end px-8 py-16 md:px-16 lg:min-h-[700px] lg:justify-center lg:px-24">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-4"
-            >
-              <div className="h-px w-8 bg-emerald-500" />
-              <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-emerald-500">
-                Our Standards
-              </p>
-            </motion.div>
-            
-            <motion.h3
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-              className="mt-8 font-serif text-[2.5rem] font-light leading-[1.15] text-white sm:text-6xl lg:text-[4.5rem]"
-            >
-              Crafted for quality. <br className="hidden md:block" />
-              <span className="italic text-stone-300">
-                Styled for the pace and confidence of modern living.
-              </span>
-            </motion.h3>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="mt-12 flex flex-wrap items-center gap-5"
-            >
-              <Button href="/about" variant="white" size="lg" className="hover:scale-[1.02] active:scale-95" icon>
-                Explore Our Story
-              </Button>
-              <Button href="/contact" variant="glass" size="lg" className="hover:scale-[1.02] active:scale-95 border-white/30 hover:bg-white/20 hover:border-white/50 backdrop-blur-2xl">
-                Get in Touch
-              </Button>
-            </motion.div>
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="aspect-[4/3] bg-gray-200 animate-pulse rounded-2xl" />
+            ))}
           </div>
-        </div>
+        ) : stories.length > 0 ? (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} // Smooth cinematic easing
+          >
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              grabCursor={true}
+              spaceBetween={20}
+              slidesPerView={1.15}
+              breakpoints={{
+                640: { slidesPerView: 2.15, spaceBetween: 24 },
+                1024: { slidesPerView: 3, spaceBetween: 32 },
+              }}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              pagination={{ clickable: true, bulletClass: 'swiper-pagination-bullet bg-gray-300 w-2.5 h-2.5 rounded-full transition-all inline-block mx-1.5', bulletActiveClass: '!bg-gray-900 !w-8' }}
+              className="w-full pb-16 story-square-swiper group/swiper"
+            >
+              {stories.map((story) => (
+                <SwiperSlide key={story._id} className="relative aspect-[4/3] lg:aspect-[16/11] w-full rounded-3xl overflow-hidden shadow-lg group cursor-pointer border border-gray-100">
+                  {/* Image Background - Absolutely positioned to strictly fill the box */}
+                  <div className="absolute inset-0 w-full h-full overflow-hidden bg-gray-100">
+                    <Image
+                      src={getImageSrc(story.image) || story.image}
+                      alt={story.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover object-center transition-transform duration-[1.5s] ease-out group-hover:scale-[1.08]"
+                      quality={90}
+                    />
+                  </div>
+
+                  {/* Elegant Gradient Overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+                  
+                  {/* Text Content */}
+                  <div className="relative z-10 flex h-full flex-col justify-end p-6 md:p-8">
+                    {story.subtitle && (
+                      <div className="overflow-hidden mb-2">
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-emerald-400 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                          {story.subtitle}
+                        </p>
+                      </div>
+                    )}
+                    
+                    <h3 className="font-serif text-2xl md:text-3xl font-medium leading-[1.1] text-white line-clamp-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                      {story.title}
+                    </h3>
+
+                    {/* Subtle hover line indicator */}
+                    <div className="mt-4 h-0.5 w-0 bg-white opacity-0 group-hover:w-12 group-hover:opacity-100 transition-all duration-500 ease-out delay-100" />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </motion.div>
+        ) : null}
       </div>
+      <style dangerouslySetInnerHTML={{__html: `
+        .story-square-swiper .swiper-pagination { bottom: 0 !important; }
+      `}} />
     </section>
   );
 }

@@ -234,6 +234,7 @@ export const upvoteAnswer = (answerId) =>
 // ═══════════════════════════════════════════════════════════
 
 export const getBanners = () => publicApi.get("/api/user/banners");
+export const getStories = () => publicApi.get("/api/user/stories");
 
 // ═══════════════════════════════════════════════════════════
 //  CATEGORIES
