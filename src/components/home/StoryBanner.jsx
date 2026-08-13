@@ -10,6 +10,33 @@ import "swiper/css/pagination";
 
 import { getStories, getImageSrc } from "@/Api/AllApi";
 
+const FALLBACK_STORIES = [
+  {
+    _id: '1',
+    title: "Crafted for quality",
+    subtitle: "Our Standards",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    _id: '2',
+    title: "Modern Lifestyle",
+    subtitle: "Style",
+    image: "https://images.unsplash.com/photo-1555529669-2269763671c0?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    _id: '3',
+    title: "Ethical Sourcing",
+    subtitle: "Planet",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    _id: '4',
+    title: "Premium Materials",
+    subtitle: "Quality",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80",
+  }
+];
+
 export default function StoryBanner() {
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,35 +49,12 @@ export default function StoryBanner() {
           setStories(res.data);
         } else {
           // Fallback static story if no data
-          setStories([
-            {
-              _id: '1',
-              title: "Crafted for quality",
-              subtitle: "Our Standards",
-              image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
-            },
-            {
-              _id: '2',
-              title: "Modern Lifestyle",
-              subtitle: "Style",
-              image: "https://images.unsplash.com/photo-1555529669-2269763671c0?auto=format&fit=crop&w=800&q=80",
-            },
-            {
-              _id: '3',
-              title: "Ethical Sourcing",
-              subtitle: "Planet",
-              image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80",
-            },
-            {
-              _id: '4',
-              title: "Premium Materials",
-              subtitle: "Quality",
-              image: "https://images.unsplash.com/photo-1618220179428-22790b46a0eb?auto=format&fit=crop&w=800&q=80",
-            }
-          ]);
+          setStories(FALLBACK_STORIES);
         }
       } catch (err) {
         console.error("Failed to fetch stories", err);
+        // Use fallback stories if the request fails (e.g. 404 API not found)
+        setStories(FALLBACK_STORIES);
       } finally {
         setLoading(false);
       }

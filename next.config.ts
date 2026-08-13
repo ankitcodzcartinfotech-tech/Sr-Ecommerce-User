@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === 'production';
-const backendUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://keshrag-backend-l2i7.onrender.com';
+const backendUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://sr-ecommerce-backend.onrender.com';
 
 const nextConfig: NextConfig = {
   images: {
@@ -26,12 +26,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'keshrag-backend-l2i7.onrender.com',
+        hostname: 'sr-ecommerce-backend.onrender.com',
         pathname: '/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: 'keshrag-backend-l2i7.onrender.com',
+        hostname: 'sr-ecommerce-backend.onrender.com',
         pathname: '/images/**',
       },
       {
@@ -67,3 +67,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+// Deploy trigger: updated backend domain URL to sr-ecommerce-backend.onrender.com
