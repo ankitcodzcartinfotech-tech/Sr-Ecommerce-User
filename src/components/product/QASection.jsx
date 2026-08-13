@@ -28,7 +28,7 @@ function Avatar({ name, size = "sm" }) {
 }
 
 function AnswerItem({ ans, onUpvote }) {
-  const name    = ans.user?.name || ans.admin?.name || "Team Keshrag";
+  const name = ans.user?.name || ans.admin?.name || "Team Sr Software ";
   const isAdmin = !!ans.admin;
   const upvotes = ans.upvotes?.length || 0;
 
@@ -65,11 +65,11 @@ function AnswerItem({ ans, onUpvote }) {
 }
 
 function QuestionItem({ question }) {
-  const [open, setOpen]             = useState(false);
+  const [open, setOpen] = useState(false);
   const [answerText, setAnswerText] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [answers, setAnswers]       = useState(question.answers || []);
-  const [err, setErr]               = useState("");
+  const [answers, setAnswers] = useState(question.answers || []);
+  const [err, setErr] = useState("");
 
   async function handleAnswer(e) {
     e.preventDefault();
@@ -207,12 +207,12 @@ function QuestionItem({ question }) {
 
 /* ─── Main section ────────────────────────────────────────── */
 export default function QASection({ productId }) {
-  const [questions, setQuestions]     = useState([]);
-  const [loading, setLoading]         = useState(true);
-  const [showForm, setShowForm]       = useState(false);
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
   const [newQuestion, setNewQuestion] = useState("");
-  const [submitting, setSubmitting]   = useState(false);
-  const [err, setErr]                 = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [err, setErr] = useState("");
 
   useEffect(() => {
     if (!productId) return;
@@ -222,7 +222,7 @@ export default function QASection({ productId }) {
         const list = d?.data || d?.questions || [];
         setQuestions(Array.isArray(list) ? list : []);
       })
-      .catch(() => {})
+      .catch(() => { })
       .finally(() => setLoading(false));
   }, [productId]);
 
@@ -261,19 +261,18 @@ export default function QASection({ productId }) {
             {loading
               ? "Loading…"
               : questions.length > 0
-              ? `${questions.length} question${questions.length !== 1 ? "s" : ""} from customers`
-              : "Be the first to ask about this product"}
+                ? `${questions.length} question${questions.length !== 1 ? "s" : ""} from customers`
+                : "Be the first to ask about this product"}
           </p>
         </div>
         {isLoggedIn() && (
           <button
             type="button"
             onClick={() => setShowForm(v => !v)}
-            className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-semibold transition-all ${
-              showForm
+            className={`flex items-center gap-1.5 rounded-full border px-4 py-2 text-xs font-semibold transition-all ${showForm
                 ? "border-rose-300 bg-rose-50 text-rose-600"
                 : "border-(--gold) text-(--gold) hover:bg-(--gold) hover:text-white"
-            } cursor-pointer`}
+              } cursor-pointer`}
           >
             {showForm ? <><X size={12} /> Cancel</> : <><Plus size={12} /> Ask a Question</>}
           </button>

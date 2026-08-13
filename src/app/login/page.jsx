@@ -40,7 +40,7 @@ function OtpField({ value, onChange, error }) {
   const handleChange = (e, index) => {
     const val = e.target.value.replace(/\D/g, "");
     if (!val) return;
-    
+
     // Only take the last typed character in case they type fast
     const char = val[val.length - 1];
     const newOtp = value.split("");
@@ -95,9 +95,8 @@ function OtpField({ value, onChange, error }) {
             value={value[index] || ""}
             onChange={(e) => handleChange(e, index)}
             onKeyDown={(e) => handleKeyDown(e, index)}
-            className={`h-[50px] w-[40px] sm:h-[56px] sm:w-[48px] text-center text-xl font-semibold rounded-[12px] border focus:outline-none focus:ring-2 transition-all ${
-              error ? "border-rose-400 bg-rose-50 focus:ring-rose-300/30 text-rose-600" : "border-stone-200 bg-white focus:ring-(--gold)/30 focus:border-(--gold) text-stone-900"
-            }`}
+            className={`h-[50px] w-[40px] sm:h-[56px] sm:w-[48px] text-center text-xl font-semibold rounded-[12px] border focus:outline-none focus:ring-2 transition-all ${error ? "border-rose-400 bg-rose-50 focus:ring-rose-300/30 text-rose-600" : "border-stone-200 bg-white focus:ring-(--gold)/30 focus:border-(--gold) text-stone-900"
+              }`}
           />
         ))}
       </div>
@@ -108,17 +107,17 @@ function OtpField({ value, onChange, error }) {
 
 /* ─── Login form ──────────────────────────────────────────── */
 function LoginForm({ onSwitch }) {
-  const [step,          setStep]        = useState("phone"); // "phone" | "otp"
-  const [mobileNumber,  setMobileNumber]= useState("");
-  const [otp,           setOtp]         = useState("");
-  const [touched,       setTouched]     = useState({});
-  const [submitting,    setSubmitting]  = useState(false);
-  const [resending,     setResending]   = useState(false);
-  const [resendTimer,   setResendTimer] = useState(0);
-  const [expiryTimer,   setExpiryTimer] = useState(0);
+  const [step, setStep] = useState("phone"); // "phone" | "otp"
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [otp, setOtp] = useState("");
+  const [touched, setTouched] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  const [resending, setResending] = useState(false);
+  const [resendTimer, setResendTimer] = useState(0);
+  const [expiryTimer, setExpiryTimer] = useState(0);
 
   const mobileErr = validateField("mobileNumber", mobileNumber);
-  const otpErr    = step === "otp" ? validateField("otp", otp) : "";
+  const otpErr = step === "otp" ? validateField("otp", otp) : "";
 
   useEffect(() => {
     let interval;
@@ -194,7 +193,7 @@ function LoginForm({ onSwitch }) {
   if (step === "otp") {
     return (
       <form onSubmit={handleVerifyOtp} noValidate className="space-y-6">
-      <div>
+        <div>
           {/* Modern SMS Preview Card */}
           <div className="mb-5 rounded-[18px] bg-gradient-to-br from-stone-50 to-stone-100 border border-stone-200 p-4">
             {/* Header row */}
@@ -203,7 +202,7 @@ function LoginForm({ onSwitch }) {
                 K
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-[11px] font-bold text-stone-800 uppercase tracking-[0.15em]">KESHRAG</p>
+                <p className="text-[11px] font-bold text-stone-800 uppercase tracking-[0.15em]">Sr Software </p>
                 <p className="text-[10px] text-stone-400">+91 {mobileNumber}</p>
               </div>
               <div className="flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5">
@@ -215,7 +214,7 @@ function LoginForm({ onSwitch }) {
             {/* SMS Bubble */}
             {/* <div className="rounded-[12px] rounded-tl-[4px] bg-white border border-stone-200/80 px-3.5 py-3 shadow-sm">
               <p className="text-[11px] leading-[1.7] text-stone-600">
-                Your <span className="font-semibold text-stone-900">Keshrag</span> login code is:{" "}
+                Your <span className="font-semibold text-stone-900">Sr Software </span> login code is:{" "}
                 <span className="inline-block font-mono font-bold text-stone-900 tracking-[0.15em] bg-stone-100 px-1.5 py-0.5 rounded-md">_ _ _ _ _ _</span>
               </p>
             </div> */}
@@ -231,7 +230,7 @@ function LoginForm({ onSwitch }) {
             <p className="mt-3 text-center text-xs text-rose-500 font-medium">OTP has expired. Please resend.</p>
           )}
         </div>
-        
+
         <button
           type="submit"
           disabled={submitting}
@@ -275,7 +274,7 @@ function LoginForm({ onSwitch }) {
         placeholder="10-digit mobile number"
         required
       />
-      
+
       <button
         type="submit"
         disabled={submitting}
@@ -296,21 +295,21 @@ function LoginForm({ onSwitch }) {
 
 /* ─── Register form ───────────────────────────────────────── */
 function RegisterForm({ onSwitch }) {
-  const [step,          setStep]        = useState("details"); // "details" | "otp"
-  const [name,          setName]        = useState("");
-  const [mobileNumber,  setMobileNumber]= useState("");
-  const [otp,           setOtp]         = useState("");
-  const [agree,         setAgree]       = useState(false);
-  const [touched,       setTouched]     = useState({});
-  const [submitting,    setSubmitting]  = useState(false);
-  const [resending,     setResending]   = useState(false);
-  const [resendTimer,   setResendTimer] = useState(0);
-  const [expiryTimer,   setExpiryTimer] = useState(0);
+  const [step, setStep] = useState("details"); // "details" | "otp"
+  const [name, setName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [otp, setOtp] = useState("");
+  const [agree, setAgree] = useState(false);
+  const [touched, setTouched] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  const [resending, setResending] = useState(false);
+  const [resendTimer, setResendTimer] = useState(0);
+  const [expiryTimer, setExpiryTimer] = useState(0);
 
-  const nameErr   = validateField("name", name);
+  const nameErr = validateField("name", name);
   const mobileErr = validateField("mobileNumber", mobileNumber);
-  const agreeErr  = !agree ? "You must accept the terms" : "";
-  const otpErr    = step === "otp" ? validateField("otp", otp) : "";
+  const agreeErr = !agree ? "You must accept the terms" : "";
+  const otpErr = step === "otp" ? validateField("otp", otp) : "";
 
   useEffect(() => {
     let interval;
@@ -357,7 +356,7 @@ function RegisterForm({ onSwitch }) {
       if (data?.token) {
         localStorage.setItem("userToken", data.token);
         playSuccess();
-        toast.success("Welcome to Keshrag!");
+        toast.success("Welcome to Sr Software !");
         setTimeout(() => {
           window.location.href = getRedirectPath();
         }, 1500);
@@ -395,7 +394,7 @@ function RegisterForm({ onSwitch }) {
                 K
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-[11px] font-bold text-stone-800 uppercase tracking-[0.15em]">KESHRAG</p>
+                <p className="text-[11px] font-bold text-stone-800 uppercase tracking-[0.15em]">Sr Software </p>
                 <p className="text-[10px] text-stone-400">+91 {mobileNumber}</p>
               </div>
               <div className="flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5">
@@ -406,7 +405,7 @@ function RegisterForm({ onSwitch }) {
             {/* SMS Bubble */}
             <div className="rounded-[12px] rounded-tl-[4px] bg-white border border-stone-200/80 px-3.5 py-3 shadow-sm">
               <p className="text-[11px] leading-[1.7] text-stone-600">
-                Your <span className="font-semibold text-stone-900">Keshrag</span> verification code is:{" "}
+                Your <span className="font-semibold text-stone-900">Sr Software </span> verification code is:{" "}
                 <span className="inline-block font-mono font-bold text-stone-900 tracking-[0.15em] bg-stone-100 px-1.5 py-0.5 rounded-md">_ _ _ _ _ _</span>
               </p>
             </div>
@@ -422,7 +421,7 @@ function RegisterForm({ onSwitch }) {
             <p className="mt-3 text-center text-xs text-rose-500 font-medium">OTP has expired. Please resend.</p>
           )}
         </div>
-        
+
         <button
           type="submit"
           disabled={submitting}
@@ -483,9 +482,8 @@ function RegisterForm({ onSwitch }) {
         <label className="flex cursor-pointer items-start gap-2.5">
           <div
             onClick={() => setAgree((a) => !a)}
-            className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-[5px] border-2 transition-all ${
-              agree ? "border-(--gold) bg-(--gold)" : "border-stone-300 bg-white"
-            } cursor-pointer`}
+            className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-[5px] border-2 transition-all ${agree ? "border-(--gold) bg-(--gold)" : "border-stone-300 bg-white"
+              } cursor-pointer`}
           >
             {agree && <Check size={10} className="text-white" strokeWidth={3} />}
           </div>
@@ -533,7 +531,7 @@ export default function LoginPage() {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setTab("signup");
       }
-      
+
       const token = params.get("token");
       if (token) {
         localStorage.setItem("userToken", token);
@@ -554,7 +552,7 @@ export default function LoginPage() {
         <div className="mb-8 text-center">
           <Link href="/" className="inline-block cursor-pointer">
             <p className="font-serif text-2xl font-semibold uppercase tracking-[0.24em] text-(--text) sm:text-3xl sm:tracking-[0.28em]">
-              KESHRAG
+              Sr Software
             </p>
             <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-(--gold)">
               Premium Sarees
@@ -567,7 +565,7 @@ export default function LoginPage() {
             transition={{ duration: 0.3 }}
             className="mt-4 text-base text-(--muted)"
           >
-            {tab === "login" ? "Welcome back — sign in to your account" : "Create your Keshrag account"}
+            {tab === "login" ? "Welcome back — sign in to your account" : "Create your Sr Software  account"}
           </motion.p>
         </div>
 
@@ -581,11 +579,10 @@ export default function LoginPage() {
                 key={t}
                 type="button"
                 onClick={() => setTab(t)}
-                className={`min-h-[44px] flex-1 rounded-[10px] px-2 py-2.5 text-[11px] font-bold uppercase tracking-[0.14em] transition-all sm:text-xs sm:tracking-[0.18em] ${
-                  tab === t
+                className={`min-h-[44px] flex-1 rounded-[10px] px-2 py-2.5 text-[11px] font-bold uppercase tracking-[0.14em] transition-all sm:text-xs sm:tracking-[0.18em] ${tab === t
                     ? "bg-white text-stone-900 shadow-sm"
                     : "text-stone-500 hover:text-stone-700"
-                } cursor-pointer`}
+                  } cursor-pointer`}
               >
                 {t === "login" ? "Sign In" : "Sign Up"}
               </button>
@@ -611,7 +608,7 @@ export default function LoginPage() {
         </div>
 
         <p className="mt-6 text-center text-xs text-stone-400">
-          © {new Date().getFullYear()} Keshrag. All rights reserved.
+          © {new Date().getFullYear()} Sr Software . All rights reserved.
         </p>
       </div>
     </div>

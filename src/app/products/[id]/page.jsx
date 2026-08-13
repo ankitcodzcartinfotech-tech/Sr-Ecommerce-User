@@ -166,7 +166,7 @@ function ProductDetailContent({ productId }) {
     let ignore = false;
 
     // Track current product as recently viewed on backend (fire-and-forget)
-    addRecentlyViewed({ productId: product._id }).catch(() => {});
+    addRecentlyViewed({ productId: product._id }).catch(() => { });
 
     // Stagger the remaining two requests to avoid rate limit
     const ordersTimer = setTimeout(() => {
@@ -225,7 +225,7 @@ function ProductDetailContent({ productId }) {
     const firstSize = firstVariant?.size || availableSizes[0] || "";
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedSize(firstSize);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product]);
 
   /** Called when user clicks a size button */
@@ -355,16 +355,16 @@ function ProductDetailContent({ productId }) {
         URL.createObjectURL(file)
       );
       const optimisticReview = {
-        _id:               submitResult?.review?._id || `local-${Date.now()}`,
-        rating:            reviewForm.rating,
-        title:             reviewForm.title,
-        comment:           reviewForm.comment,
-        images:            localImageUrls,
+        _id: submitResult?.review?._id || `local-${Date.now()}`,
+        rating: reviewForm.rating,
+        title: reviewForm.title,
+        comment: reviewForm.comment,
+        images: localImageUrls,
         isVerifiedPurchase: true,
-        helpfulVotes:      [],
-        createdAt:         new Date().toISOString(),
+        helpfulVotes: [],
+        createdAt: new Date().toISOString(),
         user: {
-          name:  typeof window !== "undefined"
+          name: typeof window !== "undefined"
             ? JSON.parse(localStorage.getItem("userProfile") || "null")?.name || "You"
             : "You",
         },
@@ -375,13 +375,13 @@ function ProductDetailContent({ productId }) {
       setReviewStats((prev) => {
         if (!prev) return prev;
         const newTotal = (prev.totalReviews || 0) + 1;
-        const newAvg   = ((prev.avgRating || 0) * (prev.totalReviews || 0) + reviewForm.rating) / newTotal;
-        const starKey  = ["oneStar","twoStar","threeStar","fourStar","fiveStar"][reviewForm.rating - 1];
+        const newAvg = ((prev.avgRating || 0) * (prev.totalReviews || 0) + reviewForm.rating) / newTotal;
+        const starKey = ["oneStar", "twoStar", "threeStar", "fourStar", "fiveStar"][reviewForm.rating - 1];
         return {
           ...prev,
           totalReviews: newTotal,
-          avgRating:    parseFloat(newAvg.toFixed(1)),
-          [starKey]:    (prev[starKey] || 0) + 1,
+          avgRating: parseFloat(newAvg.toFixed(1)),
+          [starKey]: (prev[starKey] || 0) + 1,
         };
       });
 
@@ -395,11 +395,11 @@ function ProductDetailContent({ productId }) {
       getReviews(product._id || product.id)
         .then((data) => {
           setProductReviews(data?.reviews || []);
-          setReviewStats(data?.stats   || null);
+          setReviewStats(data?.stats || null);
           // Revoke blob URLs to free memory
           localImageUrls.forEach((url) => URL.revokeObjectURL(url));
         })
-        .catch(() => {/* keep optimistic data on background failure */});
+        .catch(() => {/* keep optimistic data on background failure */ });
 
     } catch (err) {
       setReviewFormError(err.message || "Could not submit review. Please try again.");
@@ -418,7 +418,7 @@ function ProductDetailContent({ productId }) {
           ? { ...r, helpfulVotes: [...(r.helpfulVotes || []), "voted"] }
           : r
       ));
-    } catch(err) { toast.error(err.message || "Could not vote"); }
+    } catch (err) { toast.error(err.message || "Could not vote"); }
     finally { setVotingId(null); }
   };
 
@@ -490,9 +490,9 @@ function ProductDetailContent({ productId }) {
   // ─── Variant-aware price & image ───────────────────────────────────────────
   // Use selectedVariant for price/mrp if available, fallback to product-level helpers
   const price = selectedVariant?.salePrice || selectedVariant?.mrp || getProductPrice(product);
-  const mrp   = selectedVariant?.mrp || getProductMrp(product);
+  const mrp = selectedVariant?.mrp || getProductMrp(product);
   const discount = mrp > price ? Math.round(((mrp - price) / mrp) * 100) : 0;
-  const savings  = mrp > price ? mrp - price : 0;
+  const savings = mrp > price ? mrp - price : 0;
 
   // Calculate stock from the selected variant (or total across all variants)
   const totalStock = selectedVariant
@@ -569,15 +569,14 @@ function ProductDetailContent({ productId }) {
                     </h1>
                     <p className="text-sm text-(--muted)">SKU: KESH-{product._id?.slice(-6) || "000000"}</p>
                   </div>
-                  
+
                   <div className="flex gap-2 self-start sm:self-auto">
                     <button
                       onClick={handleWishlist}
-                      className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all ${
-                        wishlisted
+                      className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all ${wishlisted
                           ? "border-rose-500 bg-rose-50 text-rose-600"
                           : "border-stone-200 bg-white hover:border-(--gold) hover:text-(--gold)"
-                      } cursor-pointer`}
+                        } cursor-pointer`}
                       aria-label="Toggle wishlist"
                     >
                       <Heart size={20} fill={wishlisted ? "currentColor" : "none"} />
@@ -587,7 +586,7 @@ function ProductDetailContent({ productId }) {
                         const url = typeof window !== "undefined" ? window.location.href : "";
                         if (navigator?.share) {
                           try {
-                            await navigator.share({ title: name, text: `Check out ${name} on Keshrag`, url });
+                            await navigator.share({ title: name, text: `Check out ${name} on Sr Software `, url });
                           } catch { /* user cancelled */ }
                         } else {
                           try {
@@ -689,13 +688,12 @@ function ProductDetailContent({ productId }) {
                           onClick={() => !outOfStock && handleSizeSelect(size)}
                           disabled={outOfStock}
                           title={outOfStock ? "Out of stock" : ""}
-                          className={`relative min-w-14 rounded-full border-2 px-5 py-2.5 text-sm font-semibold transition-all ${
-                            selectedSize === size
+                          className={`relative min-w-14 rounded-full border-2 px-5 py-2.5 text-sm font-semibold transition-all ${selectedSize === size
                               ? "border-(--gold) bg-(--gold) text-white shadow-md scale-105"
                               : outOfStock
-                              ? "border-stone-200 bg-stone-50 text-stone-300 cursor-not-allowed line-through"
-                              : "border-stone-200 bg-white text-(--text) hover:border-(--gold) hover:scale-105"
-                          } cursor-not-allowed`}
+                                ? "border-stone-200 bg-stone-50 text-stone-300 cursor-not-allowed line-through"
+                                : "border-stone-200 bg-white text-(--text) hover:border-(--gold) hover:scale-105"
+                            } cursor-not-allowed`}
                         >
                           {size}
                         </button>
@@ -783,11 +781,10 @@ function ProductDetailContent({ productId }) {
                     <button
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
-                      className={`relative shrink-0 px-4 py-3 text-sm font-semibold transition-colors sm:px-5 ${
-                        activeTab === tab.id
+                      className={`relative shrink-0 px-4 py-3 text-sm font-semibold transition-colors sm:px-5 ${activeTab === tab.id
                           ? "text-(--gold)"
                           : "text-(--muted) hover:text-(--text)"
-                      } cursor-pointer`}
+                        } cursor-pointer`}
                     >
                       {tab.label}
                       {activeTab === tab.id && (
@@ -848,7 +845,7 @@ function ProductDetailContent({ productId }) {
                             {reviewStats?.totalReviews > 0 && (
                               <div className="flex items-center gap-2">
                                 <div className="flex gap-0.5">
-                                  {[1,2,3,4,5].map((s) => (
+                                  {[1, 2, 3, 4, 5].map((s) => (
                                     <Star key={s} size={16} className={s <= Math.round(reviewStats.avgRating) ? "fill-amber-400 text-amber-400" : "fill-stone-200 text-stone-200"} />
                                   ))}
                                 </div>
@@ -872,7 +869,7 @@ function ProductDetailContent({ productId }) {
                                 <option value="helpful">Most Helpful</option>
                               </select>
                             )}
-                            
+
                             {/* Review Button */}
                             {isLoggedIn() ? (
                               <button
@@ -915,7 +912,7 @@ function ProductDetailContent({ productId }) {
                                 <label className="text-xs font-semibold text-(--text)">Rating *</label>
                                 <div className="flex items-center gap-2">
                                   <div className="flex gap-1.5">
-                                    {[1,2,3,4,5].map((s) => (
+                                    {[1, 2, 3, 4, 5].map((s) => (
                                       <button
                                         key={s}
                                         type="button"
@@ -931,7 +928,7 @@ function ProductDetailContent({ productId }) {
                                   </div>
                                   {reviewForm.rating > 0 && (
                                     <span className="ml-2 text-sm font-medium text-(--muted)">
-                                      {["","Poor","Fair","Good","Very Good","Excellent"][reviewForm.rating]}
+                                      {["", "Poor", "Fair", "Good", "Very Good", "Excellent"][reviewForm.rating]}
                                     </span>
                                   )}
                                 </div>
@@ -1060,7 +1057,7 @@ function ProductDetailContent({ productId }) {
                             <div className="flex flex-col items-center justify-center text-center sm:min-w-32">
                               <p className="text-6xl font-bold text-(--text)">{reviewStats.avgRating?.toFixed(1)}</p>
                               <div className="mt-2 flex gap-0.5">
-                                {[1,2,3,4,5].map((s) => (
+                                {[1, 2, 3, 4, 5].map((s) => (
                                   <Star key={s} size={18} className={s <= Math.round(reviewStats.avgRating) ? "fill-amber-400 text-amber-400" : "fill-stone-200 text-stone-200"} />
                                 ))}
                               </div>
@@ -1111,7 +1108,7 @@ function ProductDetailContent({ productId }) {
                         {/* Review List */}
                         {reviewsLoading ? (
                           <div className="space-y-4">
-                            {[1,2].map((i) => (
+                            {[1, 2].map((i) => (
                               <div key={i} className="animate-pulse rounded-[28px] border border-stone-200 bg-white p-5 sm:p-6">
                                 <div className="flex items-center gap-3">
                                   <div className="h-10 w-10 rounded-full bg-stone-200" />
@@ -1157,16 +1154,16 @@ function ProductDetailContent({ productId }) {
                                     <div>
                                       <p className="text-sm font-semibold text-(--text)">{review.user?.name || "Customer"}</p>
                                       <p className="text-xs text-(--muted)">
-                                        {new Date(review.createdAt).toLocaleDateString("en-IN", { 
-                                          day: "numeric", 
-                                          month: "short", 
-                                          year: "numeric" 
+                                        {new Date(review.createdAt).toLocaleDateString("en-IN", {
+                                          day: "numeric",
+                                          month: "short",
+                                          year: "numeric"
                                         })}
                                       </p>
                                     </div>
                                   </div>
                                   <div className="flex shrink-0 items-center gap-0.5">
-                                    {[1,2,3,4,5].map((s) => (
+                                    {[1, 2, 3, 4, 5].map((s) => (
                                       <Star key={s} size={14} className={s <= review.rating ? "fill-amber-400 text-amber-400" : "fill-stone-200 text-stone-200"} />
                                     ))}
                                   </div>
@@ -1310,11 +1307,10 @@ function ProductDetailContent({ productId }) {
         <div className="mx-auto flex max-w-xl gap-2">
           <button
             onClick={handleWishlist}
-            className={`flex h-14 flex-1 items-center justify-center rounded-full border-2 transition-all ${
-              wishlisted
+            className={`flex h-14 flex-1 items-center justify-center rounded-full border-2 transition-all ${wishlisted
                 ? "border-rose-500 bg-rose-50 text-rose-600"
                 : "border-stone-200 hover:border-(--gold) hover:text-(--gold)"
-            } cursor-pointer`}
+              } cursor-pointer`}
           >
             <Heart size={20} fill={wishlisted ? "currentColor" : "none"} className="mr-1.5" />
             <span className="text-xs font-bold uppercase tracking-wide">Wishlist</span>

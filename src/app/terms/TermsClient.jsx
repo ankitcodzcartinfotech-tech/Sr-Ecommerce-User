@@ -163,7 +163,7 @@ export default function TermsClient() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mx-auto mt-4 sm:mt-6 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-stone-600"
             >
-              Welcome to Keshrag. These Terms & Condition govern your access to and use of our website, products, and services. By accessing or using our website, creating an account, or placing an order, you agree to be bound by these Terms.
+              Welcome to Sr Software . These Terms & Condition govern your access to and use of our website, products, and services. By accessing or using our website, creating an account, or placing an order, you agree to be bound by these Terms.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -210,11 +210,10 @@ export default function TermsClient() {
                   <button
                     key={section.id}
                     onClick={() => handleNavClick(section.id)}
-                    className={`w-full text-left text-xs sm:text-sm py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-lg transition-all ${
-                      activeSection === section.id
+                    className={`w-full text-left text-xs sm:text-sm py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-lg transition-all ${activeSection === section.id
                         ? 'bg-(--gold)/10 text-(var(--gold)) font-medium'
                         : 'text-stone-600 hover:bg-stone-100'
-                    } cursor-pointer`}
+                      } cursor-pointer`}
                   >
                     {section.title}
                   </button>
@@ -242,11 +241,10 @@ export default function TermsClient() {
                     <button
                       key={section.id}
                       onClick={() => handleNavClick(section.id)}
-                      className={`w-full text-left text-sm py-2.5 px-3 rounded-xl transition-all ${
-                        activeSection === section.id
+                      className={`w-full text-left text-sm py-2.5 px-3 rounded-xl transition-all ${activeSection === section.id
                           ? 'bg-(--gold)/10 text-(--gold) font-medium border-l-2 border-(--gold)'
                           : 'text-stone-500 hover:text-stone-900 hover:bg-stone-100/50'
-                      } cursor-pointer`}
+                        } cursor-pointer`}
                     >
                       {section.title}
                     </button>
@@ -340,7 +338,7 @@ export default function TermsClient() {
                 <li>Text</li>
                 <li>Website layout</li>
               </ul>
-              <p>is the property of Keshrag and is protected under applicable intellectual property laws.</p>
+              <p>is the property of Sr Software  and is protected under applicable intellectual property laws.</p>
               <p>No content may be copied, reproduced, distributed, or used without prior written permission.</p>
             </AnimatedSection>
 
@@ -358,7 +356,7 @@ export default function TermsClient() {
             </AnimatedSection>
 
             <AnimatedSection id="limitation-liability" title="Limitation of Liability">
-              <p>To the maximum extent permitted by law, Keshrag shall not be liable for any indirect, incidental, special, or consequential damages arising from:</p>
+              <p>To the maximum extent permitted by law, Sr Software  shall not be liable for any indirect, incidental, special, or consequential damages arising from:</p>
               <ul className="list-disc pl-5 sm:pl-6 space-y-2">
                 <li>Website interruptions</li>
                 <li>Delivery delays</li>
@@ -411,8 +409,8 @@ export default function TermsClient() {
                       <Mail className="text-[#b67b45]" size={28} />
                     </div>
                     <h4 className="font-serif text-lg md:text-xl mb-2 font-medium">Email Us</h4>
-                    <a href="mailto:support@keshrag.com" className="text-stone-300 hover:text-white transition-colors text-sm cursor-pointer">
-                      support@keshrag.com
+                    <a href="mailto:support@Sr Software .com" className="text-stone-300 hover:text-white transition-colors text-sm cursor-pointer">
+                      support@Sr Software .com
                     </a>
                   </div>
 
@@ -434,7 +432,7 @@ export default function TermsClient() {
                     </div>
                     <h4 className="font-serif text-lg md:text-xl mb-2 font-medium">Visit Us</h4>
                     <p className="text-stone-300 text-sm leading-relaxed">
-                      <span className="text-white font-medium block mb-1">Keshrag</span>
+                      <span className="text-white font-medium block mb-1">Sr Software </span>
                       Ground Floor, Raghuvir Scarlett, G-59,<br />
                       Nr. DMD Logistic Park, Saroli,<br />
                       Surat, Gujarat 395010

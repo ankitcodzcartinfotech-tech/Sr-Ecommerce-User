@@ -28,7 +28,7 @@ const LinePath = ({ className, scrollYProgress }) => {
   );
 };
 
-export default function KeshragScrollStory() {
+export default function Sr Software ScrollStory() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -98,25 +98,25 @@ export default function KeshragScrollStory() {
         className="absolute bottom-0 left-0 w-full rounded-t-[40px] bg-stone-900 px-6 py-16 text-stone-50 md:px-14"
       >
         <div className="mx-auto max-w-5xl text-center">
-  <span className="text-xs uppercase tracking-[0.4em] text-emerald-500">
-    Our Philosophy
-  </span>
+          <span className="text-xs uppercase tracking-[0.4em] text-emerald-500">
+            Our Philosophy
+          </span>
 
-  <h2 className="mt-8 font-serif text-5xl leading-none md:text-7xl">
-    More than a product.
-    <br />
-    A quality worth experiencing.
-  </h2>
+          <h2 className="mt-8 font-serif text-5xl leading-none md:text-7xl">
+            More than a product.
+            <br />
+            A quality worth experiencing.
+          </h2>
 
-  <p className="mx-auto mt-8 max-w-2xl text-lg leading-9 text-stone-400">
-    We believe every product carries a story —
-    of design excellence, exceptional utility, lifestyle upgrade,
-    and the satisfaction of quality craftsmanship.
-  </p>
-</div>
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-9 text-stone-400">
+            We believe every product carries a story —
+            of design excellence, exceptional utility, lifestyle upgrade,
+            and the satisfaction of quality craftsmanship.
+          </p>
+        </div>
       </motion.div>
     </section>
   );
 }
 
-export { KeshragScrollStory };
+export { Sr Software ScrollStory };

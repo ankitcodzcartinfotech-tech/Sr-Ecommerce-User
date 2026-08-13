@@ -2,9 +2,9 @@
 function InstagramIcon({ size = 16 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
     </svg>
   );
 }
@@ -15,12 +15,12 @@ function InstagramIcon({ size = 16 }) {
    Each image should ideally be a square crop of a product/lifestyle shot.
 ──────────────────────────────────────────────────────────────────────── */
 const POSTS = [
-  { src: "/images/saree1.jpg", alt: "Keshrag saree editorial 1" },
-  { src: "/images/saree2.jpg", alt: "Keshrag saree editorial 2" },
-  { src: "/images/saree3.jpg", alt: "Keshrag saree editorial 3" },
-  { src: "/images/saree4.jpg", alt: "Keshrag saree editorial 4" },
-  { src: "/images/saree5.jpg", alt: "Keshrag saree editorial 5" },
-  { src: "/images/saree6.jpg", alt: "Keshrag saree editorial 6" },
+  { src: "/images/saree1.jpg", alt: "Sr Software  saree editorial 1" },
+  { src: "/images/saree2.jpg", alt: "Sr Software  saree editorial 2" },
+  { src: "/images/saree3.jpg", alt: "Sr Software  saree editorial 3" },
+  { src: "/images/saree4.jpg", alt: "Sr Software  saree editorial 4" },
+  { src: "/images/saree5.jpg", alt: "Sr Software  saree editorial 5" },
+  { src: "/images/saree6.jpg", alt: "Sr Software  saree editorial 6" },
 ];
 
 export default function InstagramSection() {
@@ -35,14 +35,14 @@ export default function InstagramSection() {
               Instagram
             </p>
             <h2 className="mt-2 font-serif text-2xl font-light tracking-tight text-(--text) sm:text-3xl">
-              Follow <span className="text-(--gold)">@keshrag09</span>
+              Follow <span className="text-(--gold)">@Sr Software 09</span>
             </h2>
             <p className="mt-1 text-sm text-(--muted)">
               Real women, real sarees — join the circle on Instagram.
             </p>
           </div>
           <a
-            href="https://instagram.com/keshrag09"
+            href="https://instagram.com/Sr Software 09"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-full border border-(--border) bg-(--surface) px-5 py-2.5 text-xs font-semibold text-(--text) transition-all hover:border-(--gold) hover:text-(--gold) cursor-pointer"
@@ -57,7 +57,7 @@ export default function InstagramSection() {
           {POSTS.map((post, i) => (
             <a
               key={i}
-              href="https://instagram.com/keshrag09"
+              href="https://instagram.com/Sr Software 09"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden rounded-[14px] bg-stone-100 cursor-pointer"

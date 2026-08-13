@@ -29,9 +29,9 @@ export default function TrustBar() {
     <section className="bg-[rgba(255,255,255,0.42)] px-6 py-24 md:px-10 lg:px-14">
       <div className="mx-auto max-w-[1440px]">
         <SectionHeading
-          title="Why Women Choose Keshrag"
+          title="Why Women Choose Sr Software "
           subtitle="A premium storefront experience built around quality, ease, and lasting wardrobe value."
-          eyebrow="Why Keshrag"
+          eyebrow="Why Sr Software "
           className="mb-14"
         />
 

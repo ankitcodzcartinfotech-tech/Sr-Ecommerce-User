@@ -4,7 +4,7 @@
  * Works for both guests and logged-in users (as a local cache).
  */
 
-const STORAGE_KEY = "keshrag_rv";
+const STORAGE_KEY = "Sr Software _rv";
 const MAX_ITEMS = 10;
 
 /** Returns array of product ID strings (most recent first). */
@@ -37,5 +37,5 @@ export function clearGuestRecentlyViewed() {
   if (typeof window === "undefined") return;
   try {
     localStorage.removeItem(STORAGE_KEY);
-  } catch {}
+  } catch { }
 }

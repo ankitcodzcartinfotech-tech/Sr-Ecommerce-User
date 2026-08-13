@@ -9,18 +9,18 @@ import { resetPassword } from "@/Api/AllApi";
 import ValidatedInput from "@/components/common/ValidatedInput";
 
 function ResetPasswordForm() {
-  const searchParams  = useSearchParams();
-  const router        = useRouter();
-  const token         = searchParams.get("token") || "";
-  const email         = searchParams.get("email") || "";
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const token = searchParams.get("token") || "";
+  const email = searchParams.get("email") || "";
 
-  const [password,    setPassword]    = useState("");
-  const [confirm,     setConfirm]     = useState("");
-  const [showPass,    setShowPass]    = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [showPass, setShowPass] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
-  const [submitting,  setSubmitting]  = useState(false);
-  const [done,        setDone]        = useState(false);
-  const [error,       setError]       = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
   const [touchedPass, setTouchedPass] = useState(false);
   const [touchedConf, setTouchedConf] = useState(false);
 
@@ -32,8 +32,8 @@ function ResetPasswordForm() {
     }
   }, [token, email]);
 
-  const passOk    = password.length >= 8;
-  const matchOk   = confirm.length > 0 && password === confirm;
+  const passOk = password.length >= 8;
+  const matchOk = confirm.length > 0 && password === confirm;
   const canSubmit = passOk && matchOk && token && email && !submitting;
 
   async function handleSubmit(e) {
@@ -63,7 +63,7 @@ function ResetPasswordForm() {
         <div className="mb-8 text-center">
           <Link href="/" className="inline-block cursor-pointer">
             <p className="font-serif text-2xl font-semibold uppercase tracking-[0.24em] text-(--text)">
-              KESHRAG
+              Sr Software
             </p>
             <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-(--gold)">
               Premium Sarees
@@ -201,7 +201,7 @@ function ResetPasswordForm() {
         </div>
 
         <p className="mt-6 text-center text-xs text-stone-400">
-          © {new Date().getFullYear()} Keshrag. All rights reserved.
+          © {new Date().getFullYear()} Sr Software . All rights reserved.
         </p>
       </div>
     </div>

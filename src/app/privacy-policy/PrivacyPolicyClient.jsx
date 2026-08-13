@@ -159,7 +159,7 @@ export default function PrivacyPolicyClient() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mx-auto mt-4 sm:mt-6 max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed text-stone-600"
             >
-              At Keshrag Premium Sarees, your trust and privacy are our highest priority. We are committed to protecting and safeguarding your personal information.
+              At Sr Software  Premium Sarees, your trust and privacy are our highest priority. We are committed to protecting and safeguarding your personal information.
             </motion.p>
 
             <motion.div
@@ -199,8 +199,8 @@ export default function PrivacyPolicyClient() {
                     key={section.id}
                     onClick={() => handleNavClick(section.id)}
                     className={`w-full text-left text-xs sm:text-sm py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-lg transition-all ${activeSection === section.id
-                        ? 'bg-(--gold)/10 text-(var(--gold)) font-medium'
-                        : 'text-stone-600 hover:bg-stone-100'
+                      ? 'bg-(--gold)/10 text-(var(--gold)) font-medium'
+                      : 'text-stone-600 hover:bg-stone-100'
                       } cursor-pointer`}
                   >
                     {section.title}
@@ -230,8 +230,8 @@ export default function PrivacyPolicyClient() {
                       key={section.id}
                       onClick={() => handleNavClick(section.id)}
                       className={`w-full text-left text-sm py-2.5 px-3 rounded-xl transition-all ${activeSection === section.id
-                          ? 'bg-(--gold)/10 text-(--gold) font-medium border-l-2 border-(--gold)'
-                          : 'text-stone-500 hover:text-stone-900 hover:bg-stone-100/50'
+                        ? 'bg-(--gold)/10 text-(--gold) font-medium border-l-2 border-(--gold)'
+                        : 'text-stone-500 hover:text-stone-900 hover:bg-stone-100/50'
                         } cursor-pointer`}
                     >
                       {section.title}
@@ -246,7 +246,7 @@ export default function PrivacyPolicyClient() {
           <div className="flex-1 space-y-6 lg:space-y-8">
             <AnimatedSection id="introduction" title="Introduction">
               <p>
-                Welcome to Keshrag Premium Sarees. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, make a purchase, or interact with our services.
+                Welcome to Sr Software  Premium Sarees. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, make a purchase, or interact with our services.
               </p>
               <p>
                 Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
@@ -372,8 +372,8 @@ export default function PrivacyPolicyClient() {
                     </div>
                     <div>
                       <h4 className="font-serif text-base md:text-lg mb-1">Email Us</h4>
-                      <a href="mailto:support@keshrag.com" className="text-stone-300 hover:text-(--gold) transition-colors text-sm cursor-pointer">
-                        support@keshrag.com
+                      <a href="mailto:support@Sr Software .com" className="text-stone-300 hover:text-(--gold) transition-colors text-sm cursor-pointer">
+                        support@Sr Software .com
                       </a>
                     </div>
                   </div>
@@ -397,7 +397,7 @@ export default function PrivacyPolicyClient() {
                     <div>
                       <h4 className="font-serif text-base md:text-lg mb-1">Visit Us</h4>
                       <p className="text-stone-300 text-sm">
-                        Keshrag Premium Sarees<br />
+                        Sr Software  Premium Sarees<br />
                         Surat, Gujarat, India
                       </p>
                     </div>

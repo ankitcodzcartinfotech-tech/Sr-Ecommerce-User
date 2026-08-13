@@ -13,39 +13,39 @@ const Skiper52 = () => {
   const images = [
     {
       src: "/images/saree1.jpg",
-      alt: "Keshrag Saree Collection 1",
+      alt: "Sr Software  Saree Collection 1",
     },
     {
       src: "/images/saree2.jpg",
-      alt: "Keshrag Saree Collection 2",
+      alt: "Sr Software  Saree Collection 2",
     },
     {
       src: "/images/saree3.jpg",
-      alt: "Keshrag Saree Collection 3",
+      alt: "Sr Software  Saree Collection 3",
     },
     {
       src: "/images/saree4.jpg",
-      alt: "Keshrag Saree Collection 4",
+      alt: "Sr Software  Saree Collection 4",
     },
     {
       src: "/images/saree5.jpg",
-      alt: "Keshrag Saree Collection 5",
+      alt: "Sr Software  Saree Collection 5",
     },
     {
       src: "/images/saree6.jpg",
-      alt: "Keshrag Saree Collection 6",
+      alt: "Sr Software  Saree Collection 6",
     },
     {
       src: "/images/saree7.jpg",
-      alt: "Keshrag Saree Collection 7",
+      alt: "Sr Software  Saree Collection 7",
     },
     {
       src: "/images/saree1.jpg",
-      alt: "Keshrag Saree Collection 8",
+      alt: "Sr Software  Saree Collection 8",
     },
     {
       src: "/images/saree3.jpg",
-      alt: "Keshrag Saree Collection 9",
+      alt: "Sr Software  Saree Collection 9",
     },
   ];
 

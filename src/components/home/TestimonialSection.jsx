@@ -79,9 +79,9 @@ function ReviewCard({ review }) {
   const productHref =
     review.productId || review.productSlug
       ? getProductHref({
-          _id: review.productId,
-          slug: review.productSlug,
-        })
+        _id: review.productId,
+        slug: review.productSlug,
+      })
       : "/shop";
 
   const displayText =
@@ -115,7 +115,7 @@ function ReviewCard({ review }) {
           {review.product || "Premium Store Item"}
         </Link>
         <div className="my-5 h-px w-full bg-gradient-to-r from-stone-200 to-transparent" />
-        
+
         <div className="flex items-center gap-4">
           <div className="rounded-full p-0.5 border border-stone-200 transition-colors group-hover:border-(--gold)">
             <Avatar
@@ -205,11 +205,11 @@ export default function TestimonialSection() {
   const avgRating =
     displayReviews.length > 0
       ? (
-          displayReviews.reduce(
-            (sum, review) => sum + (review.rating || 5),
-            0
-          ) / displayReviews.length
-        ).toFixed(1)
+        displayReviews.reduce(
+          (sum, review) => sum + (review.rating || 5),
+          0
+        ) / displayReviews.length
+      ).toFixed(1)
       : "0";
 
   return (
@@ -226,7 +226,7 @@ export default function TestimonialSection() {
             </h2>
 
             <p className="mt-2 max-w-md text-sm leading-6 text-(--muted)">
-              Real reviews from customers who wear Keshrag for celebrations,
+              Real reviews from customers who wear Sr Software  for celebrations,
               gifting, and everyday moments.
             </p>
           </div>

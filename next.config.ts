@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === 'production';
-const backendUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://keshrag-backend-l2i7.onrender.com';
+const backendUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://Sr Software -backend-l2i7.onrender.com';
 
 const nextConfig: NextConfig = {
   images: {
@@ -26,12 +26,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'keshrag-backend-l2i7.onrender.com',
+        hostname: 'Sr Software -backend-l2i7.onrender.com',
         pathname: '/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: 'keshrag-backend-l2i7.onrender.com',
+        hostname: 'Sr Software -backend-l2i7.onrender.com',
         pathname: '/images/**',
       },
       {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import PageHero from "@/components/common/PageHero";
-import KeshragScrollStory from "@/components/ui/skiper-ui/skiper19";
+import Sr Software ScrollStory from "@/components/ui/skiper-ui/skiper19";
 
 const values = [
   {
@@ -138,7 +138,7 @@ export default function AboutPage() {
         </div>
       </section>
       {/* Storytelling Scroll */}
-      <KeshragScrollStory />
+      <Sr Software ScrollStory />
       {/* Image + Story Section */}
       <section className="overflow-hidden bg-white px-4 py-20 sm:px-6 md:px-10 lg:px-14 lg:py-40">
         <div className="mx-auto grid max-w-[1280px] items-center gap-16 lg:grid-cols-2 lg:gap-24">

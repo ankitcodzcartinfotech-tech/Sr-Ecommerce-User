@@ -87,14 +87,14 @@ export default function AboutPageClient() {
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-(--border) bg-(--surface) px-4 py-2 text-[10px] font-bold uppercase tracking-[0.32em] text-(--gold)"
           >
             <Sparkles size={11} />
-            About Keshrag
+            About Sr Software
           </motion.p>
 
           {/* Large TextRoll words — Skiper58 exact pattern: full-width <li> triggers hover */}
           <ul className="mb-10 w-full border-t border-(--border)">
             {[
-              { text: "Crafted.",    color: "text-(--text)" },
-              { text: "Curated.",    color: "text-(--text)" },
+              { text: "Crafted.", color: "text-(--text)" },
+              { text: "Curated.", color: "text-(--text)" },
               { text: "Celebrated.", color: "text-(--gold)" },
             ].map(({ text, color }) => (
               <li
@@ -227,7 +227,7 @@ export default function AboutPageClient() {
                 transition={{ duration: 0.5, delay: 0.25 }}
                 className="mt-8 max-w-md text-base leading-relaxed text-stone-400"
               >
-                Born from a love of Indian craftsmanship, Keshrag was created to
+                Born from a love of Indian craftsmanship, Sr Software  was created to
                 bridge the gap between heirloom-quality sarees and the modern woman
                 who wears them — with no compromise on either.
               </motion.p>
@@ -292,7 +292,7 @@ export default function AboutPageClient() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="font-serif text-[18vw] font-bold leading-none tracking-tighter text-(--text)"
           >
-            KESHRAG
+            Sr Software
           </motion.h2>
         </div>
         <motion.p

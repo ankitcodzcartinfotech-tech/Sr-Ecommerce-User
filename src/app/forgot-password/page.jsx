@@ -9,11 +9,11 @@ import ValidatedInput from "@/components/common/ValidatedInput";
 import { validateField } from "@/utils/validation";
 
 export default function ForgotPasswordPage() {
-  const [email,       setEmail]       = useState("");
-  const [submitting,  setSubmitting]  = useState(false);
-  const [done,        setDone]        = useState(false);
-  const [error,       setError]       = useState("");
-  const [touched,     setTouched]     = useState(false);
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
+  const [touched, setTouched] = useState(false);
 
   const isInvalid = validateField("email", email);
 
@@ -41,7 +41,7 @@ export default function ForgotPasswordPage() {
         <div className="mb-8 text-center">
           <Link href="/" className="inline-block cursor-pointer">
             <p className="font-serif text-2xl font-semibold uppercase tracking-[0.24em] text-(--text)">
-              KESHRAG
+              Sr Software
             </p>
             <p className="mt-1 text-[10px] uppercase tracking-[0.3em] text-(--gold)">
               Premium Sarees
@@ -127,7 +127,7 @@ export default function ForgotPasswordPage() {
         </div>
 
         <p className="mt-6 text-center text-xs text-stone-400">
-          © {new Date().getFullYear()} Keshrag. All rights reserved.
+          © {new Date().getFullYear()} Sr Software . All rights reserved.
         </p>
       </div>
     </div>

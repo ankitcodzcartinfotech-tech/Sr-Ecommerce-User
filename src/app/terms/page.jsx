@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Terms & Condition | Keshrag Premium Sarees",
-  description: "Read the Keshrag Terms & Condition to understand the rules and guidelines for using our website and services.",
+  title: "Terms & Condition | Sr Software  Premium Sarees",
+  description: "Read the Sr Software  Terms & Condition to understand the rules and guidelines for using our website and services.",
   keywords: "terms of service, terms and conditions, user agreement, saree ecommerce"
 };
 

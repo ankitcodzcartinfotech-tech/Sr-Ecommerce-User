@@ -5,7 +5,7 @@ import Skiper from "@/components/home/Skiper";
 import NewArrivalSection from "@/components/home/NewArrivalSection";
 import BestSellerSection from "@/components/home/BestSellerSection";
 import StoryBanner from "@/components/home/StoryBanner";
-import WhyKeshrag from "@/components/home/WhyKeshrag";
+import WhySr Software  from "@/components/home/WhySr Software ";
 import TestimonialSection from "@/components/home/TestimonialSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import RecentlyViewedSection from "@/components/home/RecentlyViewedSection";
@@ -30,8 +30,8 @@ export default function Home() {
       <NewArrivalSection />
       {/* 7. Brand Story */}
       <StoryBanner />
-      {/* 8. Why Keshrag */}
-      <WhyKeshrag />
+      {/* 8. Why Sr Software  */}
+      <WhySr Software />
       {/* 6. Best Sellers */}
       <BestSellerSection />
       {/* 9. Customer Reviews */}

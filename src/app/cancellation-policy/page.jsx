@@ -22,8 +22,8 @@ export default function CancellationPolicyPage() {
       ),
     },
     {
-      id: 'cancellation-by-keshrag',
-      title: '2. Cancellation by Keshrag',
+      id: 'cancellation-by-Sr Software ',
+      title: '2. Cancellation by Sr Software ',
       content: (
         <>
           <p>We reserve the right to cancel any order due to:</p>

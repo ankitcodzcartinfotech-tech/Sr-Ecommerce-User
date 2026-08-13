@@ -90,9 +90,8 @@ function Toast({ message, type, onClose }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      className={`fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full px-6 py-3 text-sm font-semibold shadow-xl ${
-        type === "error" ? "bg-rose-600 text-white" : "bg-stone-900 text-white"
-      }`}
+      className={`fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full px-6 py-3 text-sm font-semibold shadow-xl ${type === "error" ? "bg-rose-600 text-white" : "bg-stone-900 text-white"
+        }`}
     >
       {message}
     </motion.div>
@@ -104,11 +103,10 @@ function SectionHeader({ number, title, subtitle, completed }) {
   return (
     <div className="flex items-start gap-4">
       <div
-        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 font-bold transition-all ${
-          completed
+        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 font-bold transition-all ${completed
             ? "border-emerald-500 bg-emerald-500 text-white"
             : "border-(--gold) bg-(--gold) text-white"
-        }`}
+          }`}
       >
         {completed ? <Check size={20} /> : number}
       </div>
@@ -188,9 +186,9 @@ export default function CheckoutPage() {
   /* ─── Handle Coupon ──────────────────────────────────────── */
   const handleApplyCoupon = () => {
     if (!couponCode.trim()) return;
-    
+
     // Mock coupon validation
-    if (couponCode.toUpperCase() === "KESHRAG10") {
+    if (couponCode.toUpperCase() === "Sr Software 10") {
       const discountAmt = Math.round(subtotal * 0.1);
       setAppliedCoupon({ code: couponCode.toUpperCase(), discount: discountAmt });
       showToast("Coupon applied! 10% off");
@@ -202,7 +200,7 @@ export default function CheckoutPage() {
   /* ─── Handle Address Submit ──────────────────────────────── */
   const handleAddressSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const newAddr = await addAddress(addressForm);
       setAddresses((prev) => [...prev, newAddr.address || newAddr]);
@@ -246,7 +244,7 @@ export default function CheckoutPage() {
 
       const result = await placeOrder(orderData);
       showToast("Order placed successfully!");
-      
+
       // Redirect to order confirmation
       setTimeout(() => {
         router.push(`/orders/orders-details/${result.order?._id || result.orderId}`);
@@ -320,10 +318,10 @@ export default function CheckoutPage() {
       {/* Main Content */}
       <div className="mx-auto max-w-[1440px] px-6 py-10 md:px-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_400px]">
-          
+
           {/* Left Column: Steps */}
           <div className="space-y-8">
-            
+
             {/* STEP 1: Order Review */}
             <motion.section
               initial={{ opacity: 0, y: 20 }}
@@ -402,11 +400,10 @@ export default function CheckoutPage() {
                 {addresses.map((addr) => (
                   <label
                     key={addr._id || addr.id}
-                    className={`flex cursor-pointer items-start gap-4 rounded-xl border-2 p-4 transition-all ${
-                      selectedAddress === (addr._id || addr.id)
+                    className={`flex cursor-pointer items-start gap-4 rounded-xl border-2 p-4 transition-all ${selectedAddress === (addr._id || addr.id)
                         ? "border-(--gold) bg-(--gold-soft)"
                         : "border-stone-200 bg-white hover:border-stone-300"
-                    }`}
+                      }`}
                   >
                     <input
                       type="radio"
@@ -583,11 +580,10 @@ export default function CheckoutPage() {
                 {PAYMENT_METHODS.map((method) => (
                   <label
                     key={method.id}
-                    className={`flex cursor-pointer items-start gap-4 rounded-xl border-2 p-4 transition-all ${
-                      paymentMethod === method.id
+                    className={`flex cursor-pointer items-start gap-4 rounded-xl border-2 p-4 transition-all ${paymentMethod === method.id
                         ? "border-(--gold) bg-(--gold-soft)"
                         : "border-stone-200 bg-white hover:border-stone-300"
-                    } ${!method.available ? "cursor-not-allowed opacity-50" : ""}`}
+                      } ${!method.available ? "cursor-not-allowed opacity-50" : ""}`}
                   >
                     <input
                       type="radio"

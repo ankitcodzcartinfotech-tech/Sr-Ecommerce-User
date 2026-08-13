@@ -9,9 +9,9 @@ import { HoverExpand_001 } from "@/components/ui/skiper-ui/skiper52";
 /* ── Stats ────────────────────────────────────────────────── */
 const STATS = [
   { value: "1000+", label: "Happy Customers" },
-  { value: "250+",  label: "Curated Products" },
-  { value: "4.9★",  label: "Customer Rating" },
-  { value: "7 Days", label: "Easy Returns"   },
+  { value: "250+", label: "Curated Products" },
+  { value: "4.9★", label: "Customer Rating" },
+  { value: "7 Days", label: "Easy Returns" },
 ];
 
 /* ── Pillar data passed as `images` to HoverExpand_001 ──────
@@ -20,36 +20,36 @@ const STATS = [
 ───────────────────────────────────────────────────────────── */
 const PILLARS = [
   {
-    src:    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
-    alt:    "Premium Finish",
-    icon:   Gem,
+    src: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
+    alt: "Premium Finish",
+    icon: Gem,
     number: "01",
-    title:  "Premium\nFinish",
-    desc:   "Every piece passes a strict quality check for texture, detail, and finishing before it reaches you.",
+    title: "Premium\nFinish",
+    desc: "Every piece passes a strict quality check for texture, detail, and finishing before it reaches you.",
   },
   {
-    src:    "https://images.unsplash.com/photo-1581497396202-5645e76a3a8e?auto=format&fit=crop&w=600&q=80",
-    alt:    "Quality Materials",
-    icon:   Leaf,
+    src: "https://images.unsplash.com/photo-1581497396202-5645e76a3a8e?auto=format&fit=crop&w=600&q=80",
+    alt: "Quality Materials",
+    icon: Leaf,
     number: "02",
-    title:  "Quality\nMaterials",
-    desc:   "Carefully selected fabrics, components, and finishes chosen for comfort, style, and longevity.",
+    title: "Quality\nMaterials",
+    desc: "Carefully selected fabrics, components, and finishes chosen for comfort, style, and longevity.",
   },
   {
-    src:    "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=600&q=80",
-    alt:    "Fast Dispatch",
-    icon:   Truck,
+    src: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=600&q=80",
+    alt: "Fast Dispatch",
+    icon: Truck,
     number: "03",
-    title:  "Fast\nDispatch",
-    desc:   "Gift-ready packaging and reliable delivery across the country, for every single order.",
+    title: "Fast\nDispatch",
+    desc: "Gift-ready packaging and reliable delivery across the country, for every single order.",
   },
   {
-    src:    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
-    alt:    "Trusted Support",
-    icon:   ShieldCheck,
+    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    alt: "Trusted Support",
+    icon: ShieldCheck,
     number: "04",
-    title:  "Trusted\nSupport",
-    desc:   "Real help for orders, product questions, and post-purchase care — Monday to Saturday.",
+    title: "Trusted\nSupport",
+    desc: "Real help for orders, product questions, and post-purchase care — Monday to Saturday.",
   },
 ];
 
@@ -72,8 +72,8 @@ function StatCard({ value, label, delay = 0 }) {
       ref={ref}
       className="flex flex-col items-center rounded-[20px] border border-(--border) bg-(--surface) px-3 py-5 sm:px-6 sm:py-8 text-center"
       style={{
-        opacity:    shown ? 1 : 0,
-        transform:  shown ? "translateY(0)" : "translateY(18px)",
+        opacity: shown ? 1 : 0,
+        transform: shown ? "translateY(0)" : "translateY(18px)",
         transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
       }}
     >
@@ -118,23 +118,23 @@ function MobileCards() {
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
-    
+
     let closestIndex = 0;
     let minDistance = Infinity;
-    
+
     Array.from(container.children).forEach((child, index) => {
-       const childRect = child.getBoundingClientRect();
-       const containerRect = container.getBoundingClientRect();
-       const childCenter = childRect.left + childRect.width / 2;
-       const containerCenter = containerRect.left + containerRect.width / 2;
-       
-       const distance = Math.abs(containerCenter - childCenter);
-       if (distance < minDistance) {
-         minDistance = distance;
-         closestIndex = index;
-       }
+      const childRect = child.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const childCenter = childRect.left + childRect.width / 2;
+      const containerCenter = containerRect.left + containerRect.width / 2;
+
+      const distance = Math.abs(containerCenter - childCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = index;
+      }
     });
-    
+
     setActive((prev) => prev !== closestIndex ? closestIndex : prev);
   };
 
@@ -153,7 +153,7 @@ function MobileCards() {
 
   return (
     <div className="md:hidden space-y-4">
-      <div 
+      <div
         ref={scrollRef}
         onScroll={handleScroll}
         className="flex gap-3 overflow-x-auto pb-3 no-scrollbar snap-x snap-mandatory"
@@ -192,9 +192,8 @@ function MobileCards() {
             key={i}
             type="button"
             onClick={() => scrollTo(i)}
-            className={`rounded-full transition-all duration-300 ${
-              active === i ? "w-6 h-2 bg-emerald-600" : "w-2 h-2 bg-emerald-600/30"
-            } cursor-pointer`}
+            className={`rounded-full transition-all duration-300 ${active === i ? "w-6 h-2 bg-emerald-600" : "w-2 h-2 bg-emerald-600/30"
+              } cursor-pointer`}
           />
         ))}
       </div>
@@ -203,7 +202,7 @@ function MobileCards() {
 }
 
 /* ── Section ──────────────────────────────────────────────── */
-export default function WhyKeshrag() {
+export default function WhySr Software() {
   return (
     <section className="bg-(--surface) px-4 py-14 sm:px-6 md:px-10 lg:px-14 lg:py-24">
       <div className="mx-auto max-w-[1440px]">
