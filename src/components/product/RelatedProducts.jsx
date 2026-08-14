@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Heart, Eye, Star } from "lucide-react";
 import { getProducts } from "@/Api/AllApi";
-import { addToWishlist } from "@/Api/AllApi";
+import { addToWishlist, removeFromWishlist } from "@/Api/AllApi";
 import {
   formatCurrency, getProductHref, getProductImagePath,
   getProductMetrics, getProductMrp, getProductName,
@@ -33,6 +33,7 @@ function ProductSlide({ product }) {
         await addToWishlist({ productId: product._id || product.id });
         setWishlisted(true);
       } else {
+        await removeFromWishlist(product._id || product.id);
         setWishlisted(false);
       }
     } catch { /* silent */ }

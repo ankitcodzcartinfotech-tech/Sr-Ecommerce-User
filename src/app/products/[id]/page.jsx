@@ -246,6 +246,7 @@ function ProductDetailContent({ productId }) {
     try {
       if (wishlisted) {
         setWishlisted(false);
+        await removeFromWishlist(product._id || product.id);
         toast.success("Removed from wishlist");
       } else {
         await addToWishlist({ productId: product._id || product.id });

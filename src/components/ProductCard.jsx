@@ -85,14 +85,8 @@ export default function ProductCard({ product }) {
         showToast("Removed from wishlist");
         
         // Background sync
-        // NOTE: Since ProductCard doesn't easily know the wishlist item _id,
-        // we assume the backend handles removal by product ID if we modify it, 
-        // OR we can just refreshCounts() after a full sync if we implement the API.
-        // Wait, AllApi.js `removeFromWishlist` takes `itemId` (the cart/wishlist row ID, not product ID).
-        // Since we don't have it, we shouldn't attempt a blind call that will 404. 
-        // We will just let them remove from the Wishlist page for now, but at least the UI acts correctly.
-        // Wait, if I can't remove it from backend here, I shouldn't pretend I did.
-        // To properly support removing from ProductCard, the backend needs an endpoint like `DELETE /api/user/wishlist/product/:productId`
+        await removeFromWishlist(product._id || product.id);
+        refreshCounts();
       } else {
         // Optimistic update
         setWishlisted(true);
