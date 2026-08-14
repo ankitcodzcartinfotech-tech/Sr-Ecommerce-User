@@ -15,7 +15,6 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2.5">
               <img src="/logo.jpg" alt="SR Logo" className="h-8 w-8 rounded-[10px] border border-black/5 object-cover" />
-              <span className="font-serif text-2xl font-black tracking-widest text-(--primary)">SR</span>
             </div>
             <p className="mt-6 max-w-sm text-sm leading-7 text-(--muted) sm:mt-5">
               A curated shopping experience offering premium products for gifting, lifestyle, and everyday elegance.
@@ -23,9 +22,9 @@ export default function Footer() {
             <div className="mt-6 text-sm text-(--muted) max-w-sm leading-relaxed">
               <p className="font-semibold text-stone-900 mb-2">Visit Us</p>
               <p>
-                Ground Floor, Raghuvir Scarlett, G-59,<br />
-                Nr. DMD Logistic Park, Saroli,<br />
-                Surat, Gujarat 395010
+                Angel Busniess Center, Abc Cir,<br />
+                Nr. Sudama chowk, Mota Varachha,<br />
+                Surat, Gujarat 394101
               </p>
             </div>
           </div>

@@ -202,7 +202,7 @@ function MobileCards() {
 }
 
 /* ── Section ──────────────────────────────────────────────── */
-export default function WhySr Software() {
+export default function WhyKeshrag() {
   return (
     <section className="bg-(--surface) px-4 py-14 sm:px-6 md:px-10 lg:px-14 lg:py-24">
       <div className="mx-auto max-w-[1440px]">
