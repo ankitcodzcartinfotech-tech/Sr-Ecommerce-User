@@ -168,7 +168,7 @@ export const placeOrder = (body) => api.post("/api/user/orders", body);
 export const cancelOrder = (id) => api.patch(`/api/user/orders/${id}/cancel`);
 export const trackOrder = (id) => api.get(`/api/user/orders/${id}/track`);
 
-/** Downloads invoice PDF as a file — returns a Blob. */
+/** Fetches invoice PDF URL string. */
 export const downloadInvoicePdf = async (id) => {
   const token = typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
   // Use relative URL in browser (Next.js proxy), full URL on server
@@ -180,7 +180,8 @@ export const downloadInvoicePdf = async (id) => {
     },
   });
   if (!res.ok) throw new Error("Could not generate invoice");
-  return res.blob();
+  const data = await res.json();
+  return data.invoiceUrl;
 };
 
 // ═══════════════════════════════════════════════════════════

@@ -188,7 +188,7 @@ export default function ProductCard({ product }) {
       >
         <Link
           href={href}
-          className="relative block aspect-[5/6] overflow-hidden bg-white cursor-pointer"
+          className="relative block aspect-square overflow-hidden bg-white cursor-pointer"
         >
           {image ? (
             <>

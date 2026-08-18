@@ -127,8 +127,8 @@ export default function RecentlyViewedSection() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
                   className="w-44 shrink-0 snap-start sm:w-52 md:w-56">
-                  <Link href={href} className="group block cursor-pointer">
-                    <div className="relative aspect-[5/6] overflow-hidden rounded-2xl bg-stone-100">
+                  <Link href={`/product/${product._id || product.id}`}>
+                    <div className="relative aspect-square overflow-hidden rounded-2xl bg-stone-100">
                       {img
                         ? <Image src={img} alt={name} fill sizes="224px" className="object-cover group-hover:scale-105 transition-transform duration-500"/>
                         : <div className="flex h-full items-center justify-center text-stone-300"><Clock size={28}/></div>

@@ -56,17 +56,9 @@ export default function InvoicePage() {
     if (dlLoading) return;
     setDlLoading(true);
     try {
-      const blob = await downloadInvoicePdf(params.id);
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement("a");
-      const invoiceNum = order?.orderNumber
-        ? `INV-${order.orderNumber}`
-        : `INV-${params.id?.slice(-8).toUpperCase()}`;
-      a.href     = url;
-      a.download = `${invoiceNum}.pdf`;
-      a.click();
-      URL.revokeObjectURL(url);
-      toast.success("Invoice downloaded!");
+      const invoiceUrl = await downloadInvoicePdf(params.id);
+      window.open(invoiceUrl, "_blank");
+      toast.success("Invoice opened!");
     } catch {
       toast.error("Could not download invoice. Please try again.");
     } finally {

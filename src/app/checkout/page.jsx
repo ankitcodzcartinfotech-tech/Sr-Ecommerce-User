@@ -405,7 +405,8 @@ export default function CheckoutPage() {
         addressId: addressId,
         paymentMethod: paymentMethod.toUpperCase(),
         notes: '',
-        shippingCost: shippingCost
+        shippingCost: shippingCost,
+        ...(appliedCoupon?.code && { couponCode: appliedCoupon.code })
       };
 
       const result = await placeOrder(orderData);

@@ -446,7 +446,7 @@ function RecentlyViewedTab() {
         const href = getProductHref(product);
         return (
           <div key={product._id || i} className="group flex flex-col rounded-2xl border border-black/5 bg-white p-2 transition-all hover:border-emerald-500/30 hover:bg-white hover:shadow-lg hover:-translate-y-1">
-            <Link href={href} className="relative block aspect-[5/6] overflow-hidden rounded-xl bg-stone-50 cursor-pointer">
+            <Link href={href} className="relative block aspect-square overflow-hidden rounded-xl bg-stone-50 cursor-pointer">
               {img ? <Image src={img} alt={name} fill sizes="200px" className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
                 : <div className="flex h-full items-center justify-center text-[#A39C93]"><Package size={32} /></div>}
             </Link>
